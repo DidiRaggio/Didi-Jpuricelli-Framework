@@ -1,12 +1,12 @@
 
 <script>
-jQuery( document ).ready(function() {
-    jQuery('#home').backstretch(
-    		<% @homeImages.each do |homeImage| %>
-			'<%= image_tag homeImage.image.url(:original) %>',
-			<% end %>
-			{duration: 3000, fade: 750});
-});
+// jQuery( document ).ready(function() {
+//     jQuery('#home').backstretch(
+//     		<% @homeImages.each do |homeImage| %>
+// 			'<%= image_tag homeImage.image.url(:original) %>',
+// 			<% end %>
+// 			{duration: 3000, fade: 750});
+// });
     
 
 </script>
@@ -31,7 +31,14 @@ jQuery( document ).ready(function() {
 
 	<!-- Home start -->
 
-	<section id="home" class="module-image js-height-full">
+	<section id="home" class="module-image js-height-full" 
+	style="background: url(<% @homeImages.each do |homeImage| %>
+			'<%= image_tag homeImage.image.url(:original) %>',
+			<% end %>) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
 
 		<div class="intro">
 
