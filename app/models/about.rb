@@ -8,7 +8,7 @@ validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 	:image_file_size
 	:image_updated_at
 	:title
-
+	:description
 	
 
 end
