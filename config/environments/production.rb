@@ -38,8 +38,8 @@ Rails.application.configure do
   config.static_cache_control = "public, max-age=31536000"
   config.assets.digest = true
   config.assets.initialize_on_precompile = true
-  # config.serve_static_files = true
-  config.serve_static_assets = true
+  config.serve_static_files = true
+  # config.serve_static_assets = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
