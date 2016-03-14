@@ -71,7 +71,7 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-  ActionController::Base.asset_host = "https://d9rke1cfbz5k9.cloudfront.net"
+  ActionController::Base.asset_host = "d9rke1cfbz5k9.cloudfront.net"
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -99,7 +99,7 @@ Rails.application.configure do
   #Paperclip to s3
   config.paperclip_defaults = {
   :storage => :s3,
-  :s3_host_name => 'https://d9rke1cfbz5k9.cloudfront.net',
+  :s3_host_name => 'd9rke1cfbz5k9.cloudfront.net',
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
