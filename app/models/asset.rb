@@ -19,5 +19,4 @@ validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 	:gallery_id
 	:rank
 	
-
 end
