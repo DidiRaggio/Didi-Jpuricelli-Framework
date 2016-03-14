@@ -49,4 +49,5 @@ class HomeImagesController < ApplicationController
 	private
 	def homeImage_params
       params.require(:homeImage).permit( :logoWhite, :rank, :image)
+	end
 end
