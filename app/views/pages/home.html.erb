@@ -33,8 +33,8 @@
 
 	<section id="home" class="module-image js-height-full">
 		<% @homeImages.each do |homeImage| %>
-			<%= image_tag homeImage.image.url(:original), :style => 'min-width: 100%;
-  min-height: 100%;' %>
+			image_tag(homeImage.image.url(:original), :style => 'min-width: 100%;
+  min-height: 100%;')
 			<% end %>
 		<div class="intro">
 
