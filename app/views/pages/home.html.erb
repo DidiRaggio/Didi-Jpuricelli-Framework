@@ -31,15 +31,11 @@
 
 	<!-- Home start -->
 
-	<section id="home" class="module-image js-height-full" 
-	style="background: url(<% @homeImages.each do |homeImage| %>
-			<%= homeImage.image.url(:original) %>
-			<% end %>) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;">
-
+	<section id="home" class="module-image js-height-full">
+		<% @homeImages.each do |homeImage| %>
+			<%= image_tag homeImage.image.url(:original), :style => 'min-width: 100%;
+  min-height: 100%;' %>
+			<% end %>
 		<div class="intro">
 
                             <img src="http://static<%= rand(0..19) %>.jpuricelli.com/files/uploads/logo/logoBlack.png">
