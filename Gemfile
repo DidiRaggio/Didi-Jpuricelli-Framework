@@ -51,7 +51,7 @@ gem "animate-rails"
 # gem 'certified'
 #Google Maps
 gem 'underscore-rails'
-gem 'gmaps4rails'
+# gem 'gmaps4rails'
 #rails masonry
 gem 'masonry-rails', '~> 0.2.4'
 
