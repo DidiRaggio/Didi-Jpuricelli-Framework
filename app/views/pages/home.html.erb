@@ -1,7 +1,7 @@
 
 <script>
     $('#home').backstretch(
-    		<% @menuImages.each do |menuImage| %>
+    		<% @homeImages.each do |menuImage| %>
 			'<%= image_tag homeImage.image.url(:original) %>',
 			<% end %>
 			{duration: 3000, fade: 750});
