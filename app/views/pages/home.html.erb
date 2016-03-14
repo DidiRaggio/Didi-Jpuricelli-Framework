@@ -33,7 +33,7 @@
 
 	<section id="home" class="module-image js-height-full" 
 	style="background: url(<% @homeImages.each do |homeImage| %>
-			'<%= image_tag homeImage.image.url(:original) %>',
+			homeImage.image.url(:original)
 			<% end %>) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
