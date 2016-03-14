@@ -1,7 +1,7 @@
 
 <script>
-$( document ).ready(function() {
-    $('#home').backstretch(
+jQuery( document ).ready(function() {
+    jQuery('#home').backstretch(
     		<% @homeImages.each do |homeImage| %>
 			'<%= image_tag homeImage.image.url(:original) %>',
 			<% end %>
