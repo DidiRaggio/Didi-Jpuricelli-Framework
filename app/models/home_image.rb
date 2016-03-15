@@ -6,7 +6,7 @@ class HomeImage < ActiveRecord::Base
   def random0_20
       rand(0 .. 19)
   end
-  has_attached_file :image, :styles => { :original => "1500x"}, #:default_url => "/images/:style/missing.png",
+  has_attached_file :image, :styles => { :original => "1500x"}, :default_url => "/images/:style/missing.png",
   :url => ':s3_alias_url',
   :s3_host_alias => 'static15.jpuricelli.com',
   :path => "files/uploads/homeimage/image/:class/:id.:style.:extension"
