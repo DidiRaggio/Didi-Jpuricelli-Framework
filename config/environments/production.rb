@@ -98,9 +98,9 @@ Rails.application.configure do
 
   #Paperclip to s3
   config.paperclip_defaults = {
+  :url => ':s3_alias_url',
+  3:s3_host_alias => 'http://static%d.jpuricelli.com', 
   :storage => :s3,
-  :url => ":s3_alias_url",
-  :s3_host_alias  => 'https://d9rke1cfbz5k9.cloudfront.net',
   :s3_host_name => 's3-sa-east-1.amazonaws.com',
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME'],
@@ -108,6 +108,8 @@ Rails.application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
+
+
 
 
 
