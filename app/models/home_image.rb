@@ -4,7 +4,7 @@ class HomeImage < ActiveRecord::Base
     order('rank asc')
   end
 
-  has_attached_file :image, :styles => { :original => "1500x"}, :default_url => "/images/:style/missing.png",
+  has_attached_file :image, :styles => { :original => "1500x"}, :default_url => "/images/:style/missing.png"#,
   # :url => ':s3_alias_url',
   # :s3_host_alias => 'http://static%d.jpuricelli.com',
   # :path => "images/:class/:id.:style.:extension"
