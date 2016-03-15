@@ -6,8 +6,8 @@ class HomeImage < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :original => "1500x"}, #:default_url => "/images/:style/missing.png",
   :url => ':s3_alias_url',
-  :s3_host_alias => 'd9rke1cfbz5k9.cloudfront.net',
-  :path => "images/:class/:id.:style.:extension"
+  :s3_host_alias => 'static<%= rand(0..19) %>.jpuricelli.com',
+  :path => "HomeImage/image/:class/:id.:style.:extension"
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 	:image_file_name
