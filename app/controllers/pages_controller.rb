@@ -6,4 +6,9 @@ class PagesController < ApplicationController
     @gallerytypes = Gallerytype.all 
     @tags = Tag.all
   end
+
+  def const
+  	
+  end
+
 end
