@@ -62,7 +62,7 @@ ActiveAdmin.register Gallery do
         raw(gallery.description)
       end
         row :galleryimage do 
-        	image_tag(gallery.menuimage.url(:original))
+        	image_tag(gallery.menuimage.url)
         end
             row "Assets" do 
             ul do
