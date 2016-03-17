@@ -68,7 +68,7 @@ ActiveAdmin.register Gallery do
             ul do
               gallery.assets.each do |asset|
             li do 
-              image_tag(asset.image.url(:thumb))
+              image_tag(asset.image.asset_url(:thumb))
               # asset.texto
               # asset.descripcion
             end
