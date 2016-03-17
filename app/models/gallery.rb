@@ -21,7 +21,7 @@ class Gallery < ActiveRecord::Base
   has_many :gallerytypes, through: :tags
   has_many :assets, :dependent => :destroy
 
-  has_attached_file :menuimage, :styles => { :original => "314x200" },
+  has_attached_file :menuimage, :styles => { :original => "314x200" }
   # :url => ':s3_alias_url',
   # :s3_host_alias => 'static17.jpuricelli.com',
   # :path => "files/uploads/menuimage/image/:class/:id.:style.:extension"
