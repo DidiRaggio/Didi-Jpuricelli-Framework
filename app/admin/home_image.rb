@@ -19,7 +19,8 @@ ActiveAdmin.register HomeImage do
       	row :logoWhite
         row :rank
         row :image do 
-        	image_tag(homeImage.image.url)
+          homeImage.image.url
+        	# image_tag(homeImage.image.url)
         end
     end
     end
