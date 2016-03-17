@@ -62,13 +62,13 @@ ActiveAdmin.register Gallery do
         raw(gallery.description)
       end
         row :galleryimage do 
-        	image_tag(gallery.menuimage.url)
+        	image_tag(gallery.menuimage.url(:original))
         end
             row "Assets" do 
             ul do
               gallery.assets.each do |asset|
             li do 
-              image_tag(asset.image.asset_url(:thumb))
+              image_tag(asset.image.url(:thumb))
               # asset.texto
               # asset.descripcion
             end
