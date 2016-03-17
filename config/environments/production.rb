@@ -102,6 +102,7 @@ Rails.application.configure do
   # 3:s3_host_alias => 'http://static%d.jpuricelli.com', 
   :storage => :s3,
   :s3_host_name => 's3-sa-east-1.amazonaws.com',
+  :url => ':asset_host',
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
