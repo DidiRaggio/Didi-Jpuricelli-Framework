@@ -20,7 +20,7 @@ ActiveAdmin.register HomeImage do
         row :rank
         row :image do 
           # homeImage.image.url
-        	image_tag(homeImage.image.url)
+        	image_tag(homeImage.image.asset_path)
         end
     end
     end
