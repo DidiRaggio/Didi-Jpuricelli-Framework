@@ -98,8 +98,6 @@ Rails.application.configure do
 
   #Paperclip to s3
   config.paperclip_defaults = {
-  # :url => ':s3_alias_url',
-  # 3:s3_host_alias => 'http://static%d.jpuricelli.com', 
   :storage => :s3,
   :s3_host_name => 's3-sa-east-1.amazonaws.com',
   :url => ':asset_host',
