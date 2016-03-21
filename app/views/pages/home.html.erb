@@ -1,7 +1,7 @@
 
 	        <style>
-	        jQuery(document).ready(function() {
-	     	jQuery('#home').backstretch([
+	        $(document).ready(function() {
+	     	$('#home').backstretch([
 	     		<% @homeImages.each do |homeImage| %>
                 <%= homeImage.image.url(:original) %>,
             <% end %>
