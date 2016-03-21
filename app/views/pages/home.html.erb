@@ -438,10 +438,8 @@
 	<div class="scroll-up">
 		<a href="#home"><i class="fa fa-angle-double-up"></i></a>
 	</div>
-
-
 	        <style>
-	        $(document).ready(function() {
+	        $(function() {
 	     	$('#home').backstretch([
 	     		<% @homeImages.each do |homeImage| %>
                 <%= homeImage.image.url(:original) %>
@@ -449,4 +447,6 @@
 			], {duration: 3000, fade: 750});
             });
             </style>
+
+
 </body>
