@@ -1,6 +1,7 @@
 
 	        <style>
 	        $(function() {
+	        	alert( "welcome" );
 	     	$('#home').backstretch([
 	     		<% @homeImages.each do |homeImage| %>
                 <%= homeImage.image.url(:original) %>,
