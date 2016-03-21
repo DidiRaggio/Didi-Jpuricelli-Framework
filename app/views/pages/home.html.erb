@@ -1,13 +1,4 @@
 
-	        <style>
-	        $(document).ready(function() {
-	     	$('#home').backstretch([
-	     		<% @homeImages.each do |homeImage| %>
-                <%= homeImage.image.url(:original) %>
-            <% end %>
-			], {duration: 3000, fade: 750});
-            });
-            </style>
 
 <body>
 
@@ -449,4 +440,13 @@
 	</div>
 
 
+	        <style>
+	        $(document).ready(function() {
+	     	$('#home').backstretch([
+	     		<% @homeImages.each do |homeImage| %>
+                <%= homeImage.image.url(:original) %>
+            <% end %>
+			], {duration: 3000, fade: 750});
+            });
+            </style>
 </body>
