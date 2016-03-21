@@ -54,10 +54,10 @@
 			$(".js-height-full").height($(window).height());
 		});
 
-		$('#home').backstretch([
-			'assets/images/home1.jpg',
-			'assets/images/home2.jpg',
-		], {duration: 3000, fade: 750});
+		// $('#home').backstretch([
+		// 	'assets/images/home1.jpg',
+		// 	'assets/images/home2.jpg',
+		// ], {duration: 3000, fade: 750});
 
 		/* ---------------------------------------------- /*
 		 * Twitter

@@ -1,5 +1,12 @@
 
-	
+	        <style>
+	     	jQuery('#home').backstretch([
+	     		<% @gallerytypes.each do |gallerytype| %>
+                <%= image_tag homeImage.image.url(:original) %>,
+            <% end %>
+			], {duration: 3000, fade: 750});
+            
+            </style>
 
 <body>
 
@@ -14,10 +21,7 @@
 	<!-- Home start -->
 
 	<section id="home" class="module-image js-height-full">
-		<% @homeImages.each do |homeImage| %>
-			<%= image_tag homeImage.image.url(:original), :style => 'min-width: 100%;
-  min-height: 100%;' %>
-			<% end %>
+		
 		<div class="intro">
 
                             <img src="http://static<%= rand(0..19) %>.jpuricelli.com/files/uploads/logo/logoWhite.png">
@@ -88,7 +92,7 @@
 				<div class="col-sm-6 col-sm-offset-3">
 
 					<div class="module-header wow fadeInUp">
-						<h2 class="module-title">My works</h2>
+						<h2 class="module-title">Trabajos</h2>
 						<div class="module-line"></div>
 						<div class="module-subtitle">
 							He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.
@@ -108,9 +112,10 @@
 
 					<ul id="filter">
 						<li class="active" data-group="all">All</li>
-						<li data-group="slideshow">Slideshow</li>
-						<li data-group="video">Video</li>
-						<li data-group="image">Image</li>
+					<% @gallerytypes.each do |gallerytype| %>
+					     <li data-group="<%= gallerytype.name %>"><%= gallerytype.name.upcase %></li>
+               			.<%= gallerytype.name %>{}
+            		<% end %>
 					</ul>
 
 				</div>
@@ -121,21 +126,24 @@
 
 		</div><!-- .contaier -->
 
-		<ul class="portfolio-items-container">
 
-			<li class="portfolio-item" data-groups="all slideshow">
+		<ul class="portfolio-items-container">
+		<% @galleries.each do |gallery| %>
+			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
 				<figure>
-					<img src="assets/images/p1-1.jpg" alt="">
+					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
 					<figcaption>
-						<a href="portfolio/slideshow.html" class="simple-ajax-popup"></a>
+						 <%= link_to gallery_path(gallery), :class => 'simple-ajax-popup' do %><%end%>
+<!-- 						<a href="portfolio/slideshow.html" class="simple-ajax-popup"></a> -->
 						<div class="caption-inner">
-							<h3 class="portfolio-item-title">Some work one</h3>
-							<div class="portfolio-item-desc">Slideshow</div>
+							<h3 class="portfolio-item-title"><%= gallery.name %></h3>
+							<div class="portfolio-item-desc"><%= gallery.sub %></div>
 						</div>
 					</figcaption>
 				</figure>
 			</li>
-
+		<% end %>
+<!-- 
 			<li class="portfolio-item" data-groups="all video">
 				<figure>
 					<img src="assets/images/p2-2.jpg" alt="">
@@ -200,7 +208,7 @@
 					</figcaption>
 				</figure>
 			</li>
-
+ -->
 		</ul><!-- .projects-container -->
 
 	</section>
