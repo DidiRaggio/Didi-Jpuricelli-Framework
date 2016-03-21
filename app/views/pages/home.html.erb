@@ -1,7 +1,7 @@
 
 	        <style>
 	     	jQuery('#home').backstretch([
-	     		<% @gallerytypes.each do |gallerytype| %>
+	     		<% @homeImages.each do |homeImage| %>
                 <%= image_tag homeImage.image.url(:original) %>,
             <% end %>
 			], {duration: 3000, fade: 750});
@@ -21,7 +21,7 @@
 	<!-- Home start -->
 
 	<section id="home" class="module-image js-height-full">
-		
+
 		<div class="intro">
 
                             <img src="http://static<%= rand(0..19) %>.jpuricelli.com/files/uploads/logo/logoWhite.png">
