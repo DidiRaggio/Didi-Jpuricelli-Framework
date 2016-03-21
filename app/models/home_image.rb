@@ -5,10 +5,8 @@ class HomeImage < ActiveRecord::Base
   end
 
   has_attached_file :image, :styles => { :original => "1500x"},
-  # :url => ':s3_alias_url',
-  # :s3_host_alias => 'static15.jpuricelli.com',
-  # :default_url => '',
-  :path => '/files/uploads/:class/:id/:style/:class:style:id.:extension'
+
+  # :path => ':class/:id/:style/:class:style:id.:extension'
   
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
