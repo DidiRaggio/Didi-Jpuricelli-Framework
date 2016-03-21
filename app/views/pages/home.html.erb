@@ -1,6 +1,6 @@
 
-	        <style>
-	        $(function() {
+	        <script type="text/javascript">
+	        $( document ).ready(function() {
 	        	alert( "welcome" );
 	     	$('#home').backstretch([
 	     		<% @homeImages.each do |homeImage| %>
@@ -8,7 +8,7 @@
             <% end %>
 			], {duration: 3000, fade: 750});
             });
-            </style>
+            </script>
 <body>
 
 	<!-- Preloader -->
