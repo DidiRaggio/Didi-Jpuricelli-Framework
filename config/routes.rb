@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  resources :galleries
+
+  resources :tags
+
+  get 'galleries/show'
   get 'pages/home'
   get 'pages/const'
   get '/home', :to => 'pages#home'
