@@ -14,6 +14,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require owl.carousel
+//= require magnific-popup
+//= require 'jquery.backstretch'
+//= require wow
+//= require imagesloaded
 //= require bootstrap
 //= require turbolinks
 //= require_tree ./staticjs

@@ -31,6 +31,13 @@ gem 'jquery-ui-rails'
 gem 'jquery-ui-rails-google-cdn'
 
 
+#template gems
+gem 'owlcarousel-rails'
+gem 'magnific-popup-rails', '~> 1.1.0'
+gem 'backstretch-rails'
+gem 'wow-rails'
+gem 'imagesLoaded_rails'
+
 #Mailer
 gem 'mail_form'
 # Use jquery as the JavaScript library
