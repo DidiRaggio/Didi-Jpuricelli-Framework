@@ -115,7 +115,7 @@ Rails.application.configure do
   :s3_protocol    => 'https',
 # :url => ":asset_host",
 # :s3_host_alias => ':asset_host',
-  :s3_host_alias => 'https://d9rke1cfbz5k9.cloudfront.net',
+  :s3_host_alias => 'd9rke1cfbz5k9.cloudfront.net',
       :url => ':s3_alias_url',
   #:url => ':asset_host', #CORRECT THIS TO :asset_host AND GET THIS SHIT WORKING!!!
   :s3_credentials => {
