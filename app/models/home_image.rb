@@ -5,7 +5,7 @@ class HomeImage < ActiveRecord::Base
   end
 
   has_attached_file :image, :styles => { :original => "1500x"},
-
+  :hash_secret => "SOME_RANDOM_SECRET",
   :path => ':class/:id/:style/:class:style:id.:extension'
   
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }

@@ -102,6 +102,7 @@ Rails.application.configure do
   :storage => :s3,
   # :s3_host_name => 's3-sa-east-1.amazonaws.com',
   # :s3_host_alias => ":asset_host",
+  :s3_protocol    => 'https',
 :url => ":asset_host",
   # :url => ':asset_host', #CORRECT THIS TO :asset_host AND GET THIS SHIT WORKING!!!
   :s3_credentials => {
