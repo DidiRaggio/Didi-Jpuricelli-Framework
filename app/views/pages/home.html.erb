@@ -1,14 +1,4 @@
 
-	        <script type="text/javascript">
-	        $( document ).ready(function() {
-	        	
-	     	$('#home').backstretch([
-	     	<% @homeImages.each do |homeImage| %>
-                '<%= homeImage.image.url(:original) %>',
-            <% end %>
-			], {duration: 3000, fade: 750});
-            });
-            </script>
 <body>
 
 	<!-- Preloader -->
@@ -448,6 +438,17 @@
 		<a href="#home"><i class="fa fa-angle-double-up"></i></a>
 	</div>
 
-
+	        <script type="text/javascript">
+	        $( document ).ready(function() {
+	        	alert ('javascript working');
+	     	$('#home').backstretch([
+	     	<% @homeImages.each do |homeImage| %>
+                '<%= homeImage.image.url(:original) %>',
+                alert('a pic');
+            <% end %>
+			], {duration: 3000, fade: 750});
+            });
+            </script>
 
 </body>
+
