@@ -105,6 +105,7 @@ Rails.application.configure do
   :s3_protocol    => 'https',
 :url => ":asset_host",
 :s3_host_alias => ':asset_host',
+:path => ':class/:id/:style/:class:style:id.:extension',
   # :url => ':asset_host', #CORRECT THIS TO :asset_host AND GET THIS SHIT WORKING!!!
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME'],
