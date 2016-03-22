@@ -22,9 +22,8 @@ class Gallery < ActiveRecord::Base
   has_many :assets, :dependent => :destroy
 
   has_attached_file :menuimage, :styles => { :original => "314x200" }, :default_url => "/images/:style/missing.png",
-  # :url => ':s3_alias_url',
-  # :s3_host_alias => 'static17.jpuricelli.com',
-  :path => "files/uploads/menuimage/image/:class/:id.:style.:extension"
+
+  :path => ':class/:id/:style/:class:style:id.:extension'
   validates_attachment :menuimage, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   validates :menuimage, presence: true
 

@@ -1,5 +1,5 @@
 ActiveAdmin.register Gallery do
- permit_params :attributes , :description, :name, :sub, :rank , :galleryimage, :_destroy,  assets_attributes: [:id, :image, :rank, :title, :embeded_video, :assettype_id, :_destroy], tags_attributes: [:id, :gallerytype_id, :gallery_id, :_destroy]
+ permit_params :attributes , :description, :name, :sub, :rank , :menuimage, :_destroy,  assets_attributes: [:id, :image, :rank, :title, :embeded_video, :assettype_id, :_destroy], tags_attributes: [:id, :gallerytype_id, :gallery_id, :_destroy]
 
   form :html => { :multipart => true } do |f|
     f.inputs 'Details' do
