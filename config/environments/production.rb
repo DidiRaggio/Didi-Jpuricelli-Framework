@@ -66,7 +66,7 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
     # config.action_controller.asset_host = 'https://s3.amazonaws.com/jpuricelli.com'
   # config.action_controller.asset_host = 'https://d9rke1cfbz5k9.cloudfront.net'
-  config.action_controller.asset_host = 'http://static%d.jpuricelli.com=~ %r{/images/}'
+  config.action_controller.asset_host = 'http://static%d.jpuricelli.com'
   # config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -105,7 +105,7 @@ Rails.application.configure do
   :s3_protocol    => 'https',
 :url => ":asset_host",
 :s3_host_alias => ':asset_host',
-:path => ':class/:id/:style/:class:style:id.:extension',
+
   # :url => ':asset_host', #CORRECT THIS TO :asset_host AND GET THIS SHIT WORKING!!!
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME'],
