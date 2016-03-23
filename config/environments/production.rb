@@ -111,8 +111,7 @@ Rails.application.configure do
   :storage => :s3,
   # :s3_host_name => 's3-sa-east-1.amazonaws.com',
   # :s3_host_alias => ":asset_host",
-  :s3_directory: '',
-      :s3_host: ''
+
   :s3_protocol    => 'https',
 # :url => ":asset_host",
 :s3_host_alias => ':asset_host',
