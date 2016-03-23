@@ -113,7 +113,7 @@ Rails.application.configure do
   # :s3_host_alias => ":asset_host",
 
   :s3_protocol    => 'https',
-# :url => ":asset_host",
+:url => ":asset_host",
 :s3_host_alias => ':asset_host',
   # :s3_host_alias => 'd9rke1cfbz5k9.cloudfront.net',
   #     :url => ':s3_alias_url',
