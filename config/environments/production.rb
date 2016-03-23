@@ -66,7 +66,7 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
     # config.action_controller.asset_host = 'https://s3.amazonaws.com/jpuricelli.com'
   # config.action_controller.asset_host = 'https://d9rke1cfbz5k9.cloudfront.net'
-  config.action_controller.asset_host = 'd9rke1cfbz5k9.cloudfront.net'
+  config.action_controller.asset_host = 'http://static%d.jpuricelli.com'
   
   # config.action_controller.asset_host = Proc.new do |source|
   #   if source =~ /\/images/
@@ -114,10 +114,12 @@ Rails.application.configure do
 
   # :s3_protocol    => 'https',
 :url => ":asset_host",
+:s3_host => '/assets',
 # :s3_host_alias => ':asset_host',
   # :s3_host_alias => 'd9rke1cfbz5k9.cloudfront.net',
   #     :url => ':s3_alias_url',
-  #:url => ':asset_host', #CORRECT THIS TO :asset_host AND GET THIS SHIT WORKING!!!
+
+  #:url => ':asset_host', #CORRECT THIS TO :asset_host AND GET THIS SHIT WORKING!!! BUT IT'S ALL YOU NEED FOR static%d
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
