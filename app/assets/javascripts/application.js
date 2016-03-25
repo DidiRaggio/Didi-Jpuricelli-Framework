@@ -23,6 +23,7 @@
 //= require isotope/jquery.isotope
 //= require custom-shuffle-init
 //= require smoothscroll
+//= require custom
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
