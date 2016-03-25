@@ -17,6 +17,8 @@
 //= require owl.carousel
 //= require magnific-popup
 //= require 'jquery.backstretch'
+//= require 'jquery.shuffle.min'
+//= require 'jquery.sticky'
 //= require wow
 //= require masonry/jquery.masonry
 //= require imagesloaded
