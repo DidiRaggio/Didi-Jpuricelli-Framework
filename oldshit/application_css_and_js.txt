@@ -54,3 +54,22 @@ application.js
 //= require bootstrap
 //= require turbolinks
 //= require_tree ./staticjs
+
+
+WORKING
+//= require jquery
+//= require jquery-ui
+//= require jquery_ujs
+//= require owl.carousel
+//= require magnific-popup
+//= require 'jquery.backstretch'
+//= require 'jquery.shuffle.min'
+//= require 'jquery.sticky'
+//= require 'jquery.fitvids'
+//= require wow
+//= require custom-shuffle-init
+//= require smoothscroll
+//= require custom
+//= require bootstrap
+//= require turbolinks
+//= require_tree .

@@ -17,17 +17,15 @@
 //= require owl.carousel
 //= require magnific-popup
 //= require 'jquery.backstretch'
-//= require 'jquery.shuffle.min'
 //= require 'jquery.sticky'
 //= require 'jquery.fitvids'
-//= require wow
-//= require masonry/masonry.min
 //= require imagesloaded
-//= require isotope/jquery.isotope
+//= require wow
 //= require custom-shuffle-init
 //= require smoothscroll
-//= require custom
 //= require bootstrap
 //= require turbolinks
+//= require custom
+//= require 'jquery.shuffle.min'
 //= require_tree .
 
