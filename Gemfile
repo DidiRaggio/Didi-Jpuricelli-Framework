@@ -49,10 +49,11 @@ gem 'rack-zippy'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3.0-stable'
+gem 'bootstrap-sass', '~> 3.3.5'
+# gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3.0-stable'
 #Styleings
 
-gem "font-awesome-rails"
+gem "font-awesome-sass", "~> 4.4.0"
 gem 'ionicons-rails'
 gem "animate-rails"
 # gem 'certified'
