@@ -32622,6 +32622,509 @@ $.magnificPopup.registerModule(RETINA_NS, {
 /*! WOW - v1.0.2 - 2014-09-24
 * Copyright (c) 2014 Matthieu Aussaguel; Licensed MIT */
 (function(){var a,b,c,d,e,f=function(a,b){return function(){return a.apply(b,arguments)}},g=[].indexOf||function(a){for(var b=0,c=this.length;c>b;b++)if(b in this&&this[b]===a)return b;return-1};b=function(){function a(){}return a.prototype.extend=function(a,b){var c,d;for(c in b)d=b[c],null==a[c]&&(a[c]=d);return a},a.prototype.isMobile=function(a){return/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(a)},a.prototype.addEvent=function(a,b,c){return null!=a.addEventListener?a.addEventListener(b,c,!1):null!=a.attachEvent?a.attachEvent("on"+b,c):a[b]=c},a.prototype.removeEvent=function(a,b,c){return null!=a.removeEventListener?a.removeEventListener(b,c,!1):null!=a.detachEvent?a.detachEvent("on"+b,c):delete a[b]},a.prototype.innerHeight=function(){return"innerHeight"in window?window.innerHeight:document.documentElement.clientHeight},a}(),c=this.WeakMap||this.MozWeakMap||(c=function(){function a(){this.keys=[],this.values=[]}return a.prototype.get=function(a){var b,c,d,e,f;for(f=this.keys,b=d=0,e=f.length;e>d;b=++d)if(c=f[b],c===a)return this.values[b]},a.prototype.set=function(a,b){var c,d,e,f,g;for(g=this.keys,c=e=0,f=g.length;f>e;c=++e)if(d=g[c],d===a)return void(this.values[c]=b);return this.keys.push(a),this.values.push(b)},a}()),a=this.MutationObserver||this.WebkitMutationObserver||this.MozMutationObserver||(a=function(){function a(){"undefined"!=typeof console&&null!==console&&console.warn("MutationObserver is not supported by your browser."),"undefined"!=typeof console&&null!==console&&console.warn("WOW.js cannot detect dom mutations, please call .sync() after loading new content.")}return a.notSupported=!0,a.prototype.observe=function(){},a}()),d=this.getComputedStyle||function(a){return this.getPropertyValue=function(b){var c;return"float"===b&&(b="styleFloat"),e.test(b)&&b.replace(e,function(a,b){return b.toUpperCase()}),(null!=(c=a.currentStyle)?c[b]:void 0)||null},this},e=/(\-([a-z]){1})/g,this.WOW=function(){function e(a){null==a&&(a={}),this.scrollCallback=f(this.scrollCallback,this),this.scrollHandler=f(this.scrollHandler,this),this.start=f(this.start,this),this.scrolled=!0,this.config=this.util().extend(a,this.defaults),this.animationNameCache=new c}return e.prototype.defaults={boxClass:"wow",animateClass:"animated",offset:0,mobile:!0,live:!0},e.prototype.init=function(){var a;return this.element=window.document.documentElement,"interactive"===(a=document.readyState)||"complete"===a?this.start():this.util().addEvent(document,"DOMContentLoaded",this.start),this.finished=[]},e.prototype.start=function(){var b,c,d,e;if(this.stopped=!1,this.boxes=function(){var a,c,d,e;for(d=this.element.querySelectorAll("."+this.config.boxClass),e=[],a=0,c=d.length;c>a;a++)b=d[a],e.push(b);return e}.call(this),this.all=function(){var a,c,d,e;for(d=this.boxes,e=[],a=0,c=d.length;c>a;a++)b=d[a],e.push(b);return e}.call(this),this.boxes.length)if(this.disabled())this.resetStyle();else{for(e=this.boxes,c=0,d=e.length;d>c;c++)b=e[c],this.applyStyle(b,!0);this.util().addEvent(window,"scroll",this.scrollHandler),this.util().addEvent(window,"resize",this.scrollHandler),this.interval=setInterval(this.scrollCallback,50)}return this.config.live?new a(function(a){return function(b){var c,d,e,f,g;for(g=[],e=0,f=b.length;f>e;e++)d=b[e],g.push(function(){var a,b,e,f;for(e=d.addedNodes||[],f=[],a=0,b=e.length;b>a;a++)c=e[a],f.push(this.doSync(c));return f}.call(a));return g}}(this)).observe(document.body,{childList:!0,subtree:!0}):void 0},e.prototype.stop=function(){return this.stopped=!0,this.util().removeEvent(window,"scroll",this.scrollHandler),this.util().removeEvent(window,"resize",this.scrollHandler),null!=this.interval?clearInterval(this.interval):void 0},e.prototype.sync=function(){return a.notSupported?this.doSync(this.element):void 0},e.prototype.doSync=function(a){var b,c,d,e,f;if(null==a&&(a=this.element),1===a.nodeType){for(a=a.parentNode||a,e=a.querySelectorAll("."+this.config.boxClass),f=[],c=0,d=e.length;d>c;c++)b=e[c],g.call(this.all,b)<0?(this.boxes.push(b),this.all.push(b),this.stopped||this.disabled()?this.resetStyle():this.applyStyle(b,!0),f.push(this.scrolled=!0)):f.push(void 0);return f}},e.prototype.show=function(a){return this.applyStyle(a),a.className=""+a.className+" "+this.config.animateClass},e.prototype.applyStyle=function(a,b){var c,d,e;return d=a.getAttribute("data-wow-duration"),c=a.getAttribute("data-wow-delay"),e=a.getAttribute("data-wow-iteration"),this.animate(function(f){return function(){return f.customStyle(a,b,d,c,e)}}(this))},e.prototype.animate=function(){return"requestAnimationFrame"in window?function(a){return window.requestAnimationFrame(a)}:function(a){return a()}}(),e.prototype.resetStyle=function(){var a,b,c,d,e;for(d=this.boxes,e=[],b=0,c=d.length;c>b;b++)a=d[b],e.push(a.style.visibility="visible");return e},e.prototype.customStyle=function(a,b,c,d,e){return b&&this.cacheAnimationName(a),a.style.visibility=b?"hidden":"visible",c&&this.vendorSet(a.style,{animationDuration:c}),d&&this.vendorSet(a.style,{animationDelay:d}),e&&this.vendorSet(a.style,{animationIterationCount:e}),this.vendorSet(a.style,{animationName:b?"none":this.cachedAnimationName(a)}),a},e.prototype.vendors=["moz","webkit"],e.prototype.vendorSet=function(a,b){var c,d,e,f;f=[];for(c in b)d=b[c],a[""+c]=d,f.push(function(){var b,f,g,h;for(g=this.vendors,h=[],b=0,f=g.length;f>b;b++)e=g[b],h.push(a[""+e+c.charAt(0).toUpperCase()+c.substr(1)]=d);return h}.call(this));return f},e.prototype.vendorCSS=function(a,b){var c,e,f,g,h,i;for(e=d(a),c=e.getPropertyCSSValue(b),i=this.vendors,g=0,h=i.length;h>g;g++)f=i[g],c=c||e.getPropertyCSSValue("-"+f+"-"+b);return c},e.prototype.animationName=function(a){var b;try{b=this.vendorCSS(a,"animation-name").cssText}catch(c){b=d(a).getPropertyValue("animation-name")}return"none"===b?"":b},e.prototype.cacheAnimationName=function(a){return this.animationNameCache.set(a,this.animationName(a))},e.prototype.cachedAnimationName=function(a){return this.animationNameCache.get(a)},e.prototype.scrollHandler=function(){return this.scrolled=!0},e.prototype.scrollCallback=function(){var a;return!this.scrolled||(this.scrolled=!1,this.boxes=function(){var b,c,d,e;for(d=this.boxes,e=[],b=0,c=d.length;c>b;b++)a=d[b],a&&(this.isVisible(a)?this.show(a):e.push(a));return e}.call(this),this.boxes.length||this.config.live)?void 0:this.stop()},e.prototype.offsetTop=function(a){for(var b;void 0===a.offsetTop;)a=a.parentNode;for(b=a.offsetTop;a=a.offsetParent;)b+=a.offsetTop;return b},e.prototype.isVisible=function(a){var b,c,d,e,f;return c=a.getAttribute("data-wow-offset")||this.config.offset,f=window.pageYOffset,e=f+Math.min(this.element.clientHeight,this.util().innerHeight())-c,d=this.offsetTop(a),b=d+a.clientHeight,e>=d&&b>=f},e.prototype.util=function(){return null!=this._util?this._util:this._util=new b},e.prototype.disabled=function(){return!this.config.mobile&&this.util().isMobile(navigator.userAgent)},e}()}).call(this);
+/**
+ * jQuery Masonry v2.1.08
+ * A dynamic layout plugin for jQuery
+ * The flip-side of CSS Floats
+ * http://masonry.desandro.com
+ *
+ * Licensed under the MIT license.
+ * Copyright 2012 David DeSandro
+ */
+
+/*jshint browser: true, curly: true, eqeqeq: true, forin: false, immed: false, newcap: true, noempty: true, strict: true, undef: true */
+/*global jQuery: false */
+
+
+(function( window, $, undefined ){
+
+  'use strict';
+
+  /*
+   * smartresize: debounced resize event for jQuery
+   *
+   * latest version and complete README available on Github:
+   * https://github.com/louisremi/jquery.smartresize.js
+   *
+   * Copyright 2011 @louis_remi
+   * Licensed under the MIT license.
+   */
+
+  var $event = $.event,
+      resizeTimeout;
+
+  $event.special.smartresize = {
+    setup: function() {
+      $(this).bind( "resize", $event.special.smartresize.handler );
+    },
+    teardown: function() {
+      $(this).unbind( "resize", $event.special.smartresize.handler );
+    },
+    handler: function( event, execAsap ) {
+      // Save the context
+      var context = this,
+          args = arguments;
+
+      // set correct event type
+      event.type = "smartresize";
+
+      if ( resizeTimeout ) { clearTimeout( resizeTimeout ); }
+      resizeTimeout = setTimeout(function() {
+        $event.dispatch.apply( context, args );
+
+      }, execAsap === "execAsap"? 0 : 100 );
+    }
+  };
+
+  $.fn.smartresize = function( fn ) {
+    return fn ? this.bind( "smartresize", fn ) : this.trigger( "smartresize", ["execAsap"] );
+  };
+
+
+
+// ========================= Masonry ===============================
+
+
+  // our "Widget" object constructor
+  $.Mason = function( options, element ){
+    this.element = $( element );
+
+    this._create( options );
+    this._init();
+  };
+
+  $.Mason.settings = {
+    isResizable: true,
+    isAnimated: false,
+    animationOptions: {
+      queue: false,
+      duration: 500
+    },
+    gutterWidth: 0,
+    isRTL: false,
+    isFitWidth: false,
+    containerStyle: {
+      position: 'relative'
+    }
+  };
+
+  $.Mason.prototype = {
+
+    _filterFindBricks: function( $elems ) {
+      var selector = this.options.itemSelector;
+      // if there is a selector
+      // filter/find appropriate item elements
+      return !selector ? $elems : $elems.filter( selector ).add( $elems.find( selector ) );
+    },
+
+    _getBricks: function( $elems ) {
+      var $bricks = this._filterFindBricks( $elems )
+        .css({ position: 'absolute' })
+        .addClass('masonry-brick');
+      return $bricks;
+    },
+    
+    // sets up widget
+    _create : function( options ) {
+      
+      this.options = $.extend( true, {}, $.Mason.settings, options );
+      this.styleQueue = [];
+
+      // get original styles in case we re-apply them in .destroy()
+      var elemStyle = this.element[0].style;
+      this.originalStyle = {
+        // get height
+        height: elemStyle.height || ''
+      };
+      // get other styles that will be overwritten
+      var containerStyle = this.options.containerStyle;
+      for ( var prop in containerStyle ) {
+        this.originalStyle[ prop ] = elemStyle[ prop ] || '';
+      }
+
+      this.element.css( containerStyle );
+
+      this.horizontalDirection = this.options.isRTL ? 'right' : 'left';
+
+      var x = this.element.css( 'padding-' + this.horizontalDirection );
+      var y = this.element.css( 'padding-top' );
+      this.offset = {
+        x: x ? parseInt( x, 10 ) : 0,
+        y: y ? parseInt( y, 10 ) : 0
+      };
+      
+      this.isFluid = this.options.columnWidth && typeof this.options.columnWidth === 'function';
+
+      // add masonry class first time around
+      var instance = this;
+      setTimeout( function() {
+        instance.element.addClass('masonry');
+      }, 0 );
+      
+      // bind resize method
+      if ( this.options.isResizable ) {
+        $(window).bind( 'smartresize.masonry', function() { 
+          instance.resize();
+        });
+      }
+
+
+      // need to get bricks
+      this.reloadItems();
+
+    },
+  
+    // _init fires when instance is first created
+    // and when instance is triggered again -> $el.masonry();
+    _init : function( callback ) {
+      this._getColumns();
+      this._reLayout( callback );
+    },
+
+    option: function( key, value ){
+      // set options AFTER initialization:
+      // signature: $('#foo').bar({ cool:false });
+      if ( $.isPlainObject( key ) ){
+        this.options = $.extend(true, this.options, key);
+      } 
+    },
+    
+    // ====================== General Layout ======================
+
+    // used on collection of atoms (should be filtered, and sorted before )
+    // accepts atoms-to-be-laid-out to start with
+    layout : function( $bricks, callback ) {
+
+      // place each brick
+      for (var i=0, len = $bricks.length; i < len; i++) {
+        this._placeBrick( $bricks[i] );
+      }
+      
+      // set the size of the container
+      var containerSize = {};
+      containerSize.height = Math.max.apply( Math, this.colYs );
+      if ( this.options.isFitWidth ) {
+        var unusedCols = 0;
+        i = this.cols;
+        // count unused columns
+        while ( --i ) {
+          if ( this.colYs[i] !== 0 ) {
+            break;
+          }
+          unusedCols++;
+        }
+        // fit container to columns that have been used;
+        containerSize.width = (this.cols - unusedCols) * this.columnWidth - this.options.gutterWidth;
+      }
+      this.styleQueue.push({ $el: this.element, style: containerSize });
+
+      // are we animating the layout arrangement?
+      // use plugin-ish syntax for css or animate
+      var styleFn = !this.isLaidOut ? 'css' : (
+            this.options.isAnimated ? 'animate' : 'css'
+          ),
+          animOpts = this.options.animationOptions;
+
+      // process styleQueue
+      var obj;
+      for (i=0, len = this.styleQueue.length; i < len; i++) {
+        obj = this.styleQueue[i];
+        obj.$el[ styleFn ]( obj.style, animOpts );
+      }
+
+      // clear out queue for next time
+      this.styleQueue = [];
+
+      // provide $elems as context for the callback
+      if ( callback ) {
+        callback.call( $bricks );
+      }
+      
+      this.isLaidOut = true;
+    },
+    
+    // calculates number of columns
+    // i.e. this.columnWidth = 200
+    _getColumns : function() {
+      var container = this.options.isFitWidth ? this.element.parent() : this.element,
+          containerWidth = container.width();
+
+                         // use fluid columnWidth function if there
+      this.columnWidth = this.isFluid ? this.options.columnWidth( containerWidth ) :
+                    // if not, how about the explicitly set option?
+                    this.options.columnWidth ||
+                    // or use the size of the first item
+                    this.$bricks.outerWidth(true) ||
+                    // if there's no items, use size of container
+                    containerWidth;
+
+      this.columnWidth += this.options.gutterWidth;
+
+      this.cols = Math.floor( ( containerWidth + this.options.gutterWidth ) / this.columnWidth );
+      this.cols = Math.max( this.cols, 1 );
+
+    },
+
+    // layout logic
+    _placeBrick: function( brick ) {
+      var $brick = $(brick),
+          colSpan, groupCount, groupY, groupColY, j;
+
+      //how many columns does this brick span
+      colSpan = Math.ceil( $brick.outerWidth(true) / this.columnWidth );
+      colSpan = Math.min( colSpan, this.cols );
+
+      if ( colSpan === 1 ) {
+        // if brick spans only one column, just like singleMode
+        groupY = this.colYs;
+      } else {
+        // brick spans more than one column
+        // how many different places could this brick fit horizontally
+        groupCount = this.cols + 1 - colSpan;
+        groupY = [];
+
+        // for each group potential horizontal position
+        for ( j=0; j < groupCount; j++ ) {
+          // make an array of colY values for that one group
+          groupColY = this.colYs.slice( j, j+colSpan );
+          // and get the max value of the array
+          groupY[j] = Math.max.apply( Math, groupColY );
+        }
+
+      }
+
+      // get the minimum Y value from the columns
+      var minimumY = Math.min.apply( Math, groupY ),
+          shortCol = 0;
+      
+      // Find index of short column, the first from the left
+      for (var i=0, len = groupY.length; i < len; i++) {
+        if ( groupY[i] === minimumY ) {
+          shortCol = i;
+          break;
+        }
+      }
+
+      // position the brick
+      var position = {
+        top: minimumY + this.offset.y
+      };
+      // position.left or position.right
+      position[ this.horizontalDirection ] = this.columnWidth * shortCol + this.offset.x;
+      this.styleQueue.push({ $el: $brick, style: position });
+
+      // apply setHeight to necessary columns
+      var setHeight = minimumY + $brick.outerHeight(true),
+          setSpan = this.cols + 1 - len;
+      for ( i=0; i < setSpan; i++ ) {
+        this.colYs[ shortCol + i ] = setHeight;
+      }
+
+    },
+    
+    
+    resize: function() {
+      var prevColCount = this.cols;
+      // get updated colCount
+      this._getColumns();
+      if ( this.isFluid || this.cols !== prevColCount ) {
+        // if column count has changed, trigger new layout
+        this._reLayout();
+      }
+    },
+    
+    
+    _reLayout : function( callback ) {
+      // reset columns
+      var i = this.cols;
+      this.colYs = [];
+      while (i--) {
+        this.colYs.push( 0 );
+      }
+      // apply layout logic to all bricks
+      this.layout( this.$bricks, callback );
+    },
+    
+    // ====================== Convenience methods ======================
+    
+    // goes through all children again and gets bricks in proper order
+    reloadItems : function() {
+      this.$bricks = this._getBricks( this.element.children() );
+    },
+    
+    
+    reload : function( callback ) {
+      this.reloadItems();
+      this._init( callback );
+    },
+    
+
+    // convienence method for working with Infinite Scroll
+    appended : function( $content, isAnimatedFromBottom, callback ) {
+      if ( isAnimatedFromBottom ) {
+        // set new stuff to the bottom
+        this._filterFindBricks( $content ).css({ top: this.element.height() });
+        var instance = this;
+        setTimeout( function(){
+          instance._appended( $content, callback );
+        }, 1 );
+      } else {
+        this._appended( $content, callback );
+      }
+    },
+    
+    _appended : function( $content, callback ) {
+      var $newBricks = this._getBricks( $content );
+      // add new bricks to brick pool
+      this.$bricks = this.$bricks.add( $newBricks );
+      this.layout( $newBricks, callback );
+    },
+    
+    // removes elements from Masonry widget
+    remove : function( $content ) {
+      this.$bricks = this.$bricks.not( $content );
+      $content.remove();
+    },
+    
+    // destroys widget, returns elements and container back (close) to original style
+    destroy : function() {
+
+      this.$bricks
+        .removeClass('masonry-brick')
+        .each(function(){
+          this.style.position = '';
+          this.style.top = '';
+          this.style.left = '';
+        });
+      
+      // re-apply saved container styles
+      var elemStyle = this.element[0].style;
+      for ( var prop in this.originalStyle ) {
+        elemStyle[ prop ] = this.originalStyle[ prop ];
+      }
+
+      this.element
+        .unbind('.masonry')
+        .removeClass('masonry')
+        .removeData('masonry');
+      
+      $(window).unbind('.masonry');
+
+    }
+    
+  };
+  
+  
+  // ======================= imagesLoaded Plugin ===============================
+  /*!
+   * jQuery imagesLoaded plugin v1.1.0
+   * http://github.com/desandro/imagesloaded
+   *
+   * MIT License. by Paul Irish et al.
+   */
+
+
+  // $('#my-container').imagesLoaded(myFunction)
+  // or
+  // $('img').imagesLoaded(myFunction)
+
+  // execute a callback when all images have loaded.
+  // needed because .load() doesn't work on cached images
+
+  // callback function gets image collection as argument
+  //  `this` is the container
+
+  $.fn.imagesLoaded = function( callback ) {
+    var $this = this,
+        $images = $this.find('img').add( $this.filter('img') ),
+        len = $images.length,
+        blank = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==',
+        loaded = [];
+
+    function triggerCallback() {
+      callback.call( $this, $images );
+    }
+
+    function imgLoaded( event ) {
+      var img = event.target;
+      if ( img.src !== blank && $.inArray( img, loaded ) === -1 ){
+        loaded.push( img );
+        if ( --len <= 0 ){
+          setTimeout( triggerCallback );
+          $images.unbind( '.imagesLoaded', imgLoaded );
+        }
+      }
+    }
+
+    // if no images, trigger immediately
+    if ( !len ) {
+      triggerCallback();
+    }
+
+    $images.bind( 'load.imagesLoaded error.imagesLoaded',  imgLoaded ).each( function() {
+      // cached images don't fire load sometimes, so we reset src.
+      var src = this.src;
+      // webkit hack from http://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
+      // data uri bypasses webkit log warning (thx doug jones)
+      this.src = blank;
+      this.src = src;
+    });
+
+    return $this;
+  };
+
+
+  // helper function for logging errors
+  // $.error breaks jQuery chaining
+  var logError = function( message ) {
+    if ( window.console ) {
+      window.console.error( message );
+    }
+  };
+  
+  // =======================  Plugin bridge  ===============================
+  // leverages data method to either create or return $.Mason constructor
+  // A bit from jQuery UI
+  //   https://github.com/jquery/jquery-ui/blob/master/ui/jquery.ui.widget.js
+  // A bit from jcarousel 
+  //   https://github.com/jsor/jcarousel/blob/master/lib/jquery.jcarousel.js
+
+  $.fn.masonry = function( options ) {
+    if ( typeof options === 'string' ) {
+      // call method
+      var args = Array.prototype.slice.call( arguments, 1 );
+
+      this.each(function(){
+        var instance = $.data( this, 'masonry' );
+        if ( !instance ) {
+          logError( "cannot call methods on masonry prior to initialization; " +
+            "attempted to call method '" + options + "'" );
+          return;
+        }
+        if ( !$.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
+          logError( "no such method '" + options + "' for masonry instance" );
+          return;
+        }
+        // apply method
+        instance[ options ].apply( instance, args );
+      });
+    } else {
+      this.each(function() {
+        var instance = $.data( this, 'masonry' );
+        if ( instance ) {
+          // apply options & init
+          instance.option( options || {} );
+          instance._init();
+        } else {
+          // initialize new instance
+          $.data( this, 'masonry', new $.Mason( options, this ) );
+        }
+      });
+    }
+    return this;
+  };
+
+})( window, jQuery );
 /*!
  * imagesLoaded PACKAGED v4.1.0
  * JavaScript is all like "You images are done yet or what?"
@@ -32630,6 +33133,1753 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
 
 !function(t,e){"function"==typeof define&&define.amd?define("ev-emitter/ev-emitter",e):"object"==typeof module&&module.exports?module.exports=e():t.EvEmitter=e()}(this,function(){function t(){}var e=t.prototype;return e.on=function(t,e){if(t&&e){var i=this._events=this._events||{},n=i[t]=i[t]||[];return-1==n.indexOf(e)&&n.push(e),this}},e.once=function(t,e){if(t&&e){this.on(t,e);var i=this._onceEvents=this._onceEvents||{},n=i[t]=i[t]||[];return n[e]=!0,this}},e.off=function(t,e){var i=this._events&&this._events[t];if(i&&i.length){var n=i.indexOf(e);return-1!=n&&i.splice(n,1),this}},e.emitEvent=function(t,e){var i=this._events&&this._events[t];if(i&&i.length){var n=0,o=i[n];e=e||[];for(var r=this._onceEvents&&this._onceEvents[t];o;){var s=r&&r[o];s&&(this.off(t,o),delete r[o]),o.apply(this,e),n+=s?0:1,o=i[n]}return this}},t}),function(t,e){"use strict";"function"==typeof define&&define.amd?define(["ev-emitter/ev-emitter"],function(i){return e(t,i)}):"object"==typeof module&&module.exports?module.exports=e(t,require("ev-emitter")):t.imagesLoaded=e(t,t.EvEmitter)}(window,function(t,e){function i(t,e){for(var i in e)t[i]=e[i];return t}function n(t){var e=[];if(Array.isArray(t))e=t;else if("number"==typeof t.length)for(var i=0;i<t.length;i++)e.push(t[i]);else e.push(t);return e}function o(t,e,r){return this instanceof o?("string"==typeof t&&(t=document.querySelectorAll(t)),this.elements=n(t),this.options=i({},this.options),"function"==typeof e?r=e:i(this.options,e),r&&this.on("always",r),this.getImages(),h&&(this.jqDeferred=new h.Deferred),void setTimeout(function(){this.check()}.bind(this))):new o(t,e,r)}function r(t){this.img=t}function s(t,e){this.url=t,this.element=e,this.img=new Image}var h=t.jQuery,a=t.console;o.prototype=Object.create(e.prototype),o.prototype.options={},o.prototype.getImages=function(){this.images=[],this.elements.forEach(this.addElementImages,this)},o.prototype.addElementImages=function(t){"IMG"==t.nodeName&&this.addImage(t),this.options.background===!0&&this.addElementBackgroundImages(t);var e=t.nodeType;if(e&&d[e]){for(var i=t.querySelectorAll("img"),n=0;n<i.length;n++){var o=i[n];this.addImage(o)}if("string"==typeof this.options.background){var r=t.querySelectorAll(this.options.background);for(n=0;n<r.length;n++){var s=r[n];this.addElementBackgroundImages(s)}}}};var d={1:!0,9:!0,11:!0};return o.prototype.addElementBackgroundImages=function(t){var e=getComputedStyle(t);if(e)for(var i=/url\((['"])?(.*?)\1\)/gi,n=i.exec(e.backgroundImage);null!==n;){var o=n&&n[2];o&&this.addBackground(o,t),n=i.exec(e.backgroundImage)}},o.prototype.addImage=function(t){var e=new r(t);this.images.push(e)},o.prototype.addBackground=function(t,e){var i=new s(t,e);this.images.push(i)},o.prototype.check=function(){function t(t,i,n){setTimeout(function(){e.progress(t,i,n)})}var e=this;return this.progressedCount=0,this.hasAnyBroken=!1,this.images.length?void this.images.forEach(function(e){e.once("progress",t),e.check()}):void this.complete()},o.prototype.progress=function(t,e,i){this.progressedCount++,this.hasAnyBroken=this.hasAnyBroken||!t.isLoaded,this.emitEvent("progress",[this,t,e]),this.jqDeferred&&this.jqDeferred.notify&&this.jqDeferred.notify(this,t),this.progressedCount==this.images.length&&this.complete(),this.options.debug&&a&&a.log("progress: "+i,t,e)},o.prototype.complete=function(){var t=this.hasAnyBroken?"fail":"done";if(this.isComplete=!0,this.emitEvent(t,[this]),this.emitEvent("always",[this]),this.jqDeferred){var e=this.hasAnyBroken?"reject":"resolve";this.jqDeferred[e](this)}},r.prototype=Object.create(e.prototype),r.prototype.check=function(){var t=this.getIsImageComplete();return t?void this.confirm(0!==this.img.naturalWidth,"naturalWidth"):(this.proxyImage=new Image,this.proxyImage.addEventListener("load",this),this.proxyImage.addEventListener("error",this),this.img.addEventListener("load",this),this.img.addEventListener("error",this),void(this.proxyImage.src=this.img.src))},r.prototype.getIsImageComplete=function(){return this.img.complete&&void 0!==this.img.naturalWidth},r.prototype.confirm=function(t,e){this.isLoaded=t,this.emitEvent("progress",[this,this.img,e])},r.prototype.handleEvent=function(t){var e="on"+t.type;this[e]&&this[e](t)},r.prototype.onload=function(){this.confirm(!0,"onload"),this.unbindEvents()},r.prototype.onerror=function(){this.confirm(!1,"onerror"),this.unbindEvents()},r.prototype.unbindEvents=function(){this.proxyImage.removeEventListener("load",this),this.proxyImage.removeEventListener("error",this),this.img.removeEventListener("load",this),this.img.removeEventListener("error",this)},s.prototype=Object.create(r.prototype),s.prototype.check=function(){this.img.addEventListener("load",this),this.img.addEventListener("error",this),this.img.src=this.url;var t=this.getIsImageComplete();t&&(this.confirm(0!==this.img.naturalWidth,"naturalWidth"),this.unbindEvents())},s.prototype.unbindEvents=function(){this.img.removeEventListener("load",this),this.img.removeEventListener("error",this)},s.prototype.confirm=function(t,e){this.isLoaded=t,this.emitEvent("progress",[this,this.element,e])},o.makeJQueryPlugin=function(e){e=e||t.jQuery,e&&(h=e,h.fn.imagesLoaded=function(t,e){var i=new o(this,t,e);return i.jqDeferred.promise(h(this))})},o.makeJQueryPlugin(),o});
+/**
+ * Isotope v1.5.25
+ * An exquisite jQuery plugin for magical layouts
+ * http://isotope.metafizzy.co
+ *
+ * Commercial use requires one-time license fee
+ * http://metafizzy.co/#licenses
+ *
+ * Copyright 2012 David DeSandro / Metafizzy
+ */
+
+/*jshint asi: true, browser: true, curly: true, eqeqeq: true, forin: false, immed: false, newcap: true, noempty: true, strict: true, undef: true */
+/*global jQuery: false */
+
+
+(function( window, $, undefined ){
+
+  'use strict';
+
+  // get global vars
+  var document = window.document;
+  var Modernizr = window.Modernizr;
+
+  // helper function
+  var capitalize = function( str ) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  // ========================= getStyleProperty by kangax ===============================
+  // http://perfectionkills.com/feature-testing-css-properties/
+
+  var prefixes = 'Moz Webkit O Ms'.split(' ');
+
+  var getStyleProperty = function( propName ) {
+    var style = document.documentElement.style,
+        prefixed;
+
+    // test standard property first
+    if ( typeof style[propName] === 'string' ) {
+      return propName;
+    }
+
+    // capitalize
+    propName = capitalize( propName );
+
+    // test vendor specific properties
+    for ( var i=0, len = prefixes.length; i < len; i++ ) {
+      prefixed = prefixes[i] + propName;
+      if ( typeof style[ prefixed ] === 'string' ) {
+        return prefixed;
+      }
+    }
+  };
+
+  var transformProp = getStyleProperty('transform'),
+      transitionProp = getStyleProperty('transitionProperty');
+
+
+  // ========================= miniModernizr ===============================
+  // <3<3<3 and thanks to Faruk and Paul for doing the heavy lifting
+
+  /*!
+   * Modernizr v1.6ish: miniModernizr for Isotope
+   * http://www.modernizr.com
+   *
+   * Developed by:
+   * - Faruk Ates  http://farukat.es/
+   * - Paul Irish  http://paulirish.com/
+   *
+   * Copyright (c) 2009-2010
+   * Dual-licensed under the BSD or MIT licenses.
+   * http://www.modernizr.com/license/
+   */
+
+  /*
+   * This version whittles down the script just to check support for
+   * CSS transitions, transforms, and 3D transforms.
+  */
+
+  var tests = {
+    csstransforms: function() {
+      return !!transformProp;
+    },
+
+    csstransforms3d: function() {
+      var test = !!getStyleProperty('perspective');
+      // double check for Chrome's false positive
+      if ( test ) {
+        var vendorCSSPrefixes = ' -o- -moz- -ms- -webkit- -khtml- '.split(' '),
+            mediaQuery = '@media (' + vendorCSSPrefixes.join('transform-3d),(') + 'modernizr)',
+            $style = $('<style>' + mediaQuery + '{#modernizr{height:3px}}' + '</style>')
+                        .appendTo('head'),
+            $div = $('<div id="modernizr" />').appendTo('html');
+
+        test = $div.height() === 3;
+
+        $div.remove();
+        $style.remove();
+      }
+      return test;
+    },
+
+    csstransitions: function() {
+      return !!transitionProp;
+    }
+  };
+
+  var testName;
+
+  if ( Modernizr ) {
+    // if there's a previous Modernzir, check if there are necessary tests
+    for ( testName in tests) {
+      if ( !Modernizr.hasOwnProperty( testName ) ) {
+        // if test hasn't been run, use addTest to run it
+        Modernizr.addTest( testName, tests[ testName ] );
+      }
+    }
+  } else {
+    // or create new mini Modernizr that just has the 3 tests
+    Modernizr = window.Modernizr = {
+      _version : '1.6ish: miniModernizr for Isotope'
+    };
+
+    var classes = ' ';
+    var result;
+
+    // Run through tests
+    for ( testName in tests) {
+      result = tests[ testName ]();
+      Modernizr[ testName ] = result;
+      classes += ' ' + ( result ?  '' : 'no-' ) + testName;
+    }
+
+    // Add the new classes to the <html> element.
+    $('html').addClass( classes );
+  }
+
+
+  // ========================= isoTransform ===============================
+
+  /**
+   *  provides hooks for .css({ scale: value, translate: [x, y] })
+   *  Progressively enhanced CSS transforms
+   *  Uses hardware accelerated 3D transforms for Safari
+   *  or falls back to 2D transforms.
+   */
+
+  if ( Modernizr.csstransforms ) {
+
+        // i.e. transformFnNotations.scale(0.5) >> 'scale3d( 0.5, 0.5, 1)'
+    var transformFnNotations = Modernizr.csstransforms3d ?
+      { // 3D transform functions
+        translate : function ( position ) {
+          return 'translate3d(' + position[0] + 'px, ' + position[1] + 'px, 0) ';
+        },
+        scale : function ( scale ) {
+          return 'scale3d(' + scale + ', ' + scale + ', 1) ';
+        }
+      } :
+      { // 2D transform functions
+        translate : function ( position ) {
+          return 'translate(' + position[0] + 'px, ' + position[1] + 'px) ';
+        },
+        scale : function ( scale ) {
+          return 'scale(' + scale + ') ';
+        }
+      }
+    ;
+
+    var setIsoTransform = function ( elem, name, value ) {
+          // unpack current transform data
+      var data =  $.data( elem, 'isoTransform' ) || {},
+          newData = {},
+          fnName,
+          transformObj = {},
+          transformValue;
+
+      // i.e. newData.scale = 0.5
+      newData[ name ] = value;
+      // extend new value over current data
+      $.extend( data, newData );
+
+      for ( fnName in data ) {
+        transformValue = data[ fnName ];
+        transformObj[ fnName ] = transformFnNotations[ fnName ]( transformValue );
+      }
+
+      // get proper order
+      // ideally, we could loop through this give an array, but since we only have
+      // a couple transforms we're keeping track of, we'll do it like so
+      var translateFn = transformObj.translate || '',
+          scaleFn = transformObj.scale || '',
+          // sorting so translate always comes first
+          valueFns = translateFn + scaleFn;
+
+      // set data back in elem
+      $.data( elem, 'isoTransform', data );
+
+      // set name to vendor specific property
+      elem.style[ transformProp ] = valueFns;
+    };
+
+    // ==================== scale ===================
+
+    $.cssNumber.scale = true;
+
+    $.cssHooks.scale = {
+      set: function( elem, value ) {
+        // uncomment this bit if you want to properly parse strings
+        // if ( typeof value === 'string' ) {
+        //   value = parseFloat( value );
+        // }
+        setIsoTransform( elem, 'scale', value );
+      },
+      get: function( elem, computed ) {
+        var transform = $.data( elem, 'isoTransform' );
+        return transform && transform.scale ? transform.scale : 1;
+      }
+    };
+
+    $.fx.step.scale = function( fx ) {
+      $.cssHooks.scale.set( fx.elem, fx.now+fx.unit );
+    };
+
+
+    // ==================== translate ===================
+
+    $.cssNumber.translate = true;
+
+    $.cssHooks.translate = {
+      set: function( elem, value ) {
+
+        // uncomment this bit if you want to properly parse strings
+        // if ( typeof value === 'string' ) {
+        //   value = value.split(' ');
+        // }
+        //
+        // var i, val;
+        // for ( i = 0; i < 2; i++ ) {
+        //   val = value[i];
+        //   if ( typeof val === 'string' ) {
+        //     val = parseInt( val );
+        //   }
+        // }
+
+        setIsoTransform( elem, 'translate', value );
+      },
+
+      get: function( elem, computed ) {
+        var transform = $.data( elem, 'isoTransform' );
+        return transform && transform.translate ? transform.translate : [ 0, 0 ];
+      }
+    };
+
+  }
+
+  // ========================= get transition-end event ===============================
+  var transitionEndEvent, transitionDurProp;
+
+  if ( Modernizr.csstransitions ) {
+    transitionEndEvent = {
+      WebkitTransitionProperty: 'webkitTransitionEnd',  // webkit
+      MozTransitionProperty: 'transitionend',
+      OTransitionProperty: 'oTransitionEnd otransitionend',
+      transitionProperty: 'transitionend'
+    }[ transitionProp ];
+
+    transitionDurProp = getStyleProperty('transitionDuration');
+  }
+
+  // ========================= smartresize ===============================
+
+  /*
+   * smartresize: debounced resize event for jQuery
+   *
+   * latest version and complete README available on Github:
+   * https://github.com/louisremi/jquery.smartresize.js
+   *
+   * Copyright 2011 @louis_remi
+   * Licensed under the MIT license.
+   */
+
+  var $event = $.event,
+      dispatchMethod = $.event.handle ? 'handle' : 'dispatch',
+      resizeTimeout;
+
+  $event.special.smartresize = {
+    setup: function() {
+      $(this).bind( "resize", $event.special.smartresize.handler );
+    },
+    teardown: function() {
+      $(this).unbind( "resize", $event.special.smartresize.handler );
+    },
+    handler: function( event, execAsap ) {
+      // Save the context
+      var context = this,
+          args = arguments;
+
+      // set correct event type
+      event.type = "smartresize";
+
+      if ( resizeTimeout ) { clearTimeout( resizeTimeout ); }
+      resizeTimeout = setTimeout(function() {
+        $event[ dispatchMethod ].apply( context, args );
+      }, execAsap === "execAsap"? 0 : 100 );
+    }
+  };
+
+  $.fn.smartresize = function( fn ) {
+    return fn ? this.bind( "smartresize", fn ) : this.trigger( "smartresize", ["execAsap"] );
+  };
+
+
+
+// ========================= Isotope ===============================
+
+
+  // our "Widget" object constructor
+  $.Isotope = function( options, element, callback ){
+    this.element = $( element );
+
+    this._create( options );
+    this._init( callback );
+  };
+
+  // styles of container element we want to keep track of
+  var isoContainerStyles = [ 'width', 'height' ];
+
+  var $window = $(window);
+
+  $.Isotope.settings = {
+    resizable: true,
+    layoutMode : 'masonry',
+    containerClass : 'isotope',
+    itemClass : 'isotope-item',
+    hiddenClass : 'isotope-hidden',
+    hiddenStyle: { opacity: 0, scale: 0.001 },
+    visibleStyle: { opacity: 1, scale: 1 },
+    containerStyle: {
+      position: 'relative',
+      overflow: 'hidden'
+    },
+    animationEngine: 'best-available',
+    animationOptions: {
+      queue: false,
+      duration: 800
+    },
+    sortBy : 'original-order',
+    sortAscending : true,
+    resizesContainer : true,
+    transformsEnabled: true,
+    itemPositionDataEnabled: false
+  };
+
+  $.Isotope.prototype = {
+
+    // sets up widget
+    _create : function( options ) {
+
+      this.options = $.extend( {}, $.Isotope.settings, options );
+
+      this.styleQueue = [];
+      this.elemCount = 0;
+
+      // get original styles in case we re-apply them in .destroy()
+      var elemStyle = this.element[0].style;
+      this.originalStyle = {};
+      // keep track of container styles
+      var containerStyles = isoContainerStyles.slice(0);
+      for ( var prop in this.options.containerStyle ) {
+        containerStyles.push( prop );
+      }
+      for ( var i=0, len = containerStyles.length; i < len; i++ ) {
+        prop = containerStyles[i];
+        this.originalStyle[ prop ] = elemStyle[ prop ] || '';
+      }
+      // apply container style from options
+      this.element.css( this.options.containerStyle );
+
+      this._updateAnimationEngine();
+      this._updateUsingTransforms();
+
+      // sorting
+      var originalOrderSorter = {
+        'original-order' : function( $elem, instance ) {
+          instance.elemCount ++;
+          return instance.elemCount;
+        },
+        random : function() {
+          return Math.random();
+        }
+      };
+
+      this.options.getSortData = $.extend( this.options.getSortData, originalOrderSorter );
+
+      // need to get atoms
+      this.reloadItems();
+
+      // get top left position of where the bricks should be
+      this.offset = {
+        left: parseInt( ( this.element.css('padding-left') || 0 ), 10 ),
+        top: parseInt( ( this.element.css('padding-top') || 0 ), 10 )
+      };
+
+      // add isotope class first time around
+      var instance = this;
+      setTimeout( function() {
+        instance.element.addClass( instance.options.containerClass );
+      }, 0 );
+
+      // bind resize method
+      if ( this.options.resizable ) {
+        $window.bind( 'smartresize.isotope', function() {
+          instance.resize();
+        });
+      }
+
+      // dismiss all click events from hidden events
+      this.element.delegate( '.' + this.options.hiddenClass, 'click', function(){
+        return false;
+      });
+
+    },
+
+    _getAtoms : function( $elems ) {
+      var selector = this.options.itemSelector,
+          // filter & find
+          $atoms = selector ? $elems.filter( selector ).add( $elems.find( selector ) ) : $elems,
+          // base style for atoms
+          atomStyle = { position: 'absolute' };
+
+      // filter out text nodes
+      $atoms = $atoms.filter( function( i, atom ) {
+        return atom.nodeType === 1;
+      });
+
+      if ( this.usingTransforms ) {
+        atomStyle.left = 0;
+        atomStyle.top = 0;
+      }
+
+      $atoms.css( atomStyle ).addClass( this.options.itemClass );
+
+      this.updateSortData( $atoms, true );
+
+      return $atoms;
+    },
+
+    // _init fires when your instance is first created
+    // (from the constructor above), and when you
+    // attempt to initialize the widget again (by the bridge)
+    // after it has already been initialized.
+    _init : function( callback ) {
+
+      this.$filteredAtoms = this._filter( this.$allAtoms );
+      this._sort();
+      this.reLayout( callback );
+
+    },
+
+    option : function( opts ){
+      // change options AFTER initialization:
+      // signature: $('#foo').bar({ cool:false });
+      if ( $.isPlainObject( opts ) ){
+        this.options = $.extend( true, this.options, opts );
+
+        // trigger _updateOptionName if it exists
+        var updateOptionFn;
+        for ( var optionName in opts ) {
+          updateOptionFn = '_update' + capitalize( optionName );
+          if ( this[ updateOptionFn ] ) {
+            this[ updateOptionFn ]();
+          }
+        }
+      }
+    },
+
+    // ====================== updaters ====================== //
+    // kind of like setters
+
+    _updateAnimationEngine : function() {
+      var animationEngine = this.options.animationEngine.toLowerCase().replace( /[ _\-]/g, '');
+      var isUsingJQueryAnimation;
+      // set applyStyleFnName
+      switch ( animationEngine ) {
+        case 'css' :
+        case 'none' :
+          isUsingJQueryAnimation = false;
+          break;
+        case 'jquery' :
+          isUsingJQueryAnimation = true;
+          break;
+        default : // best available
+          isUsingJQueryAnimation = !Modernizr.csstransitions;
+      }
+      this.isUsingJQueryAnimation = isUsingJQueryAnimation;
+      this._updateUsingTransforms();
+    },
+
+    _updateTransformsEnabled : function() {
+      this._updateUsingTransforms();
+    },
+
+    _updateUsingTransforms : function() {
+      var usingTransforms = this.usingTransforms = this.options.transformsEnabled &&
+        Modernizr.csstransforms && Modernizr.csstransitions && !this.isUsingJQueryAnimation;
+
+      // prevent scales when transforms are disabled
+      if ( !usingTransforms ) {
+        delete this.options.hiddenStyle.scale;
+        delete this.options.visibleStyle.scale;
+      }
+
+      this.getPositionStyles = usingTransforms ? this._translate : this._positionAbs;
+    },
+
+
+    // ====================== Filtering ======================
+
+    _filter : function( $atoms ) {
+      var filter = this.options.filter === '' ? '*' : this.options.filter;
+
+      if ( !filter ) {
+        return $atoms;
+      }
+
+      var hiddenClass    = this.options.hiddenClass,
+          hiddenSelector = '.' + hiddenClass,
+          $hiddenAtoms   = $atoms.filter( hiddenSelector ),
+          $atomsToShow   = $hiddenAtoms;
+
+      if ( filter !== '*' ) {
+        $atomsToShow = $hiddenAtoms.filter( filter );
+        var $atomsToHide = $atoms.not( hiddenSelector ).not( filter ).addClass( hiddenClass );
+        this.styleQueue.push({ $el: $atomsToHide, style: this.options.hiddenStyle });
+      }
+
+      this.styleQueue.push({ $el: $atomsToShow, style: this.options.visibleStyle });
+      $atomsToShow.removeClass( hiddenClass );
+
+      return $atoms.filter( filter );
+    },
+
+    // ====================== Sorting ======================
+
+    updateSortData : function( $atoms, isIncrementingElemCount ) {
+      var instance = this,
+          getSortData = this.options.getSortData,
+          $this, sortData;
+      $atoms.each(function(){
+        $this = $(this);
+        sortData = {};
+        // get value for sort data based on fn( $elem ) passed in
+        for ( var key in getSortData ) {
+          if ( !isIncrementingElemCount && key === 'original-order' ) {
+            // keep original order original
+            sortData[ key ] = $.data( this, 'isotope-sort-data' )[ key ];
+          } else {
+            sortData[ key ] = getSortData[ key ]( $this, instance );
+          }
+        }
+        // apply sort data to element
+        $.data( this, 'isotope-sort-data', sortData );
+      });
+    },
+
+    // used on all the filtered atoms
+    _sort : function() {
+
+      var sortBy = this.options.sortBy,
+          getSorter = this._getSorter,
+          sortDir = this.options.sortAscending ? 1 : -1,
+          sortFn = function( alpha, beta ) {
+            var a = getSorter( alpha, sortBy ),
+                b = getSorter( beta, sortBy );
+            // fall back to original order if data matches
+            if ( a === b && sortBy !== 'original-order') {
+              a = getSorter( alpha, 'original-order' );
+              b = getSorter( beta, 'original-order' );
+            }
+            return ( ( a > b ) ? 1 : ( a < b ) ? -1 : 0 ) * sortDir;
+          };
+
+      this.$filteredAtoms.sort( sortFn );
+    },
+
+    _getSorter : function( elem, sortBy ) {
+      return $.data( elem, 'isotope-sort-data' )[ sortBy ];
+    },
+
+    // ====================== Layout Helpers ======================
+
+    _translate : function( x, y ) {
+      return { translate : [ x, y ] };
+    },
+
+    _positionAbs : function( x, y ) {
+      return { left: x, top: y };
+    },
+
+    _pushPosition : function( $elem, x, y ) {
+      x = Math.round( x + this.offset.left );
+      y = Math.round( y + this.offset.top );
+      var position = this.getPositionStyles( x, y );
+      this.styleQueue.push({ $el: $elem, style: position });
+      if ( this.options.itemPositionDataEnabled ) {
+        $elem.data('isotope-item-position', {x: x, y: y} );
+      }
+    },
+
+
+    // ====================== General Layout ======================
+
+    // used on collection of atoms (should be filtered, and sorted before )
+    // accepts atoms-to-be-laid-out to start with
+    layout : function( $elems, callback ) {
+
+      var layoutMode = this.options.layoutMode;
+
+      // layout logic
+      this[ '_' +  layoutMode + 'Layout' ]( $elems );
+
+      // set the size of the container
+      if ( this.options.resizesContainer ) {
+        var containerStyle = this[ '_' +  layoutMode + 'GetContainerSize' ]();
+        this.styleQueue.push({ $el: this.element, style: containerStyle });
+      }
+
+      this._processStyleQueue( $elems, callback );
+
+      this.isLaidOut = true;
+    },
+
+    _processStyleQueue : function( $elems, callback ) {
+      // are we animating the layout arrangement?
+      // use plugin-ish syntax for css or animate
+      var styleFn = !this.isLaidOut ? 'css' : (
+            this.isUsingJQueryAnimation ? 'animate' : 'css'
+          ),
+          animOpts = this.options.animationOptions,
+          onLayout = this.options.onLayout,
+          objStyleFn, processor,
+          triggerCallbackNow, callbackFn;
+
+      // default styleQueue processor, may be overwritten down below
+      processor = function( i, obj ) {
+        obj.$el[ styleFn ]( obj.style, animOpts );
+      };
+
+      if ( this._isInserting && this.isUsingJQueryAnimation ) {
+        // if using styleQueue to insert items
+        processor = function( i, obj ) {
+          // only animate if it not being inserted
+          objStyleFn = obj.$el.hasClass('no-transition') ? 'css' : styleFn;
+          obj.$el[ objStyleFn ]( obj.style, animOpts );
+        };
+
+      } else if ( callback || onLayout || animOpts.complete ) {
+        // has callback
+        var isCallbackTriggered = false,
+            // array of possible callbacks to trigger
+            callbacks = [ callback, onLayout, animOpts.complete ],
+            instance = this;
+        triggerCallbackNow = true;
+        // trigger callback only once
+        callbackFn = function() {
+          if ( isCallbackTriggered ) {
+            return;
+          }
+          var hollaback;
+          for (var i=0, len = callbacks.length; i < len; i++) {
+            hollaback = callbacks[i];
+            if ( typeof hollaback === 'function' ) {
+              hollaback.call( instance.element, $elems, instance );
+            }
+          }
+          isCallbackTriggered = true;
+        };
+
+        if ( this.isUsingJQueryAnimation && styleFn === 'animate' ) {
+          // add callback to animation options
+          animOpts.complete = callbackFn;
+          triggerCallbackNow = false;
+
+        } else if ( Modernizr.csstransitions ) {
+          // detect if first item has transition
+          var i = 0,
+              firstItem = this.styleQueue[0],
+              testElem = firstItem && firstItem.$el,
+              styleObj;
+          // get first non-empty jQ object
+          while ( !testElem || !testElem.length ) {
+            styleObj = this.styleQueue[ i++ ];
+            // HACK: sometimes styleQueue[i] is undefined
+            if ( !styleObj ) {
+              return;
+            }
+            testElem = styleObj.$el;
+          }
+          // get transition duration of the first element in that object
+          // yeah, this is inexact
+          var duration = parseFloat( getComputedStyle( testElem[0] )[ transitionDurProp ] );
+          if ( duration > 0 ) {
+            processor = function( i, obj ) {
+              obj.$el[ styleFn ]( obj.style, animOpts )
+                // trigger callback at transition end
+                .one( transitionEndEvent, callbackFn );
+            };
+            triggerCallbackNow = false;
+          }
+        }
+      }
+
+      // process styleQueue
+      $.each( this.styleQueue, processor );
+
+      if ( triggerCallbackNow ) {
+        callbackFn();
+      }
+
+      // clear out queue for next time
+      this.styleQueue = [];
+    },
+
+
+    resize : function() {
+      if ( this[ '_' + this.options.layoutMode + 'ResizeChanged' ]() ) {
+        this.reLayout();
+      }
+    },
+
+
+    reLayout : function( callback ) {
+
+      this[ '_' +  this.options.layoutMode + 'Reset' ]();
+      this.layout( this.$filteredAtoms, callback );
+
+    },
+
+    // ====================== Convenience methods ======================
+
+    // ====================== Adding items ======================
+
+    // adds a jQuery object of items to a isotope container
+    addItems : function( $content, callback ) {
+      var $newAtoms = this._getAtoms( $content );
+      // add new atoms to atoms pools
+      this.$allAtoms = this.$allAtoms.add( $newAtoms );
+
+      if ( callback ) {
+        callback( $newAtoms );
+      }
+    },
+
+    // convienence method for adding elements properly to any layout
+    // positions items, hides them, then animates them back in <--- very sezzy
+    insert : function( $content, callback ) {
+      // position items
+      this.element.append( $content );
+
+      var instance = this;
+      this.addItems( $content, function( $newAtoms ) {
+        var $newFilteredAtoms = instance._filter( $newAtoms );
+        instance._addHideAppended( $newFilteredAtoms );
+        instance._sort();
+        instance.reLayout();
+        instance._revealAppended( $newFilteredAtoms, callback );
+      });
+
+    },
+
+    // convienence method for working with Infinite Scroll
+    appended : function( $content, callback ) {
+      var instance = this;
+      this.addItems( $content, function( $newAtoms ) {
+        instance._addHideAppended( $newAtoms );
+        instance.layout( $newAtoms );
+        instance._revealAppended( $newAtoms, callback );
+      });
+    },
+
+    // adds new atoms, then hides them before positioning
+    _addHideAppended : function( $newAtoms ) {
+      this.$filteredAtoms = this.$filteredAtoms.add( $newAtoms );
+      $newAtoms.addClass('no-transition');
+
+      this._isInserting = true;
+
+      // apply hidden styles
+      this.styleQueue.push({ $el: $newAtoms, style: this.options.hiddenStyle });
+    },
+
+    // sets visible style on new atoms
+    _revealAppended : function( $newAtoms, callback ) {
+      var instance = this;
+      // apply visible style after a sec
+      setTimeout( function() {
+        // enable animation
+        $newAtoms.removeClass('no-transition');
+        // reveal newly inserted filtered elements
+        instance.styleQueue.push({ $el: $newAtoms, style: instance.options.visibleStyle });
+        instance._isInserting = false;
+        instance._processStyleQueue( $newAtoms, callback );
+      }, 10 );
+    },
+
+    // gathers all atoms
+    reloadItems : function() {
+      this.$allAtoms = this._getAtoms( this.element.children() );
+    },
+
+    // removes elements from Isotope widget
+    remove: function( $content, callback ) {
+      // remove elements immediately from Isotope instance
+      this.$allAtoms = this.$allAtoms.not( $content );
+      this.$filteredAtoms = this.$filteredAtoms.not( $content );
+      // remove() as a callback, for after transition / animation
+      var instance = this;
+      var removeContent = function() {
+        $content.remove();
+        if ( callback ) {
+          callback.call( instance.element );
+        }
+      };
+
+      if ( $content.filter( ':not(.' + this.options.hiddenClass + ')' ).length ) {
+        // if any non-hidden content needs to be removed
+        this.styleQueue.push({ $el: $content, style: this.options.hiddenStyle });
+        this._sort();
+        this.reLayout( removeContent );
+      } else {
+        // remove it now
+        removeContent();
+      }
+
+    },
+
+    shuffle : function( callback ) {
+      this.updateSortData( this.$allAtoms );
+      this.options.sortBy = 'random';
+      this._sort();
+      this.reLayout( callback );
+    },
+
+    // destroys widget, returns elements and container back (close) to original style
+    destroy : function() {
+
+      var usingTransforms = this.usingTransforms;
+      var options = this.options;
+
+      this.$allAtoms
+        .removeClass( options.hiddenClass + ' ' + options.itemClass )
+        .each(function(){
+          var style = this.style;
+          style.position = '';
+          style.top = '';
+          style.left = '';
+          style.opacity = '';
+          if ( usingTransforms ) {
+            style[ transformProp ] = '';
+          }
+        });
+
+      // re-apply saved container styles
+      var elemStyle = this.element[0].style;
+      for ( var prop in this.originalStyle ) {
+        elemStyle[ prop ] = this.originalStyle[ prop ];
+      }
+
+      this.element
+        .unbind('.isotope')
+        .undelegate( '.' + options.hiddenClass, 'click' )
+        .removeClass( options.containerClass )
+        .removeData('isotope');
+
+      $window.unbind('.isotope');
+
+    },
+
+
+    // ====================== LAYOUTS ======================
+
+    // calculates number of rows or columns
+    // requires columnWidth or rowHeight to be set on namespaced object
+    // i.e. this.masonry.columnWidth = 200
+    _getSegments : function( isRows ) {
+      var namespace = this.options.layoutMode,
+          measure  = isRows ? 'rowHeight' : 'columnWidth',
+          size     = isRows ? 'height' : 'width',
+          segmentsName = isRows ? 'rows' : 'cols',
+          containerSize = this.element[ size ](),
+          segments,
+                    // i.e. options.masonry && options.masonry.columnWidth
+          segmentSize = this.options[ namespace ] && this.options[ namespace ][ measure ] ||
+                    // or use the size of the first item, i.e. outerWidth
+                    this.$filteredAtoms[ 'outer' + capitalize(size) ](true) ||
+                    // if there's no items, use size of container
+                    containerSize;
+
+      segments = Math.floor( containerSize / segmentSize );
+      segments = Math.max( segments, 1 );
+
+      // i.e. this.masonry.cols = ....
+      this[ namespace ][ segmentsName ] = segments;
+      // i.e. this.masonry.columnWidth = ...
+      this[ namespace ][ measure ] = segmentSize;
+
+    },
+
+    _checkIfSegmentsChanged : function( isRows ) {
+      var namespace = this.options.layoutMode,
+          segmentsName = isRows ? 'rows' : 'cols',
+          prevSegments = this[ namespace ][ segmentsName ];
+      // update cols/rows
+      this._getSegments( isRows );
+      // return if updated cols/rows is not equal to previous
+      return ( this[ namespace ][ segmentsName ] !== prevSegments );
+    },
+
+    // ====================== Masonry ======================
+
+    _masonryReset : function() {
+      // layout-specific props
+      this.masonry = {};
+      // FIXME shouldn't have to call this again
+      this._getSegments();
+      var i = this.masonry.cols;
+      this.masonry.colYs = [];
+      while (i--) {
+        this.masonry.colYs.push( 0 );
+      }
+    },
+
+    _masonryLayout : function( $elems ) {
+      var instance = this,
+          props = instance.masonry;
+      $elems.each(function(){
+        var $this  = $(this),
+            //how many columns does this brick span
+            colSpan = Math.ceil( $this.outerWidth(true) / props.columnWidth );
+        colSpan = Math.min( colSpan, props.cols );
+
+        if ( colSpan === 1 ) {
+          // if brick spans only one column, just like singleMode
+          instance._masonryPlaceBrick( $this, props.colYs );
+        } else {
+          // brick spans more than one column
+          // how many different places could this brick fit horizontally
+          var groupCount = props.cols + 1 - colSpan,
+              groupY = [],
+              groupColY,
+              i;
+
+          // for each group potential horizontal position
+          for ( i=0; i < groupCount; i++ ) {
+            // make an array of colY values for that one group
+            groupColY = props.colYs.slice( i, i+colSpan );
+            // and get the max value of the array
+            groupY[i] = Math.max.apply( Math, groupColY );
+          }
+
+          instance._masonryPlaceBrick( $this, groupY );
+        }
+      });
+    },
+
+    // worker method that places brick in the columnSet
+    //   with the the minY
+    _masonryPlaceBrick : function( $brick, setY ) {
+      // get the minimum Y value from the columns
+      var minimumY = Math.min.apply( Math, setY ),
+          shortCol = 0;
+
+      // Find index of short column, the first from the left
+      for (var i=0, len = setY.length; i < len; i++) {
+        if ( setY[i] === minimumY ) {
+          shortCol = i;
+          break;
+        }
+      }
+
+      // position the brick
+      var x = this.masonry.columnWidth * shortCol,
+          y = minimumY;
+      this._pushPosition( $brick, x, y );
+
+      // apply setHeight to necessary columns
+      var setHeight = minimumY + $brick.outerHeight(true),
+          setSpan = this.masonry.cols + 1 - len;
+      for ( i=0; i < setSpan; i++ ) {
+        this.masonry.colYs[ shortCol + i ] = setHeight;
+      }
+
+    },
+
+    _masonryGetContainerSize : function() {
+      var containerHeight = Math.max.apply( Math, this.masonry.colYs );
+      return { height: containerHeight };
+    },
+
+    _masonryResizeChanged : function() {
+      return this._checkIfSegmentsChanged();
+    },
+
+    // ====================== fitRows ======================
+
+    _fitRowsReset : function() {
+      this.fitRows = {
+        x : 0,
+        y : 0,
+        height : 0
+      };
+    },
+
+    _fitRowsLayout : function( $elems ) {
+      var instance = this,
+          containerWidth = this.element.width(),
+          props = this.fitRows;
+
+      $elems.each( function() {
+        var $this = $(this),
+            atomW = $this.outerWidth(true),
+            atomH = $this.outerHeight(true);
+
+        if ( props.x !== 0 && atomW + props.x > containerWidth ) {
+          // if this element cannot fit in the current row
+          props.x = 0;
+          props.y = props.height;
+        }
+
+        // position the atom
+        instance._pushPosition( $this, props.x, props.y );
+
+        props.height = Math.max( props.y + atomH, props.height );
+        props.x += atomW;
+
+      });
+    },
+
+    _fitRowsGetContainerSize : function () {
+      return { height : this.fitRows.height };
+    },
+
+    _fitRowsResizeChanged : function() {
+      return true;
+    },
+
+
+    // ====================== cellsByRow ======================
+
+    _cellsByRowReset : function() {
+      this.cellsByRow = {
+        index : 0
+      };
+      // get this.cellsByRow.columnWidth
+      this._getSegments();
+      // get this.cellsByRow.rowHeight
+      this._getSegments(true);
+    },
+
+    _cellsByRowLayout : function( $elems ) {
+      var instance = this,
+          props = this.cellsByRow;
+      $elems.each( function(){
+        var $this = $(this),
+            col = props.index % props.cols,
+            row = Math.floor( props.index / props.cols ),
+            x = ( col + 0.5 ) * props.columnWidth - $this.outerWidth(true) / 2,
+            y = ( row + 0.5 ) * props.rowHeight - $this.outerHeight(true) / 2;
+        instance._pushPosition( $this, x, y );
+        props.index ++;
+      });
+    },
+
+    _cellsByRowGetContainerSize : function() {
+      return { height : Math.ceil( this.$filteredAtoms.length / this.cellsByRow.cols ) * this.cellsByRow.rowHeight + this.offset.top };
+    },
+
+    _cellsByRowResizeChanged : function() {
+      return this._checkIfSegmentsChanged();
+    },
+
+
+    // ====================== straightDown ======================
+
+    _straightDownReset : function() {
+      this.straightDown = {
+        y : 0
+      };
+    },
+
+    _straightDownLayout : function( $elems ) {
+      var instance = this;
+      $elems.each( function( i ){
+        var $this = $(this);
+        instance._pushPosition( $this, 0, instance.straightDown.y );
+        instance.straightDown.y += $this.outerHeight(true);
+      });
+    },
+
+    _straightDownGetContainerSize : function() {
+      return { height : this.straightDown.y };
+    },
+
+    _straightDownResizeChanged : function() {
+      return true;
+    },
+
+
+    // ====================== masonryHorizontal ======================
+
+    _masonryHorizontalReset : function() {
+      // layout-specific props
+      this.masonryHorizontal = {};
+      // FIXME shouldn't have to call this again
+      this._getSegments( true );
+      var i = this.masonryHorizontal.rows;
+      this.masonryHorizontal.rowXs = [];
+      while (i--) {
+        this.masonryHorizontal.rowXs.push( 0 );
+      }
+    },
+
+    _masonryHorizontalLayout : function( $elems ) {
+      var instance = this,
+          props = instance.masonryHorizontal;
+      $elems.each(function(){
+        var $this  = $(this),
+            //how many rows does this brick span
+            rowSpan = Math.ceil( $this.outerHeight(true) / props.rowHeight );
+        rowSpan = Math.min( rowSpan, props.rows );
+
+        if ( rowSpan === 1 ) {
+          // if brick spans only one column, just like singleMode
+          instance._masonryHorizontalPlaceBrick( $this, props.rowXs );
+        } else {
+          // brick spans more than one row
+          // how many different places could this brick fit horizontally
+          var groupCount = props.rows + 1 - rowSpan,
+              groupX = [],
+              groupRowX, i;
+
+          // for each group potential horizontal position
+          for ( i=0; i < groupCount; i++ ) {
+            // make an array of colY values for that one group
+            groupRowX = props.rowXs.slice( i, i+rowSpan );
+            // and get the max value of the array
+            groupX[i] = Math.max.apply( Math, groupRowX );
+          }
+
+          instance._masonryHorizontalPlaceBrick( $this, groupX );
+        }
+      });
+    },
+
+    _masonryHorizontalPlaceBrick : function( $brick, setX ) {
+      // get the minimum Y value from the columns
+      var minimumX  = Math.min.apply( Math, setX ),
+          smallRow  = 0;
+      // Find index of smallest row, the first from the top
+      for (var i=0, len = setX.length; i < len; i++) {
+        if ( setX[i] === minimumX ) {
+          smallRow = i;
+          break;
+        }
+      }
+
+      // position the brick
+      var x = minimumX,
+          y = this.masonryHorizontal.rowHeight * smallRow;
+      this._pushPosition( $brick, x, y );
+
+      // apply setHeight to necessary columns
+      var setWidth = minimumX + $brick.outerWidth(true),
+          setSpan = this.masonryHorizontal.rows + 1 - len;
+      for ( i=0; i < setSpan; i++ ) {
+        this.masonryHorizontal.rowXs[ smallRow + i ] = setWidth;
+      }
+    },
+
+    _masonryHorizontalGetContainerSize : function() {
+      var containerWidth = Math.max.apply( Math, this.masonryHorizontal.rowXs );
+      return { width: containerWidth };
+    },
+
+    _masonryHorizontalResizeChanged : function() {
+      return this._checkIfSegmentsChanged(true);
+    },
+
+
+    // ====================== fitColumns ======================
+
+    _fitColumnsReset : function() {
+      this.fitColumns = {
+        x : 0,
+        y : 0,
+        width : 0
+      };
+    },
+
+    _fitColumnsLayout : function( $elems ) {
+      var instance = this,
+          containerHeight = this.element.height(),
+          props = this.fitColumns;
+      $elems.each( function() {
+        var $this = $(this),
+            atomW = $this.outerWidth(true),
+            atomH = $this.outerHeight(true);
+
+        if ( props.y !== 0 && atomH + props.y > containerHeight ) {
+          // if this element cannot fit in the current column
+          props.x = props.width;
+          props.y = 0;
+        }
+
+        // position the atom
+        instance._pushPosition( $this, props.x, props.y );
+
+        props.width = Math.max( props.x + atomW, props.width );
+        props.y += atomH;
+
+      });
+    },
+
+    _fitColumnsGetContainerSize : function () {
+      return { width : this.fitColumns.width };
+    },
+
+    _fitColumnsResizeChanged : function() {
+      return true;
+    },
+
+
+
+    // ====================== cellsByColumn ======================
+
+    _cellsByColumnReset : function() {
+      this.cellsByColumn = {
+        index : 0
+      };
+      // get this.cellsByColumn.columnWidth
+      this._getSegments();
+      // get this.cellsByColumn.rowHeight
+      this._getSegments(true);
+    },
+
+    _cellsByColumnLayout : function( $elems ) {
+      var instance = this,
+          props = this.cellsByColumn;
+      $elems.each( function(){
+        var $this = $(this),
+            col = Math.floor( props.index / props.rows ),
+            row = props.index % props.rows,
+            x = ( col + 0.5 ) * props.columnWidth - $this.outerWidth(true) / 2,
+            y = ( row + 0.5 ) * props.rowHeight - $this.outerHeight(true) / 2;
+        instance._pushPosition( $this, x, y );
+        props.index ++;
+      });
+    },
+
+    _cellsByColumnGetContainerSize : function() {
+      return { width : Math.ceil( this.$filteredAtoms.length / this.cellsByColumn.rows ) * this.cellsByColumn.columnWidth };
+    },
+
+    _cellsByColumnResizeChanged : function() {
+      return this._checkIfSegmentsChanged(true);
+    },
+
+    // ====================== straightAcross ======================
+
+    _straightAcrossReset : function() {
+      this.straightAcross = {
+        x : 0
+      };
+    },
+
+    _straightAcrossLayout : function( $elems ) {
+      var instance = this;
+      $elems.each( function( i ){
+        var $this = $(this);
+        instance._pushPosition( $this, instance.straightAcross.x, 0 );
+        instance.straightAcross.x += $this.outerWidth(true);
+      });
+    },
+
+    _straightAcrossGetContainerSize : function() {
+      return { width : this.straightAcross.x };
+    },
+
+    _straightAcrossResizeChanged : function() {
+      return true;
+    }
+
+  };
+
+
+  // ======================= imagesLoaded Plugin ===============================
+  /*!
+   * jQuery imagesLoaded plugin v1.1.0
+   * http://github.com/desandro/imagesloaded
+   *
+   * MIT License. by Paul Irish et al.
+   */
+
+
+  // $('#my-container').imagesLoaded(myFunction)
+  // or
+  // $('img').imagesLoaded(myFunction)
+
+  // execute a callback when all images have loaded.
+  // needed because .load() doesn't work on cached images
+
+  // callback function gets image collection as argument
+  //  `this` is the container
+
+  $.fn.imagesLoaded = function( callback ) {
+    var $this = this,
+        $images = $this.find('img').add( $this.filter('img') ),
+        len = $images.length,
+        blank = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==',
+        loaded = [];
+
+    function triggerCallback() {
+      callback.call( $this, $images );
+    }
+
+    function imgLoaded( event ) {
+      var img = event.target;
+      if ( img.src !== blank && $.inArray( img, loaded ) === -1 ){
+        loaded.push( img );
+        if ( --len <= 0 ){
+          setTimeout( triggerCallback );
+          $images.unbind( '.imagesLoaded', imgLoaded );
+        }
+      }
+    }
+
+    // if no images, trigger immediately
+    if ( !len ) {
+      triggerCallback();
+    }
+
+    $images.bind( 'load.imagesLoaded error.imagesLoaded',  imgLoaded ).each( function() {
+      // cached images don't fire load sometimes, so we reset src.
+      var src = this.src;
+      // webkit hack from http://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
+      // data uri bypasses webkit log warning (thx doug jones)
+      this.src = blank;
+      this.src = src;
+    });
+
+    return $this;
+  };
+
+
+  // helper function for logging errors
+  // $.error breaks jQuery chaining
+  var logError = function( message ) {
+    if ( window.console ) {
+      window.console.error( message );
+    }
+  };
+
+  // =======================  Plugin bridge  ===============================
+  // leverages data method to either create or return $.Isotope constructor
+  // A bit from jQuery UI
+  //   https://github.com/jquery/jquery-ui/blob/master/ui/jquery.ui.widget.js
+  // A bit from jcarousel
+  //   https://github.com/jsor/jcarousel/blob/master/lib/jquery.jcarousel.js
+
+  $.fn.isotope = function( options, callback ) {
+    if ( typeof options === 'string' ) {
+      // call method
+      var args = Array.prototype.slice.call( arguments, 1 );
+
+      this.each(function(){
+        var instance = $.data( this, 'isotope' );
+        if ( !instance ) {
+          logError( "cannot call methods on isotope prior to initialization; " +
+              "attempted to call method '" + options + "'" );
+          return;
+        }
+        if ( !$.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
+          logError( "no such method '" + options + "' for isotope instance" );
+          return;
+        }
+        // apply method
+        instance[ options ].apply( instance, args );
+      });
+    } else {
+      this.each(function() {
+        var instance = $.data( this, 'isotope' );
+        if ( instance ) {
+          // apply options & init
+          instance.option( options );
+          instance._init( callback );
+        } else {
+          // initialize new instance
+          $.data( this, 'isotope', new $.Isotope( options, this, callback ) );
+        }
+      });
+    }
+    // return jQuery object
+    // so plugin methods do not have to
+    return this;
+  };
+
+})( window, jQuery );
+
+	var ImageDemo = (function($, imagesLoaded) {
+
+	var $projectsContainer = $('.portfolio-items-container'),
+		$imgs = $projectsContainer.find('img'),
+		imgLoad,
+
+	init = function() {
+		imgLoad = new imagesLoaded($imgs.get());
+		imgLoad.on('always', onAllImagesFinished);
+	},
+
+	onAllImagesFinished = function(instance) {
+
+		// Adds visibility: visible;
+		$projectsContainer.addClass('images-loaded');
+
+		// Initialize shuffle
+		$projectsContainer.shuffle({
+			itemSelector: '.portfolio-item',
+			delimeter: ' '
+		});
+
+	};
+
+	return {
+		init: init
+	};
+
+	}( jQuery, window.imagesLoaded ));
+
+	$(document).ready(function() {
+		ImageDemo.init();
+	});
+// SmoothScroll v0.9.9
+// Licensed under the terms of the MIT license.
+
+// People involved
+// - Balazs Galambosi: maintainer (CHANGELOG.txt)
+// - Patrick Brunner (patrickb1991@gmail.com)
+// - Michael Herf: ssc_pulse Algorithm
+
+function ssc_init() {
+    if (!document.body) return;
+    var e = document.body;
+    var t = document.documentElement;
+    var n = window.innerHeight;
+    var r = e.scrollHeight;
+    ssc_root = document.compatMode.indexOf("CSS") >= 0 ? t : e;
+    ssc_activeElement = e;
+    ssc_initdone = true;
+    if (top != self) {
+        ssc_frame = true
+    } else if (r > n && (e.offsetHeight <= n || t.offsetHeight <= n)) {
+        ssc_root.style.height = "auto";
+        if (ssc_root.offsetHeight <= n) {
+            var i = document.createElement("div");
+            i.style.clear = "both";
+            e.appendChild(i)
+        }
+    }
+    if (!ssc_fixedback) {
+        e.style.backgroundAttachment = "scroll";
+        t.style.backgroundAttachment = "scroll"
+    }
+    if (ssc_keyboardsupport) {
+        ssc_addEvent("keydown", ssc_keydown)
+    }
+}
+
+function ssc_scrollArray(e, t, n, r) {
+    r || (r = 1e3);
+    ssc_directionCheck(t, n);
+    ssc_que.push({
+        x: t,
+        y: n,
+        lastX: t < 0 ? .99 : -.99,
+        lastY: n < 0 ? .99 : -.99,
+        start: +(new Date)
+    });
+    if (ssc_pending) {
+        return
+    }
+    var i = function () {
+        var s = +(new Date);
+        var o = 0;
+        var u = 0;
+        for (var a = 0; a < ssc_que.length; a++) {
+            var f = ssc_que[a];
+            var l = s - f.start;
+            var c = l >= ssc_animtime;
+            var h = c ? 1 : l / ssc_animtime;
+            if (ssc_pulseAlgorithm) {
+                h = ssc_pulse(h)
+            }
+            var p = f.x * h - f.lastX >> 0;
+            var d = f.y * h - f.lastY >> 0;
+            o += p;
+            u += d;
+            f.lastX += p;
+            f.lastY += d;
+            if (c) {
+                ssc_que.splice(a, 1);
+                a--
+            }
+        }
+        if (t) {
+            var v = e.scrollLeft;
+            e.scrollLeft += o;
+            if (o && e.scrollLeft === v) {
+                t = 0
+            }
+        }
+        if (n) {
+            var m = e.scrollTop;
+            e.scrollTop += u;
+            if (u && e.scrollTop === m) {
+                n = 0
+            }
+        }
+        if (!t && !n) {
+            ssc_que = []
+        }
+        if (ssc_que.length) {
+            setTimeout(i, r / ssc_framerate + 1)
+        } else {
+            ssc_pending = false
+        }
+    };
+    setTimeout(i, 0);
+    ssc_pending = true
+}
+
+function ssc_wheel(e) {
+    if (!ssc_initdone) {
+        ssc_init()
+    }
+    var t = e.target;
+    var n = ssc_overflowingAncestor(t);
+    if (!n || e.defaultPrevented || ssc_isNodeName(ssc_activeElement, "embed") || ssc_isNodeName(t, "embed") && /\.pdf/i.test(t.src)) {
+        return true
+    }
+    var r = e.wheelDeltaX || 0;
+    var i = e.wheelDeltaY || 0;
+    if (!r && !i) {
+        i = e.wheelDelta || 0
+    }
+    if (Math.abs(r) > 1.2) {
+        r *= ssc_stepsize / 120
+    }
+    if (Math.abs(i) > 1.2) {
+        i *= ssc_stepsize / 120
+    }
+    ssc_scrollArray(n, -r, -i);
+    e.preventDefault()
+}
+
+function ssc_keydown(e) {
+    var t = e.target;
+    var n = e.ctrlKey || e.altKey || e.metaKey;
+    if (/input|textarea|embed/i.test(t.nodeName) || t.isContentEditable || e.defaultPrevented || n) {
+        return true
+    }
+    if (ssc_isNodeName(t, "button") && e.keyCode === ssc_key.spacebar) {
+        return true
+    }
+    var r, i = 0,
+        s = 0;
+    var o = ssc_overflowingAncestor(ssc_activeElement);
+    var u = o.clientHeight;
+    if (o == document.body) {
+        u = window.innerHeight
+    }
+    switch (e.keyCode) {
+    case ssc_key.up:
+        s = -ssc_arrowscroll;
+        break;
+    case ssc_key.down:
+        s = ssc_arrowscroll;
+        break;
+    case ssc_key.spacebar:
+        r = e.shiftKey ? 1 : -1;
+        s = -r * u * .9;
+        break;
+    case ssc_key.pageup:
+        s = -u * .9;
+        break;
+    case ssc_key.pagedown:
+        s = u * .9;
+        break;
+    case ssc_key.home:
+        s = -o.scrollTop;
+        break;
+    case ssc_key.end:
+        var a = o.scrollHeight - o.scrollTop - u;
+        s = a > 0 ? a + 10 : 0;
+        break;
+    case ssc_key.left:
+        i = -ssc_arrowscroll;
+        break;
+    case ssc_key.right:
+        i = ssc_arrowscroll;
+        break;
+    default:
+        return true
+    }
+    ssc_scrollArray(o, i, s);
+    e.preventDefault()
+}
+
+function ssc_mousedown(e) {
+    ssc_activeElement = e.target
+}
+
+function ssc_setCache(e, t) {
+    for (var n = e.length; n--;) ssc_cache[ssc_uniqueID(e[n])] = t;
+    return t
+}
+
+function ssc_overflowingAncestor(e) {
+    var t = [];
+    var n = ssc_root.scrollHeight;
+    do {
+        var r = ssc_cache[ssc_uniqueID(e)];
+        if (r) {
+            return ssc_setCache(t, r)
+        }
+        t.push(e);
+        if (n === e.scrollHeight) {
+            if (!ssc_frame || ssc_root.clientHeight + 10 < n) {
+                return ssc_setCache(t, document.body)
+            }
+        } else if (e.clientHeight + 10 < e.scrollHeight) {
+            overflow = getComputedStyle(e, "").getPropertyValue("overflow");
+            if (overflow === "scroll" || overflow === "auto") {
+                return ssc_setCache(t, e)
+            }
+        }
+    } while (e = e.parentNode)
+}
+
+function ssc_addEvent(e, t, n) {
+    window.addEventListener(e, t, n || false)
+}
+
+function ssc_removeEvent(e, t, n) {
+    window.removeEventListener(e, t, n || false)
+}
+
+function ssc_isNodeName(e, t) {
+    return e.nodeName.toLowerCase() === t.toLowerCase()
+}
+
+function ssc_directionCheck(e, t) {
+    e = e > 0 ? 1 : -1;
+    t = t > 0 ? 1 : -1;
+    if (ssc_direction.x !== e || ssc_direction.y !== t) {
+        ssc_direction.x = e;
+        ssc_direction.y = t;
+        ssc_que = []
+    }
+}
+
+function ssc_pulse_(e) {
+    var t, n, r;
+    e = e * ssc_pulseScale;
+    if (e < 1) {
+        t = e - (1 - Math.exp(-e))
+    } else {
+        n = Math.exp(-1);
+        e -= 1;
+        r = 1 - Math.exp(-e);
+        t = n + r * (1 - n)
+    }
+    return t * ssc_pulseNormalize
+}
+
+function ssc_pulse(e) {
+    if (e >= 1) return 1;
+    if (e <= 0) return 0;
+    if (ssc_pulseNormalize == 1) {
+        ssc_pulseNormalize /= ssc_pulse_(1)
+    }
+    return ssc_pulse_(e)
+}
+
+var ssc_framerate = 150;
+var ssc_animtime = 500;
+var ssc_stepsize = 150;
+var ssc_pulseAlgorithm = true;
+var ssc_pulseScale = 6;
+var ssc_pulseNormalize = 1;
+var ssc_keyboardsupport = true;
+var ssc_arrowscroll = 50;
+var ssc_frame = false;
+var ssc_direction = {
+    x: 0,
+    y: 0
+};
+
+var ssc_initdone = false;
+var ssc_fixedback = true;
+var ssc_root = document.documentElement;
+var ssc_activeElement;
+var ssc_key = {
+    left: 37,
+    up: 38,
+    right: 39,
+    down: 40,
+    spacebar: 32,
+    pageup: 33,
+    pagedown: 34,
+    end: 35,
+    home: 36
+};
+
+var ssc_que = [];
+var ssc_pending = false;
+var ssc_cache = {};
+
+setInterval(function () {
+    ssc_cache = {}
+}, 10 * 1e3);
+
+var ssc_uniqueID = function () {
+    var e = 0;
+    return function (t) {
+        return t.ssc_uniqueID || (t.ssc_uniqueID = e++)
+    }
+}();
+
+var ischrome = /chrome/.test(navigator.userAgent.toLowerCase());
+
+if (ischrome) {
+    ssc_addEvent("mousedown", ssc_mousedown);
+    ssc_addEvent("mousewheel", ssc_wheel);
+    ssc_addEvent("load", ssc_init)
+}
+;
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -36371,40 +38621,6 @@ if (typeof jQuery === 'undefined') {
 
 
 }).call(this);
-
-	var ImageDemo = (function($, imagesLoaded) {
-
-	var $projectsContainer = $('.portfolio-items-container'),
-		$imgs = $projectsContainer.find('img'),
-		imgLoad,
-
-	init = function() {
-		imgLoad = new imagesLoaded($imgs.get());
-		imgLoad.on('always', onAllImagesFinished);
-	},
-
-	onAllImagesFinished = function(instance) {
-
-		// Adds visibility: visible;
-		$projectsContainer.addClass('images-loaded');
-
-		// Initialize shuffle
-		$projectsContainer.shuffle({
-			itemSelector: '.portfolio-item',
-			delimeter: ' '
-		});
-
-	};
-
-	return {
-		init: init
-	};
-
-	}( jQuery, window.imagesLoaded ));
-
-	$(document).ready(function() {
-		ImageDemo.init();
-	});
 (function($){
 
 	/* ---------------------------------------------- /*
@@ -36653,311 +38869,6 @@ if (typeof jQuery === 'undefined') {
 
 
 }).call(this);
-// SmoothScroll v0.9.9
-// Licensed under the terms of the MIT license.
-
-// People involved
-// - Balazs Galambosi: maintainer (CHANGELOG.txt)
-// - Patrick Brunner (patrickb1991@gmail.com)
-// - Michael Herf: ssc_pulse Algorithm
-
-function ssc_init() {
-    if (!document.body) return;
-    var e = document.body;
-    var t = document.documentElement;
-    var n = window.innerHeight;
-    var r = e.scrollHeight;
-    ssc_root = document.compatMode.indexOf("CSS") >= 0 ? t : e;
-    ssc_activeElement = e;
-    ssc_initdone = true;
-    if (top != self) {
-        ssc_frame = true
-    } else if (r > n && (e.offsetHeight <= n || t.offsetHeight <= n)) {
-        ssc_root.style.height = "auto";
-        if (ssc_root.offsetHeight <= n) {
-            var i = document.createElement("div");
-            i.style.clear = "both";
-            e.appendChild(i)
-        }
-    }
-    if (!ssc_fixedback) {
-        e.style.backgroundAttachment = "scroll";
-        t.style.backgroundAttachment = "scroll"
-    }
-    if (ssc_keyboardsupport) {
-        ssc_addEvent("keydown", ssc_keydown)
-    }
-}
-
-function ssc_scrollArray(e, t, n, r) {
-    r || (r = 1e3);
-    ssc_directionCheck(t, n);
-    ssc_que.push({
-        x: t,
-        y: n,
-        lastX: t < 0 ? .99 : -.99,
-        lastY: n < 0 ? .99 : -.99,
-        start: +(new Date)
-    });
-    if (ssc_pending) {
-        return
-    }
-    var i = function () {
-        var s = +(new Date);
-        var o = 0;
-        var u = 0;
-        for (var a = 0; a < ssc_que.length; a++) {
-            var f = ssc_que[a];
-            var l = s - f.start;
-            var c = l >= ssc_animtime;
-            var h = c ? 1 : l / ssc_animtime;
-            if (ssc_pulseAlgorithm) {
-                h = ssc_pulse(h)
-            }
-            var p = f.x * h - f.lastX >> 0;
-            var d = f.y * h - f.lastY >> 0;
-            o += p;
-            u += d;
-            f.lastX += p;
-            f.lastY += d;
-            if (c) {
-                ssc_que.splice(a, 1);
-                a--
-            }
-        }
-        if (t) {
-            var v = e.scrollLeft;
-            e.scrollLeft += o;
-            if (o && e.scrollLeft === v) {
-                t = 0
-            }
-        }
-        if (n) {
-            var m = e.scrollTop;
-            e.scrollTop += u;
-            if (u && e.scrollTop === m) {
-                n = 0
-            }
-        }
-        if (!t && !n) {
-            ssc_que = []
-        }
-        if (ssc_que.length) {
-            setTimeout(i, r / ssc_framerate + 1)
-        } else {
-            ssc_pending = false
-        }
-    };
-    setTimeout(i, 0);
-    ssc_pending = true
-}
-
-function ssc_wheel(e) {
-    if (!ssc_initdone) {
-        ssc_init()
-    }
-    var t = e.target;
-    var n = ssc_overflowingAncestor(t);
-    if (!n || e.defaultPrevented || ssc_isNodeName(ssc_activeElement, "embed") || ssc_isNodeName(t, "embed") && /\.pdf/i.test(t.src)) {
-        return true
-    }
-    var r = e.wheelDeltaX || 0;
-    var i = e.wheelDeltaY || 0;
-    if (!r && !i) {
-        i = e.wheelDelta || 0
-    }
-    if (Math.abs(r) > 1.2) {
-        r *= ssc_stepsize / 120
-    }
-    if (Math.abs(i) > 1.2) {
-        i *= ssc_stepsize / 120
-    }
-    ssc_scrollArray(n, -r, -i);
-    e.preventDefault()
-}
-
-function ssc_keydown(e) {
-    var t = e.target;
-    var n = e.ctrlKey || e.altKey || e.metaKey;
-    if (/input|textarea|embed/i.test(t.nodeName) || t.isContentEditable || e.defaultPrevented || n) {
-        return true
-    }
-    if (ssc_isNodeName(t, "button") && e.keyCode === ssc_key.spacebar) {
-        return true
-    }
-    var r, i = 0,
-        s = 0;
-    var o = ssc_overflowingAncestor(ssc_activeElement);
-    var u = o.clientHeight;
-    if (o == document.body) {
-        u = window.innerHeight
-    }
-    switch (e.keyCode) {
-    case ssc_key.up:
-        s = -ssc_arrowscroll;
-        break;
-    case ssc_key.down:
-        s = ssc_arrowscroll;
-        break;
-    case ssc_key.spacebar:
-        r = e.shiftKey ? 1 : -1;
-        s = -r * u * .9;
-        break;
-    case ssc_key.pageup:
-        s = -u * .9;
-        break;
-    case ssc_key.pagedown:
-        s = u * .9;
-        break;
-    case ssc_key.home:
-        s = -o.scrollTop;
-        break;
-    case ssc_key.end:
-        var a = o.scrollHeight - o.scrollTop - u;
-        s = a > 0 ? a + 10 : 0;
-        break;
-    case ssc_key.left:
-        i = -ssc_arrowscroll;
-        break;
-    case ssc_key.right:
-        i = ssc_arrowscroll;
-        break;
-    default:
-        return true
-    }
-    ssc_scrollArray(o, i, s);
-    e.preventDefault()
-}
-
-function ssc_mousedown(e) {
-    ssc_activeElement = e.target
-}
-
-function ssc_setCache(e, t) {
-    for (var n = e.length; n--;) ssc_cache[ssc_uniqueID(e[n])] = t;
-    return t
-}
-
-function ssc_overflowingAncestor(e) {
-    var t = [];
-    var n = ssc_root.scrollHeight;
-    do {
-        var r = ssc_cache[ssc_uniqueID(e)];
-        if (r) {
-            return ssc_setCache(t, r)
-        }
-        t.push(e);
-        if (n === e.scrollHeight) {
-            if (!ssc_frame || ssc_root.clientHeight + 10 < n) {
-                return ssc_setCache(t, document.body)
-            }
-        } else if (e.clientHeight + 10 < e.scrollHeight) {
-            overflow = getComputedStyle(e, "").getPropertyValue("overflow");
-            if (overflow === "scroll" || overflow === "auto") {
-                return ssc_setCache(t, e)
-            }
-        }
-    } while (e = e.parentNode)
-}
-
-function ssc_addEvent(e, t, n) {
-    window.addEventListener(e, t, n || false)
-}
-
-function ssc_removeEvent(e, t, n) {
-    window.removeEventListener(e, t, n || false)
-}
-
-function ssc_isNodeName(e, t) {
-    return e.nodeName.toLowerCase() === t.toLowerCase()
-}
-
-function ssc_directionCheck(e, t) {
-    e = e > 0 ? 1 : -1;
-    t = t > 0 ? 1 : -1;
-    if (ssc_direction.x !== e || ssc_direction.y !== t) {
-        ssc_direction.x = e;
-        ssc_direction.y = t;
-        ssc_que = []
-    }
-}
-
-function ssc_pulse_(e) {
-    var t, n, r;
-    e = e * ssc_pulseScale;
-    if (e < 1) {
-        t = e - (1 - Math.exp(-e))
-    } else {
-        n = Math.exp(-1);
-        e -= 1;
-        r = 1 - Math.exp(-e);
-        t = n + r * (1 - n)
-    }
-    return t * ssc_pulseNormalize
-}
-
-function ssc_pulse(e) {
-    if (e >= 1) return 1;
-    if (e <= 0) return 0;
-    if (ssc_pulseNormalize == 1) {
-        ssc_pulseNormalize /= ssc_pulse_(1)
-    }
-    return ssc_pulse_(e)
-}
-
-var ssc_framerate = 150;
-var ssc_animtime = 500;
-var ssc_stepsize = 150;
-var ssc_pulseAlgorithm = true;
-var ssc_pulseScale = 6;
-var ssc_pulseNormalize = 1;
-var ssc_keyboardsupport = true;
-var ssc_arrowscroll = 50;
-var ssc_frame = false;
-var ssc_direction = {
-    x: 0,
-    y: 0
-};
-
-var ssc_initdone = false;
-var ssc_fixedback = true;
-var ssc_root = document.documentElement;
-var ssc_activeElement;
-var ssc_key = {
-    left: 37,
-    up: 38,
-    right: 39,
-    down: 40,
-    spacebar: 32,
-    pageup: 33,
-    pagedown: 34,
-    end: 35,
-    home: 36
-};
-
-var ssc_que = [];
-var ssc_pending = false;
-var ssc_cache = {};
-
-setInterval(function () {
-    ssc_cache = {}
-}, 10 * 1e3);
-
-var ssc_uniqueID = function () {
-    var e = 0;
-    return function (t) {
-        return t.ssc_uniqueID || (t.ssc_uniqueID = e++)
-    }
-}();
-
-var ischrome = /chrome/.test(navigator.userAgent.toLowerCase());
-
-if (ischrome) {
-    ssc_addEvent("mousedown", ssc_mousedown);
-    ssc_addEvent("mousewheel", ssc_wheel);
-    ssc_addEvent("load", ssc_init)
-}
-;
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -36971,6 +38882,10 @@ if (ischrome) {
 // about supported directives.
 //
 //
+
+
+
+
 
 
 

@@ -18,7 +18,11 @@
 //= require magnific-popup
 //= require 'jquery.backstretch'
 //= require wow
+//= require masonry/jquery.masonry
 //= require imagesloaded
+//= require isotope/jquery.isotope
+//= require custom-shuffle-init
+//= require smoothscroll
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
