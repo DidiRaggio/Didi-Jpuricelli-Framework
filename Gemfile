@@ -61,7 +61,8 @@ gem "animate-rails"
 gem 'underscore-rails'
 # gem 'gmaps4rails'
 #rails masonry
-gem 'masonry-rails', '~> 0.2.4'
+gem 'masonry-rails'
+# gem 'masonry-rails', '~> 0.2.4'
 
 #paperclip and aws-sdk
 gem 'paperclip', '~> 4.2'

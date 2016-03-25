@@ -19,8 +19,9 @@
 //= require 'jquery.backstretch'
 //= require 'jquery.shuffle.min'
 //= require 'jquery.sticky'
+//= require 'jquery.fitvids'
 //= require wow
-//= require masonry/jquery.masonry
+//= require masonry/masonry.min
 //= require imagesloaded
 //= require isotope/jquery.isotope
 //= require custom-shuffle-init
