@@ -36659,7 +36659,9 @@ if (typeof jQuery === 'undefined') {
 	});
 
 })(jQuery);
+(function($){
 
+	$(document).ready(function() {
 	var ImageDemo = (function($, imagesLoaded) {
 
 	var $projectsContainer = $('.portfolio-items-container'),
@@ -36693,6 +36695,10 @@ if (typeof jQuery === 'undefined') {
 	$(document).ready(function() {
 		ImageDemo.init();
 	});
+
+	});
+
+})(jQuery);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

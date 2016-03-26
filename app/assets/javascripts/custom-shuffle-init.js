@@ -1,4 +1,6 @@
+(function($){
 
+	$(document).ready(function() {
 	var ImageDemo = (function($, imagesLoaded) {
 
 	var $projectsContainer = $('.portfolio-items-container'),
@@ -32,3 +34,7 @@
 	$(document).ready(function() {
 		ImageDemo.init();
 	});
+
+	});
+
+})(jQuery);
