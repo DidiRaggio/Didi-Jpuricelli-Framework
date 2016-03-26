@@ -21,10 +21,10 @@
 //= require 'jquery.fitvids'
 //= require imagesloaded
 //= require wow
-//= require custom-shuffle-init
 //= require smoothscroll
 //= require bootstrap
 //= require turbolinks
 //= require custom
 //= require 'jquery.shuffle.min'
+//= require custom-shuffle-init
 
