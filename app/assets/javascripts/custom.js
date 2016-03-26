@@ -8,7 +8,9 @@
 		$('#status').fadeOut();
 		$('#preloader').delay(350).fadeOut('slow');
 	});
-
+	$(document).ready(function() {
+		ImageDemo.init();
+	});
 	$(document).ready(function() {
 
 		/* ---------------------------------------------- /*
