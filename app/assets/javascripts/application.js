@@ -27,5 +27,4 @@
 //= require turbolinks
 //= require custom
 //= require 'jquery.shuffle.min'
-//= require_tree .
 
