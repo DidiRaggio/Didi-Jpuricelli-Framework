@@ -5,7 +5,7 @@ class PagesController < ApplicationController
  	@assets = Asset.all.to_rank
     @gallerytypes = Gallerytype.all 
     @tags = Tag.all
-    @abouts = About.first
+    @abouts = About.all
   end
 
   def const
