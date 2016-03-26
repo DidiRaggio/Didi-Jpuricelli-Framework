@@ -19,12 +19,12 @@
 //= require 'jquery.backstretch'
 //= require 'jquery.sticky'
 //= require 'jquery.fitvids'
+//= require 'jquery.shuffle.min'
 //= require imagesloaded
 //= require wow
 //= require smoothscroll
 //= require bootstrap
 //= require turbolinks
 //= require custom
-//= require 'jquery.shuffle.min'
 //= require custom-shuffle-init
 
