@@ -24,7 +24,8 @@
 //= require wow
 //= require smoothscroll
 //= require bootstrap
+//= require custom-shuffle-init
 //= require turbolinks
 //= require custom
-//= require custom-shuffle-init
+
 

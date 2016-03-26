@@ -35643,6 +35643,46 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+// (function($){
+
+// 	$(document).ready(function() {
+	var ImageDemo = (function($, imagesLoaded) {
+
+	var $projectsContainer = $('.portfolio-items-container'),
+		$imgs = $projectsContainer.find('img'),
+		imgLoad,
+
+	init = function() {
+		imgLoad = new imagesLoaded($imgs.get());
+		imgLoad.on('always', onAllImagesFinished);
+	},
+
+	onAllImagesFinished = function(instance) {
+
+		// Adds visibility: visible;
+		$projectsContainer.addClass('images-loaded');
+
+		// Initialize shuffle
+		$projectsContainer.shuffle({
+			itemSelector: '.portfolio-item',
+			delimeter: ' '
+		});
+
+	};
+
+	return {
+		init: init
+	};
+
+	}( jQuery, window.imagesLoaded ));
+
+	$(document).ready(function() {
+		ImageDemo.init();
+	});
+
+// 	});
+
+// })(jQuery);
 (function() {
   var CSRFToken, Click, ComponentUrl, EVENTS, Link, ProgressBar, browserIsntBuggy, browserSupportsCustomEvents, browserSupportsPushState, browserSupportsTurbolinks, bypassOnLoadPopstate, cacheCurrentPage, cacheSize, changePage, clone, constrainPageCacheTo, createDocument, crossOriginRedirect, currentState, enableProgressBar, enableTransitionCache, executeScriptTags, extractTitleAndBody, fetch, fetchHistory, fetchReplacement, historyStateIsDefined, initializeTurbolinks, installDocumentReadyPageEventTriggers, installHistoryChangeHandler, installJqueryAjaxSuccessPageUpdateTrigger, loadedAssets, manuallyTriggerHashChangeForFirefox, pageCache, pageChangePrevented, pagesCached, popCookie, processResponse, progressBar, recallScrollPosition, ref, referer, reflectNewUrl, reflectRedirectedUrl, rememberCurrentState, rememberCurrentUrl, rememberReferer, removeNoscriptTags, requestMethodIsSafe, resetScrollPosition, setAutofocusElement, transitionCacheEnabled, transitionCacheFor, triggerEvent, visit, xhr,
     indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -36661,46 +36701,6 @@ if (typeof jQuery === 'undefined') {
 	});
 
 })(jQuery);
-// (function($){
-
-// 	$(document).ready(function() {
-	var ImageDemo = (function($, imagesLoaded) {
-
-	var $projectsContainer = $('.portfolio-items-container'),
-		$imgs = $projectsContainer.find('img'),
-		imgLoad,
-
-	init = function() {
-		imgLoad = new imagesLoaded($imgs.get());
-		imgLoad.on('always', onAllImagesFinished);
-	},
-
-	onAllImagesFinished = function(instance) {
-
-		// Adds visibility: visible;
-		$projectsContainer.addClass('images-loaded');
-
-		// Initialize shuffle
-		$projectsContainer.shuffle({
-			itemSelector: '.portfolio-item',
-			delimeter: ' '
-		});
-
-	};
-
-	return {
-		init: init
-	};
-
-	}( jQuery, window.imagesLoaded ));
-
-	$(document).ready(function() {
-		ImageDemo.init();
-	});
-
-// 	});
-
-// })(jQuery);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -36714,6 +36714,7 @@ if (typeof jQuery === 'undefined') {
 // about supported directives.
 //
 //
+
 
 
 
