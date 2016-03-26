@@ -191,18 +191,20 @@
 					<div class="col-sm-12">
 
 						<div class="module-header module-header-left wow fadeInUp">
-							<h2 class="module-title">About me</h2>
+							<% @abouts.each do |about| %>
+							<h2 class="module-title"><%= @about.title %></h2>
 							<div class="module-subtitle">
-								Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+								<%= @about.description.html_safe %>
 							</div>
 							<div class="module-line"></div>
+							<% end %>
 						</div>
 
 					</div>
 
 				</div><!-- .row -->
 
-				<div class="row">
+<!-- 				<div class="row">
 
 					<div class="col-sm-6">
 
@@ -272,7 +274,7 @@
 
 					</div>
 
-				</div><!-- .row -->
+				</div><!-- .row --> -->
 
 			</div><!-- col-xs-12 -->
 

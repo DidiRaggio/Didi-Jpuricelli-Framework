@@ -1,1 +1,81 @@
 <h1>THIS IS THE GALLERY SHOW PAGE</h1>
+
+<!-- IMAGES -->
+
+<div id="custom-content" class="white-popup-block">
+
+	<div class="row">
+	  <div class="col-sm-12 text-center">
+      <% @gallery.assets.each do |asset| %>
+              <% if asset.assettype_id == 1 %> 
+					<div class="owl-carousel owl-theme portfolio-slider">
+						<div class="item">
+							<%= image_tag asset.image.url(:original) %>
+						</div>
+            		</div>
+                
+                <% end %>
+              <!-- <a href="files/uploads/art/artM1.jpg"><img src="files/uploads/art/artS1.jpg" data-big="files/uploads/art/artL1.jpg" data-title="Collage I" data-description=""></a> -->
+
+              <% else %>
+              <iframe width="420" height="250" src="<%= asset.embeded_video%>" frameborder="0" allowfullscreen></iframe>
+
+                <% end %>
+
+              <!-- <a href="http://vimeo.com/91759289" data-title="RBS + Treeless Forest" data-description=""><span class="video">Watch this on Vimeo!</span></a> -->
+              <% end %>
+
+            <% end %>
+       </div><!-- .col -->
+		
+
+	</div><!-- .row -->
+
+	<div class="popup-content">
+		<div class="row">
+
+			<div class="col-sm-12">
+
+				<div class="popup-header">
+					<h2 class="popup-title"><%= @gallery.name %></h2>
+					<div class="popup-subtitle">
+						<%= @gallery.sub %>
+					</div>
+					<div class="popup-line"></div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-sm-12">
+				<%= @gallery.description.html_safe %>
+			</div>
+
+		</div>
+
+	</div>
+
+	<section class="popup-callout">
+		<div class="row">
+
+			<div class="col-sm-12">
+				<h3>Like Our Works?</h3>
+				<div class="module-line"></div>
+			</div>
+
+			<div class="col-sm-12">
+				<div class="btn-list">
+					<a href="index.html#services" class="btn btn-custom-3" target="_blank">View Services</a>
+					<a href="index.html#contact" class="btn btn-custom-4" target="_blank">Start Project</a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+</div>
+
+
