@@ -1,18 +1,15 @@
-<h1>THIS IS THE GALLERY SHOW PAGE</h1>
-
-<!-- IMAGES -->
 
 <div id="custom-content" class="white-popup-block">
 
 	<div class="row">
 	  <div class="col-sm-12 text-center">
       <% @gallery.assets.each do |asset| %>
-              <% if asset.assettype_id == 1 %> 
-					<div class="owl-carousel owl-theme portfolio-slider">
+      <div class="owl-carousel owl-theme portfolio-slider">
 						<div class="item">
+              <% if asset.assettype_id == 1 %> 
+					
 							<%= image_tag asset.image.url(:original) %>
-						</div>
-            		</div>
+
                 
               
               <!-- <a href="files/uploads/art/artM1.jpg"><img src="files/uploads/art/artS1.jpg" data-big="files/uploads/art/artL1.jpg" data-title="Collage I" data-description=""></a> -->
@@ -25,6 +22,8 @@
               <!-- <a href="http://vimeo.com/91759289" data-title="RBS + Treeless Forest" data-description=""><span class="video">Watch this on Vimeo!</span></a> -->
               
 			<% end %>
+						</div>
+            		</div>
             <% end %>
        </div><!-- .col -->
 		
