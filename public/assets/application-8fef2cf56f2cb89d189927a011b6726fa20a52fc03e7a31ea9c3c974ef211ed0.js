@@ -36629,39 +36629,39 @@ if (typeof jQuery === 'undefined') {
 		 * Google Map
 		/* ---------------------------------------------- */
 
-		var mapLocation = new google.maps.LatLng(34.031428,-118.2071542,17);
+		// var mapLocation = new google.maps.LatLng(34.031428,-118.2071542,17);
 
-		map = new GMaps({
-			streetViewControl : false,
-			overviewMapControl: false,
-			mapTypeControl: false,
-			zoomControl : false,
-			panControl : false,
-			scrollwheel: false,
-			center: mapLocation,
-			el: '#map',
-			zoom: 16,
-			styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
-		});
+		// map = new GMaps({
+		// 	streetViewControl : false,
+		// 	overviewMapControl: false,
+		// 	mapTypeControl: false,
+		// 	zoomControl : false,
+		// 	panControl : false,
+		// 	scrollwheel: false,
+		// 	center: mapLocation,
+		// 	el: '#map',
+		// 	zoom: 16,
+		// 	styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+		// });
 
-		var image = new google.maps.MarkerImage('assets/images/map-icon.png',
-			new google.maps.Size(80, 80),
-			new google.maps.Point(0, 0),
-			new google.maps.Point(40, 40)
-		);
+		// var image = new google.maps.MarkerImage('assets/images/map-icon.png',
+		// 	new google.maps.Size(80, 80),
+		// 	new google.maps.Point(0, 0),
+		// 	new google.maps.Point(40, 40)
+		// );
 
-		map.addMarker({
-			position: mapLocation,
-			icon: image,
-			animation: google.maps.Animation.BOUNCE,
-		});
+		// map.addMarker({
+		// 	position: mapLocation,
+		// 	icon: image,
+		// 	animation: google.maps.Animation.BOUNCE,
+		// });
 
 	});
 
 })(jQuery);
-(function($){
+// (function($){
 
-	$(document).ready(function() {
+// 	$(document).ready(function() {
 	var ImageDemo = (function($, imagesLoaded) {
 
 	var $projectsContainer = $('.portfolio-items-container'),
@@ -36696,9 +36696,9 @@ if (typeof jQuery === 'undefined') {
 		ImageDemo.init();
 	});
 
-	});
+// 	});
 
-})(jQuery);
+// })(jQuery);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
