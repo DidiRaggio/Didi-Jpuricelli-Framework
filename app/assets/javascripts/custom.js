@@ -245,13 +245,13 @@
 	var ImageDemo = (function($, imagesLoaded) {
 
 	var $projectsContainer = $('.portfolio-items-container'),
-		$imgs = $projectsContainer.find('img'),
-		imgLoad,
+		// $imgs = $projectsContainer.find('img'),
+		// imgLoad,
 
-	init = function() {
-		imgLoad = new imagesLoaded($imgs.get());
-		imgLoad.on('always', onAllImagesFinished);
-	},
+	// init = function() {
+	// 	imgLoad = new imagesLoaded($imgs.get());
+	// 	imgLoad.on('always', onAllImagesFinished);
+	// },
 
 	onAllImagesFinished = function(instance) {
 
@@ -266,9 +266,9 @@
 
 	};
 
-	return {
-		init: init
-	};
+	// return {
+	// 	init: init
+	// };
 
 	}( jQuery, window.imagesLoaded ));
 
