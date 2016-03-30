@@ -1,4 +1,4 @@
-$(function($){
+$(function(){
 
 	var ImageDemo = (function($, imagesLoaded) {
 
@@ -35,4 +35,4 @@ $(function($){
 	});
 
 	});
-})(jQuery);
+});
