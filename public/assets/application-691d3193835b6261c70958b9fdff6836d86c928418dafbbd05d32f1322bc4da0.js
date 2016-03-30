@@ -36588,8 +36588,11 @@ if (typeof jQuery === 'undefined') {
 			type: 'ajax',
 			callbacks: {
 				parseAjax: function(mfpResponse) {
-					$.getScript('http://d9rke1cfbz5k9.cloudfront.net/assets/js/jquery.fitvids.js');
-					$.getScript('http://d9rke1cfbz5k9.cloudfront.net/assets/custom-portfolio.js');
+					$.getScript('d9rke1cfbz5k9.cloudfront.net/assets/js/jquery.fitvids.js', function( data, textStatus, jqxhr ) {
+  console.log( "got jquery.fitVids"); // Data returned
+  
+					});
+					$.getScript('d9rke1cfbz5k9.cloudfront.net/assets/custom-portfolio.js');
 				},
 			}
 		});
