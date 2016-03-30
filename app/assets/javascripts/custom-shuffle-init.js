@@ -1,3 +1,4 @@
+$(function($){
 
 	var ImageDemo = (function($, imagesLoaded) {
 
@@ -32,3 +33,6 @@
 	$(document).ready(function() {
 		ImageDemo.init();
 	});
+
+	});
+})(jQuery);
