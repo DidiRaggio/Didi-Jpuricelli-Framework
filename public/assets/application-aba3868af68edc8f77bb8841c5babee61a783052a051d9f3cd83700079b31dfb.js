@@ -36586,15 +36586,15 @@ if (typeof jQuery === 'undefined') {
 
 		$('.simple-ajax-popup').magnificPopup({
 			type: 'ajax',
-			callbacks: {
-				parseAjax: function(mfpResponse) {
-					$.getScript('https://d9rke1cfbz5k9.cloudfront.net/assets/js/jquery.fitvids.js', function( data, textStatus, jqxhr ) {
-  console.log( "got jquery.fitVids"); // Data returned
+		// 	callbacks: {
+		// 		parseAjax: function(mfpResponse) {
+		// 			$.getScript('https://d9rke1cfbz5k9.cloudfront.net/assets/js/jquery.fitvids.js', function( data, textStatus, jqxhr ) {
+  // console.log( "got jquery.fitVids"); // Data returned
   
-					});
-					$.getScript('https://d9rke1cfbz5k9.cloudfront.net/assets/custom-portfolio.js');
-				},
-			}
+		// 			});
+		// 			$.getScript('https://d9rke1cfbz5k9.cloudfront.net/assets/custom-portfolio.js');
+		// 		},
+		// 	}
 		});
 
 		/* ---------------------------------------------- /*
@@ -36713,10 +36713,10 @@ if (typeof jQuery === 'undefined') {
 		$imgs = $projectsContainer.find('img'),
 		imgLoad,
 
-	// init = function() {
-	// 	imgLoad = new imagesLoaded($imgs.get());
-	// 	imgLoad.on('always', onAllImagesFinished);
-	// },
+	init = function() {
+		imgLoad = new imagesLoaded($imgs.get());
+		imgLoad.on('always', onAllImagesFinished);
+	},
 
 	onAllImagesFinished = function(instance) {
 
@@ -36731,9 +36731,9 @@ if (typeof jQuery === 'undefined') {
 
 	};
 
-	// return {
-	// 	init: init
-	// };
+	return {
+		init: init
+	};
 
 	}( jQuery, window.imagesLoaded ));
 
