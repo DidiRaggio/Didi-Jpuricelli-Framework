@@ -35643,9 +35643,7 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
-// (function($){
-
-// 	$(document).ready(function() {
+	$(document).ready(function() {
 	var ImageDemo = (function($, imagesLoaded) {
 
 	var $projectsContainer = $('.portfolio-items-container'),
@@ -35680,9 +35678,9 @@ if (typeof jQuery === 'undefined') {
 		ImageDemo.init();
 	});
 
-// 	});
+	});
 
-// })(jQuery);
+})(jQuery);
 (function() {
   var CSRFToken, Click, ComponentUrl, EVENTS, Link, ProgressBar, browserIsntBuggy, browserSupportsCustomEvents, browserSupportsPushState, browserSupportsTurbolinks, bypassOnLoadPopstate, cacheCurrentPage, cacheSize, changePage, clone, constrainPageCacheTo, createDocument, crossOriginRedirect, currentState, enableProgressBar, enableTransitionCache, executeScriptTags, extractTitleAndBody, fetch, fetchHistory, fetchReplacement, historyStateIsDefined, initializeTurbolinks, installDocumentReadyPageEventTriggers, installHistoryChangeHandler, installJqueryAjaxSuccessPageUpdateTrigger, loadedAssets, manuallyTriggerHashChangeForFirefox, pageCache, pageChangePrevented, pagesCached, popCookie, processResponse, progressBar, recallScrollPosition, ref, referer, reflectNewUrl, reflectRedirectedUrl, rememberCurrentState, rememberCurrentUrl, rememberReferer, removeNoscriptTags, requestMethodIsSafe, resetScrollPosition, setAutofocusElement, transitionCacheEnabled, transitionCacheFor, triggerEvent, visit, xhr,
     indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -36473,16 +36471,14 @@ if (typeof jQuery === 'undefined') {
 		$('#status').fadeOut();
 		$('#preloader').delay(350).fadeOut('slow');
 	});
-	$(document).ready(function() {
-		ImageDemo.init();
-	});
+
 	$(document).ready(function() {
 
 		/* ---------------------------------------------- /*
 		 * Animated scrolling / Scroll Up
 		/* ---------------------------------------------- */
 
-		$('a[href*=\\#]').bind("click", function(e){
+		$('a[href*=#]').bind("click", function(e){
 			var anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $(anchor.attr('href')).offset().top
@@ -36586,15 +36582,12 @@ if (typeof jQuery === 'undefined') {
 
 		$('.simple-ajax-popup').magnificPopup({
 			type: 'ajax',
-		// 	callbacks: {
-		// 		parseAjax: function(mfpResponse) {
-		// 			$.getScript('https://d9rke1cfbz5k9.cloudfront.net/assets/js/jquery.fitvids.js', function( data, textStatus, jqxhr ) {
-  // console.log( "got jquery.fitVids"); // Data returned
-  
-		// 			});
-		// 			$.getScript('https://d9rke1cfbz5k9.cloudfront.net/assets/custom-portfolio.js');
-		// 		},
-		// 	}
+			// callbacks: {
+			// 	parseAjax: function(mfpResponse) {
+			// 		$.getScript('assets/js/jquery.fitvids.js');
+			// 		$.getScript('assets/js/custom-portfolio.js');
+			// 	},
+			// }
 		});
 
 		/* ---------------------------------------------- /*
@@ -36625,50 +36618,50 @@ if (typeof jQuery === 'undefined') {
 		 * Contact form ajax
 		/* ---------------------------------------------- */
 
-		$('#contact-form').submit(function(e) {
+		// $('#contact-form').submit(function(e) {
 
-			e.preventDefault();
+		// 	e.preventDefault();
 
-			var c_name = $('#c_name').val();
-			var c_email = $('#c_email').val();
-			var c_message = $('#c_message ').val();
-			var responseMessage = $('#contact-form .ajax-response');
+		// 	var c_name = $('#c_name').val();
+		// 	var c_email = $('#c_email').val();
+		// 	var c_message = $('#c_message ').val();
+		// 	var responseMessage = $('#contact-form .ajax-response');
 
-			if (( c_name== '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email) )) {
-				responseMessage.fadeIn(500);
-				responseMessage.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
-			}
+		// 	if (( c_name== '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email) )) {
+		// 		responseMessage.fadeIn(500);
+		// 		responseMessage.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
+		// 	}
 
-			else {
-				$.ajax({
-					type: 'POST',
-					url: 'assets/php/contactForm.php',
-					dataType: 'json',
-					data: {
-						c_email: c_email,
-						c_name: c_name,
-						c_message: c_message
-					},
-					beforeSend: function(result) {
-						$('#contact-form button').empty();
-						$('#contact-form button').append('<i class="fa fa-cog fa-spin"></i> Wait...');
-					},
-					success: function(result) {
-						if(result.sendstatus == 1) {
-							$('#contact-form .ajax-hidden').fadeOut(500);
-							responseMessage.html(result.message).fadeIn(500);
-						} else {
-							$('#contact-form button').empty();
-							$('#contact-form button').append('<i class="fa fa-retweet"></i> Try again.');
-							responseMessage.html(result.message).fadeIn(1000);
-						}
-					}
-				});
-			}
+		// 	else {
+		// 		$.ajax({
+		// 			type: 'POST',
+		// 			url: 'assets/php/contactForm.php',
+		// 			dataType: 'json',
+		// 			data: {
+		// 				c_email: c_email,
+		// 				c_name: c_name,
+		// 				c_message: c_message
+		// 			},
+		// 			beforeSend: function(result) {
+		// 				$('#contact-form button').empty();
+		// 				$('#contact-form button').append('<i class="fa fa-cog fa-spin"></i> Wait...');
+		// 			},
+		// 			success: function(result) {
+		// 				if(result.sendstatus == 1) {
+		// 					$('#contact-form .ajax-hidden').fadeOut(500);
+		// 					responseMessage.html(result.message).fadeIn(500);
+		// 				} else {
+		// 					$('#contact-form button').empty();
+		// 					$('#contact-form button').append('<i class="fa fa-retweet"></i> Try again.');
+		// 					responseMessage.html(result.message).fadeIn(1000);
+		// 				}
+		// 			}
+		// 		});
+		// 	}
 
-			return false;
+		// 	return false;
 
-		});
+		// });
 
 		/* ---------------------------------------------- /*
 		 * Google Map
@@ -36701,49 +36694,6 @@ if (typeof jQuery === 'undefined') {
 		// 	animation: google.maps.Animation.BOUNCE,
 		// });
 
-
-
-
-// (function($){
-
-// 	$(document).ready(function() {
-	var ImageDemo = (function($, imagesLoaded) {
-
-	var $projectsContainer = $('.portfolio-items-container'),
-		$imgs = $projectsContainer.find('img'),
-		imgLoad,
-
-	init = function() {
-		imgLoad = new imagesLoaded($imgs.get());
-		imgLoad.on('always', onAllImagesFinished);
-	},
-
-	onAllImagesFinished = function(instance) {
-
-		// Adds visibility: visible;
-		$projectsContainer.addClass('images-loaded');
-
-		// Initialize shuffle
-		$projectsContainer.shuffle({
-			itemSelector: '.portfolio-item',
-			delimeter: ' '
-		});
-
-	};
-
-	return {
-		init: init
-	};
-
-	}( jQuery, window.imagesLoaded ));
-
-	$(document).ready(function() {
-		ImageDemo.init();
-	});
-
-// 	});
-
-// })(jQuery);
 	});
 
 })(jQuery);
