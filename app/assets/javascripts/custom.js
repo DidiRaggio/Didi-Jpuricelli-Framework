@@ -123,8 +123,8 @@
 			type: 'ajax',
 			callbacks: {
 				parseAjax: function(mfpResponse) {
-					$.getScript('jquery.fitvids.js');
-					$.getScript('custom-portfolio.js');
+					$.getScript('/jquery.fitvids.js');
+					$.getScript('/custom-portfolio.js');
 				},
 			}
 		});
