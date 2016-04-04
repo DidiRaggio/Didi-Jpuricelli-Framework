@@ -27,5 +27,6 @@
 //= require custom-shuffle-init
 //= require turbolinks
 //= require custom
+//= require core
 
 
