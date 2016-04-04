@@ -42,10 +42,7 @@ class GalleriesController < ApplicationController
   		@galleries = Gallery.all.to_rank
   	    @rankarray = @galleries.map(&:rank)
  	    @rankarraylength = @rankarray.size
-   respond_to do |format|
-    format.html { redirect_to root_path } #for my controller, i wanted it to be JS only
-    format.js
-  end
+ 
 	end
 
 	def destroy
