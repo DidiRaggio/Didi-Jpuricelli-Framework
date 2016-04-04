@@ -196,7 +196,7 @@
 
 
 
-
+<%= button_to "An article", gallery, remote: true %>
 <%= render 'galleries/show' %>
 
 			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
