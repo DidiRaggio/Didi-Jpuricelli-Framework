@@ -195,7 +195,7 @@
 					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
 					<figcaption>
 
-						 <%= link_to "", gallery, remote: true %>
+						 <%= link_to "", gallery, remote: true, :data => {:toggle => "modal", :target => "#myModal"} %>
 
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title"><%= gallery.name %></h3>
