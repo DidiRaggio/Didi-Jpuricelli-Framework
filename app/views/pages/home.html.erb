@@ -187,19 +187,13 @@
 
 
 		<ul class="portfolio-items-container">
-		<% @galleries.each do |gallery| %>
-<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
-
-
-<%= link_to "an article", gallery, class: "btn btn-primary btn-lg", remote: true %>
-
-	</li>
 
 			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
 				<figure>
 					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
 					<figcaption>
-						 <%= link_to "", gallery_path(gallery), :class => 'simple-ajax-popup', remote: true %>
+						
+						 <%= link_to "", gallery, remote: true %>
 
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title"><%= gallery.name %></h3>
