@@ -187,12 +187,14 @@
 
 
 		<ul class="portfolio-items-container">
+		<% @galleries.each do |gallery| %>
+
 
 			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
 				<figure>
 					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
 					<figcaption>
-						
+
 						 <%= link_to "", gallery, remote: true %>
 
 						<div class="caption-inner">
