@@ -1,3 +1,7 @@
         <%= render 'galleries/show', locals: { gallery: @gallery} %>
 
 						 <%= link_to "", gallery_path(gallery), :remote => true, :data => {:toggle => "modal", :target => "#myModal"} %>
+
+
+
+						 <%= link_to "", render(:partial => 'galleries/show'), :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}  %>
