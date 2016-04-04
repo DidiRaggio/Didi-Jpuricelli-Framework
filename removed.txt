@@ -1,1 +1,2 @@
-						 <%= link_to "", gallery_path(gallery), :class => 'simple-ajax-popup', remote: true %>
+
+						 <%= link_to "", gallery_path(gallery), :remote => true, :data => {:toggle => "modal", :target => "#myModal"} %>
