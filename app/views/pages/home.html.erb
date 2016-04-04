@@ -188,7 +188,7 @@
 
 		<ul class="portfolio-items-container">
 		<% @galleries.each do |gallery| %>
-
+        <%= render 'galleries/show' %>
 
 			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
 				<figure>
