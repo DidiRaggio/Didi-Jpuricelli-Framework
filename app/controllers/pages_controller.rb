@@ -6,10 +6,6 @@ class PagesController < ApplicationController
     @gallerytypes = Gallerytype.all 
     @tags = Tag.all
     @abouts = About.all
-
-      respond_to do |format|
-    format.html { redirect_to root_path } #for my controller, i wanted it to be JS only
-    format.js
   end
   end
 
