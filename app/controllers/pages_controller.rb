@@ -6,17 +6,17 @@ class PagesController < ApplicationController
     @gallerytypes = Gallerytype.all 
     @tags = Tag.all
     @abouts = About.all
-    # @gallery = Gallery.find(params[:id])
-    # respond_to format.js
+    @gallery = Gallery.find(params[:id])
+    respond_to format.js
   end
 
   def const
   	
   end
 
-  # private
-  # def gallery_params
-  #     params.require(:gallery).permit( :id, :name, :sub, :assets , :tags, :rank, :menuimage, :description , assets_attributes: [:image, :description, :title, :embeded_video, :assettype_id, :gallery_id], tags_attributes: [:id, :gallery_id, :gallerytype_id])
-  # end
+  private
+  def gallery_params
+      params.require(:gallery).permit( :id, :name, :sub, :assets , :tags, :rank, :menuimage, :description , assets_attributes: [:image, :description, :title, :embeded_video, :assettype_id, :gallery_id], tags_attributes: [:id, :gallery_id, :gallerytype_id])
+  end
   
 end
