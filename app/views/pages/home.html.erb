@@ -188,15 +188,7 @@
 
 		<ul class="portfolio-items-container">
 		<% @galleries.each do |gallery| %>
-
-
-	
-
-			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
-				<figure>
-					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
-					<figcaption>
-						 <%= link_to "", gallery_path(gallery), :class => 'simple-ajax-popup' %>
+<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
@@ -205,6 +197,14 @@
 
 <%= button_to "An article", gallery, remote: true %>
 <%= render 'galleries/show' %>
+	</li>
+
+			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
+				<figure>
+					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
+					<figcaption>
+						 <%= link_to "", gallery_path(gallery), :class => 'simple-ajax-popup' %>
+
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title"><%= gallery.name %></h3>
 							<div class="portfolio-item-desc"><%= gallery.sub %></div>
