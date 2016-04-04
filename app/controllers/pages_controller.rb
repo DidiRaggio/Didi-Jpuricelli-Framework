@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @gallerytypes = Gallerytype.all 
     @tags = Tag.all
     @abouts = About.all
+    @gallery = Gallery.find(params[:id])
   end
 
   def const
