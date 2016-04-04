@@ -6,7 +6,6 @@ class PagesController < ApplicationController
     @gallerytypes = Gallerytype.all 
     @tags = Tag.all
     @abouts = About.all
-    respond_to :js
   end
 
   def const

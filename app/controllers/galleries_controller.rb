@@ -42,7 +42,6 @@ class GalleriesController < ApplicationController
   		@galleries = Gallery.all.to_rank
   	    @rankarray = @galleries.map(&:rank)
  	    @rankarraylength = @rankarray.size
- 	    respond_to :js
  
 	end
 
