@@ -195,9 +195,7 @@
 
 
 
-<%= link_to(gallery), remote: true do %>
-<%= image_tag gallery.menuimage.url(:original), alt: ""%>
-<%= end %>
+<%= link_to "an article", gallery, remote: true %>
 
 <%= render 'galleries/show' %>
 	</li>
@@ -206,7 +204,7 @@
 				<figure>
 					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
 					<figcaption>
-						 <%= link_to "", gallery_path(gallery), :class => 'simple-ajax-popup' %>
+						 <%= link_to "", gallery_path(gallery), :class => 'simple-ajax-popup', remote: true %>
 
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title"><%= gallery.name %></h3>
