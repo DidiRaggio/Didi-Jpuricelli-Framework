@@ -188,14 +188,14 @@
 
 		<ul class="portfolio-items-container">
 		<% @galleries.each do |gallery| %>
-        <%= render 'galleries/show', locals: { gallery: gallery} %>
+        <%= render 'galleries/show', locals: { gallery: @gallery} %>
 
 			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
 				<figure>
 					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
 					<figcaption>
 
-						 <%= link_to "", gallery, remote: true, :data => {:toggle => "modal", :target => "#myModal"} %>
+						 <%= link_to "", gallery, remote: true, :data => {:toggle => "modal", :target => "#<%= gallery.name.gsub(/\s+/, "") %>"} %>
 
 						<div class="caption-inner">
 							<h3 class="portfolio-item-title"><%= gallery.name %></h3>
