@@ -8,6 +8,15 @@ class PagesController < ApplicationController
     @abouts = About.all
   end
 
+  def show
+    @gallery = Gallery.find(params[:id])
+    @assets = Asset.all.to_rank
+      @galleries = Gallery.all.to_rank
+        @rankarray = @galleries.map(&:rank)
+      @rankarraylength = @rankarray.size
+ 
+  end
+  
   def const
   	
   end
