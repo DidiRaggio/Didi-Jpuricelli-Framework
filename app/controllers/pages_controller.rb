@@ -17,7 +17,6 @@ class PagesController < ApplicationController
   def render_partial
   respond_to do |format|               
     format.js
-    format.json
   end        
 end 
 
