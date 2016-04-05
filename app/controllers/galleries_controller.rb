@@ -45,6 +45,15 @@ class GalleriesController < ApplicationController
  
 	end
 
+	def _show
+		@gallery = Gallery.find(params[:id])
+		@assets = Asset.all.to_rank
+  		@galleries = Gallery.all.to_rank
+  	    @rankarray = @galleries.map(&:rank)
+ 	    @rankarraylength = @rankarray.size
+ 
+	end
+
 	def destroy
 		@gallery = Gallery.find(params[:id])
 		@gallery.destroy
