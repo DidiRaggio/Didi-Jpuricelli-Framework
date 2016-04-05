@@ -6,7 +6,14 @@
 	<div class="row">
 	  <div class="col-sm-12 text-center">
       <div class="owl-carousel owl-theme portfolio-slider">
+      <% @gallery.assets.each do |asset| %>
+						<div class="item">
+            
+					
+							<%= image_tag asset.image.url(:original) %>
 
+						</div>
+            <% end %>
             		</div>
        </div><!-- .col -->
 		
@@ -19,9 +26,9 @@
 			<div class="col-sm-12">
 
 				<div class="popup-header">
-				
+					<h2 class="popup-title"><%= @gallery.name %></h2>
 					<div class="popup-subtitle">
-		
+						<%= @gallery.sub %>
 					</div>
 					<div class="popup-line"></div>
 				</div>
@@ -33,7 +40,7 @@
 		<div class="row">
 
 			<div class="col-sm-12">
-		
+				<%= @gallery.description.html_safe %>
 			</div>
 
 		</div>
