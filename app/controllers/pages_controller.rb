@@ -14,11 +14,11 @@ class PagesController < ApplicationController
   	
   end
 
-  def render_partial
-  respond_to do |format|               
-    format.js
-  end        
-end 
+#   def render_partial
+#   respond_to do |format|               
+#     format.js
+#   end        
+# end 
 
   private
   def gallery_params
