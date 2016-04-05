@@ -5,3 +5,9 @@
 
 
 						 <%= link_to "", render(:partial => 'galleries/show'), :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}  %>
+
+
+						 <%= link_to "", render(:partial => 'galleries/show'), :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}  %>
+
+						 
+						 <%= link_to "", render_partial_path , :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}  %>
