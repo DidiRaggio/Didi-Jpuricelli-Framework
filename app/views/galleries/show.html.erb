@@ -4,7 +4,7 @@
 	<div class="row">
 	  <div class="col-sm-12 text-center">
       <div class="owl-carousel owl-theme portfolio-slider">
-      <% @gallery.assets.each do |asset| %>
+      <% gallery.assets.each do |asset| %>
 						<div class="item">
             
 					
@@ -26,7 +26,7 @@
 				<div class="popup-header">
 					<h2 class="popup-title"><%= @gallery.name %></h2>
 					<div class="popup-subtitle">
-						<%= @gallery.sub %>
+						<%= gallery.sub %>
 					</div>
 					<div class="popup-line"></div>
 				</div>
@@ -38,7 +38,7 @@
 		<div class="row">
 
 			<div class="col-sm-12">
-				<%= @gallery.description.html_safe %>
+				<%= gallery.description.html_safe %>
 			</div>
 
 		</div>
