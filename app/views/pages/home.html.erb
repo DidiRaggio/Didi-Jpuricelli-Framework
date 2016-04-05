@@ -195,7 +195,7 @@
 					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
 					<figcaption>
 
-					<%= link_to "", gallery, :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery} %>
+					<%= link_to "", '#', :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}, render(:partial => 'galleries/show')%>
 					
 
 						<div class="caption-inner">
