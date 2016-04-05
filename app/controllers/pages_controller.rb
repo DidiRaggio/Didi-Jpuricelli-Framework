@@ -7,7 +7,9 @@ class PagesController < ApplicationController
     @tags = Tag.all
     @abouts = About.all
     # @gallery = Gallery.find(params[:id])
-    respond_to format.js
+    respond_to do |format|
+        format.js
+    end
   end
 
   def const
