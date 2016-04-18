@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
 
 
-    @contact = Contact.new(contact_params)
+    @contact = Contact.new
     
     puts params
     puts @contact.as_json.to_s
