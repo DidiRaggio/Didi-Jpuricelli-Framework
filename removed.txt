@@ -11,3 +11,6 @@
 
 						 
 						 <%= link_to "", render_partial_path , :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}  %>
+
+
+						 		    $('.mpf-content').html("<%= render :partial => 'galleries/show' %>");
