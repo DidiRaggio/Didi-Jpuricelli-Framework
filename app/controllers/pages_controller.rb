@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
 @contact = Contact.new(contact_params)
 
-    if contact.valid?
+    if @contact.valid?
       ContactMailer.contact_created(@contact).deliver
       ResponseMailer.response_created(@contact).deliver_now
       # flash[:notice] = "Comment was successfully created."
