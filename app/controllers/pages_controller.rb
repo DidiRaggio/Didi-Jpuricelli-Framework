@@ -7,20 +7,31 @@ class PagesController < ApplicationController
     @tags = Tag.all
     @abouts = About.all
     # @gallery = Gallery.find(params[:id])
-    @contact = Contact.new(params[:id])
-
-    if @contact.save
 
 
 
+
+@contact = Contact.new(message_params)
+
+    if contact.valid?
       ContactMailer.contact_created(@contact).deliver
       ResponseMailer.response_created(@contact).deliver_now
       # flash[:notice] = "Comment was successfully created."
       redirect_to :back, :notice => "Gracias por contactarse!"
     else
-      # flash[:notice] = "Error creating post_comment: #(@post_comment.errors)"
-      # redirect_to :back, :notice => "Error creating contact: #(@contact.errors)"
+      redirect_to :back
     end
+
+
+
+
+
+
+
+
+
+
+
   end
 
   def const
