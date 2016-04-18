@@ -7,4 +7,8 @@ class Contact
   validates_presence_of :email, presence: true,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   validates_presence_of :subject, presence: true
   validates_presence_of :message, presence: true
+
+  def persisted?
+    self.id == 1
+  end
 end
