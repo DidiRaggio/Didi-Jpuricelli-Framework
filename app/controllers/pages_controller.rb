@@ -10,8 +10,8 @@ class PagesController < ApplicationController
 
 
 
-
     @contact = Contact.new
+    @contact = Contact.new(contact_params)
 
     if @contact.valid?
       ContactMailer.contact_created(@contact).deliver
