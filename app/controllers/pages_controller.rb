@@ -10,12 +10,17 @@ class PagesController < ApplicationController
 
 
 
-    @contact = Contact.new
+    @contact = Contact.new(contact_params)
     
-
+    puts params
+    puts @contact.as_json.to_s
     if @contact.valid?
-      ContactMailer.contact_created(@contact).deliver
-      ResponseMailer.response_created(@contact).deliver_now
+
+    puts params
+    puts @contact.as_json.to_s
+
+      # ContactMailer.contact_created(@contact).deliver
+      # ResponseMailer.response_created(@contact).deliver_now
       flash[:notice] = "Gracias por contactarse!"
       # redirect_to :back, :notice => "Gracias por contactarse!"
     else
