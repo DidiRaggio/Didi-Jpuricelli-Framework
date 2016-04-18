@@ -16,10 +16,11 @@ class PagesController < ApplicationController
     if @contact.valid?
       ContactMailer.contact_created(@contact).deliver
       ResponseMailer.response_created(@contact).deliver_now
-      # flash[:notice] = "Comment was successfully created."
-      redirect_to :back, :notice => "Gracias por contactarse!"
+      flash[:notice] = "Gracias por contactarse!"
+      # redirect_to :back, :notice => "Gracias por contactarse!"
     else
-      redirect_to :back
+      # redirect_to :back
+      flash[:notice] = "No se pudo contactar :("
     end
 
 
