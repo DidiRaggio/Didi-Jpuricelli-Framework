@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   resources :galleries
 
   resources :tags
-
+  resources "contacts", only: [:new, :create]
   get 'galleries/show'
   get 'pages/home'
   get 'pages/const'
   get '/home', :to => 'pages#home'
-  resources "contacts", only: [:new, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
