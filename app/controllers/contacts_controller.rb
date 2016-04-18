@@ -2,23 +2,21 @@ class ContactsController < ApplicationController
 	def new
     @contact = Contact.new
     end
-	def create
-		@contact = Contact.new(contact_params)
-
-		if @contact.valid?
+    def create
+    @contact = Contact.new(contact_params)
 
 
+    if @contact.valid?
+      ContactMailer.contact_created(@contact).deliver
+      ResponseMailer.response_created(@contact).deliver_now
+      flash[:notice] = "Gracias por contactarse!"
+      # redirect_to :back, :notice => "Gracias por contactarse!"
+    else
+      # redirect_to :back
+      flash[:notice] = "No se pudo contactar :("
+    end
 
-			ContactMailer.contact_created(@contact).deliver
-			ResponseMailer.response_created(@contact).deliver_now
-			# flash[:notice] = "Comment was successfully created."
-			redirect_to :back, :notice => "Gracias por contactarse!"
-		else
-			# flash[:notice] = "Error creating post_comment: #(@post_comment.errors)"
-			# redirect_to :back, :notice => "Error creating contact: #(@contact.errors)"
-		end
-
-	end
+  end
 	# def destroy
 	# 	@contact = Contact.find(params[:id])
 	# 	@contact.destroy
