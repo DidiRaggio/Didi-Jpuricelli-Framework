@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :galleries
 
   resources :tags
-  resources "contacts", only: [:new, :create]
+  resources :contacts, only: [:new, :create]
   get 'galleries/show'
   get 'pages/home'
   get 'pages/const'
