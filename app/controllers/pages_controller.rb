@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @contact = Contact.new
     
 
-    if @contact.valid?
+    if @contact.save
       ContactMailer.contact_created(@contact).deliver
       ResponseMailer.response_created(@contact).deliver_now
       flash[:notice] = "Gracias por contactarse!"
