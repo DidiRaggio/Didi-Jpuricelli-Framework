@@ -19,11 +19,11 @@ class ContactsController < ApplicationController
 		end
 
 	end
-	def destroy
-		@contact = Contact.find(params[:id])
-		@contact.destroy
-		redirect_to contacts_path, :notice => "Su contact ha sido borrado"
-	end
+	# def destroy
+	# 	@contact = Contact.find(params[:id])
+	# 	@contact.destroy
+	# 	redirect_to contacts_path, :notice => "Su contact ha sido borrado"
+	# end
 	private
     def contact_params
       params.require(:contact).permit(:name, :email, :subject, :message)
