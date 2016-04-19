@@ -26,5 +26,6 @@
 //= require custom-shuffle-init
 //= require turbolinks
 //= require custom
+//= require 'xone-loader'
 
 
