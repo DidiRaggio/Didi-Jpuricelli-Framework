@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     flash[:notice] = "THis isn't working!"
 
 
-    @contact = Contact.new
+    @contact = Contact.new(contact_params)
     
     # puts params
     # puts @contact.as_json.to_s
