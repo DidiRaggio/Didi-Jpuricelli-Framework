@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require 'style'
  */
 
  @import "bootstrap-sprockets";
@@ -23,4 +22,5 @@
  @import "active_admin/editor/wysiwyg";
  @import "ionicons";
  @import "jquery-ui";
+ @import "style";
  @import "animate";

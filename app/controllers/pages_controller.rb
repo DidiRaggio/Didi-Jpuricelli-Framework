@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  respond_to :html
   def home
   	@homeImages = HomeImage.all.to_rank
     @galleries = Gallery.all.to_rank
@@ -10,7 +11,9 @@ class PagesController < ApplicationController
 
 
     flash[:notice] = "THis isn't working!"
-        @contact = Contact.new(contact_params)
+
+
+    @contact = Contact.new
     
     # puts params
     # puts @contact.as_json.to_s

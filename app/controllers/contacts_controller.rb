@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
       flash[:notice] = "No se pudo contactar :("
     end
 
-  end
+  	end
 	# def destroy
 	# 	@contact = Contact.find(params[:id])
 	# 	@contact.destroy
