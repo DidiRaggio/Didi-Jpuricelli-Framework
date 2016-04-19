@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     
     puts params
     puts @contact.as_json.to_s
-    if @contact.post?
+    if @contact.valid?
 
     puts params
     puts @contact.as_json.to_s
