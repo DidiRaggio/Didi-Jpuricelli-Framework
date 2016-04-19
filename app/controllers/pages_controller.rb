@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     # @gallery = Gallery.find(params[:id])
 
 
-
+    flash[:notice] = "THis isn't working!"
     @contact = Contact.new
     
     puts params

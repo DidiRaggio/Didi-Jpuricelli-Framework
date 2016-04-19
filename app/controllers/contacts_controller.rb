@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+	respond_to :html
 	def new
     @contact = Contact.new
     end
