@@ -12,12 +12,12 @@ class PagesController < ApplicationController
 
     @contact = Contact.new
     
-    logger.info params
-    logger.info @contact.as_json.to_s
-    if @contact.valid?
+    puts params
+    puts @contact.as_json.to_s
+    if @contact.post?
 
-    logger.info params
-    logger.info @contact.as_json.to_s
+    puts params
+    puts @contact.as_json.to_s
 
       # ContactMailer.contact_created(@contact).deliver
       # ResponseMailer.response_created(@contact).deliver_now
