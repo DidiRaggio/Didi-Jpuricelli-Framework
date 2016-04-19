@@ -15,7 +15,6 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require owl.carousel
-//= require magnific-popup
 //= require 'jquery.backstretch'
 //= require 'jquery.sticky'
 //= require 'jquery.fitvids'
