@@ -1,6 +1,10 @@
 $ rails g model Contact --migration=false --skip-fixture name:string email:string subject:string message:text
 
 
+FROM SIDE-IMAGE
+	background: url(../images/about.jpg) scroll center no-repeat;
+
+
         <%= render 'galleries/show', locals: { gallery: @gallery} %>
 
 						 <%= link_to "", gallery_path(gallery), :remote => true, :data => {:toggle => "modal", :target => "#myModal"} %>
