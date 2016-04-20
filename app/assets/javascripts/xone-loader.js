@@ -68,6 +68,7 @@ ready = function() {
 					jQuery( "#portfolio-single .entry-media" ).animate({ 'top': '60px'}, 600, 'easeOutQuart');
 					jQuery( "#portfolio-single .entry-content" ).animate({ 'top': '60px'}, 600, 'easeOutQuart');
 					jQuery( ".ajax-content" ).fadeOut(600, function(){
+						jQuery(".owl-carousel").owlCarousel();
 						loadcontent(url);
 
 						// jQuery('body').getScript('galleria/themes/12/galleria.twelve.js');
