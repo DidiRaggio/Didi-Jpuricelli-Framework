@@ -40,17 +40,14 @@ ready = function() {
 
 			var scrolltop = jQuery('header').height() - 1;
 			var url = jQuery(this).attr('href');
-			alert('clicked gallery item');
 			
 			if (!activeproject) { 
 				jQuery( ".ajax-section" ).slideDown(500);
 				// jQuery(".owl-carousel").owlCarousel();
 				loadcontent(url); 
-				alert('not activeproject');
 				
 			} else if (activeproject == url) {
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 700, 'easeOutQuart');
-				alert('is activeproject');
 				// jQuery(".owl-carousel").owlCarousel();
 			} else {
 				var i = 0; // Bug Fix Safari when scrolling + callback 
@@ -58,8 +55,6 @@ ready = function() {
 					if (i == 0) { // Bug Fix Safari when scrolling + callback 
 					var currentheight = jQuery( ".ajax-section" ).height();
 					
-					
-					alert('dunno whats happening here');
 					jQuery( ".ajax-section" ).css({ 'min-height' : currentheight+'px' });
 					jQuery( '.close-project' ).fadeOut(500);
 					
@@ -188,7 +183,7 @@ $(document).on('page:load', ready);
 				slideSpeed : 300,
 				paginationSpeed : 400,
 				autoPlay: 5000,
-				navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']	
+				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']	
 
 		 });	
 
