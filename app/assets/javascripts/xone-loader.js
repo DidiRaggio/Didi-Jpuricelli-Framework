@@ -175,17 +175,33 @@ $(document).on('page:load', ready);
 
   //  });	
 
-		jQuery(".owl-carousel").owlCarousel({
+		// jQuery(".owl-carousel").owlCarousel({
 
-		     	singleItem: true,
-				navigation: false,
-				pagination: false,
-				slideSpeed : 300,
-				paginationSpeed : 400,
-				autoPlay: 5000,
-				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']	
+		//      	singleItem: true,
+		// 		navigation: false,
+		// 		pagination: false,
+		// 		slideSpeed : 300,
+		// 		paginationSpeed : 400,
+		// 		autoPlay: 5000,
+		// 		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']	
+
+		//  });
+		 jQuery(".owl-carousel").owlCarousel({
+
+		items:1,
+        loop:true,
+        autoplay:true,
+        autoHeight: false,
+        autoHeightClass: 'owl-height',
+        dots:false,
+        nav:true,
+        navText:[
+            "<i class='fa fa-angle-left fa-2x'></i>",
+            "<i class='fa fa-angle-right fa-2x'></i>"
+        ]
 
 		 });	
+	
 
 
 
