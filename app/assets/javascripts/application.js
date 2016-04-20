@@ -19,6 +19,7 @@
 //= require 'jquery.sticky'
 //= require 'jquery.fitvids'
 //= require 'jquery.shuffle.min'
+//= require 'jquery.easing.1.3'
 //= require imagesloaded
 //= require wow
 //= require smoothscroll
