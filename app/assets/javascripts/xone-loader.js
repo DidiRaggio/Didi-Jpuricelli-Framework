@@ -53,7 +53,7 @@ ready = function() {
 
 			var scrolltop = jQuery('header').height() - 1;
 			jQuery( ".ajax-content" ).load( url + ' #portfolio-single', function(response, status) {
-				jQuery('.galleria').galleria(); 
+				// jQuery('.galleria').galleria(); 
 				jQuery( ".ajax-content" ).css({opacity: 1});
 				
 				if (status == 'success') {
