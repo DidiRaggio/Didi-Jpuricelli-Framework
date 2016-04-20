@@ -34,7 +34,7 @@ ready = function() {
 			flexInit('body');		
 
 
-						
+
 		var activeproject = false;	
 		jQuery("body").on("click", 'a.load-content', function() {
 
@@ -51,7 +51,9 @@ ready = function() {
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 500, 'easeOutQuart', function() {
 					if (i == 0) { // Bug Fix Safari when scrolling + callback 
 					var currentheight = jQuery( ".ajax-section" ).height();
-					//alert(currentheight);
+					jQuery(".owl-carousel").owlCarousel();
+					
+					alert('owl 1');
 					jQuery( ".ajax-section" ).css({ 'min-height' : currentheight+'px' });
 					jQuery( '.close-project' ).fadeOut(500);
 					
