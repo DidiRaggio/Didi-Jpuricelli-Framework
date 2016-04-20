@@ -15,7 +15,6 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require owl.carousel
-//= require magnific-popup
 //= require 'jquery.backstretch'
 //= require 'jquery.sticky'
 //= require 'jquery.fitvids'
@@ -27,6 +26,5 @@
 //= require custom-shuffle-init
 //= require turbolinks
 //= require custom
-
-
+//= require 'xone-loader'
 
