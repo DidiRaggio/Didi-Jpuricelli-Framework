@@ -44,9 +44,10 @@ ready = function() {
 			
 			if (!activeproject) { 
 				jQuery( ".ajax-section" ).slideDown(500);
+				jQuery(".owl-carousel").owlCarousel();
 				loadcontent(url); 
 				alert('not activeproject');
-				jQuery(".owl-carousel").owlCarousel();
+				
 			} else if (activeproject == url) {
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 700, 'easeOutQuart');
 				alert('is activeproject');
