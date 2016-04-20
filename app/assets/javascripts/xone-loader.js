@@ -83,11 +83,11 @@ ready = function() {
 		});
 		
 		function loadcontent(url){
-			
+
 			var scrolltop = jQuery('header').height() - 1;
 			jQuery( ".ajax-content" ).load( url + ' #portfolio-single', function(response, status) {
 				// jQuery('.galleria').galleria(); 
-				
+
 				jQuery( ".ajax-content" ).css({opacity: 1});
 				
 				if (status == 'success') {
@@ -164,21 +164,36 @@ $(document).on('page:load', ready);
 	}
 		
 	function portfolioShow(){
+		// jQuery(".owl-carousel").owlCarousel({
+
+  // navigation : true, // Show next and prev buttons
+  // slideSpeed : 300,
+  // paginationSpeed : 400,
+  // singleItem:true
+
+  //  // "singleItem:true" is a shortcut for:
+  //  // items : 1, 
+  //  // itemsDesktop : false,
+  //  // itemsDesktopSmall : false,
+  //  // itemsTablet: false,
+  //  // itemsMobile : false
+
+  //  });	
+
 		jQuery(".owl-carousel").owlCarousel({
 
-  navigation : true, // Show next and prev buttons
-  slideSpeed : 300,
-  paginationSpeed : 400,
-  singleItem:true
+		     	singleItem: true,
+				navigation: false,
+				pagination: false,
+				slideSpeed : 300,
+				paginationSpeed : 400,
+				autoPlay: 5000,
+				navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']	
 
-   // "singleItem:true" is a shortcut for:
-   // items : 1, 
-   // itemsDesktop : false,
-   // itemsDesktopSmall : false,
-   // itemsTablet: false,
-   // itemsMobile : false
+		 });	
 
-   });		
+
+
 		// Show Title
 		jQuery( "#portfolio-single .project-title" ).animate({ 'top': '0', opacity: 1 }, 500, 'easeOutQuart');
 			
