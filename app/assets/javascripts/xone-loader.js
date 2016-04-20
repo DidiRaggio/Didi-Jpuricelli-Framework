@@ -40,13 +40,16 @@ ready = function() {
 
 			var scrolltop = jQuery('header').height() - 1;
 			var url = jQuery(this).attr('href');
-			
+			alert('clicked gallery item');
+			jQuery(".owl-carousel").owlCarousel();
 			if (!activeproject) { 
 				jQuery( ".ajax-section" ).slideDown(500);
 				loadcontent(url); 
-				jQuery(".owl-carousel").owlCarousel();
+				alert('not activeproject');
 			} else if (activeproject == url) {
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 700, 'easeOutQuart');
+				alert('is activeproject');
+
 			} else {
 				var i = 0; // Bug Fix Safari when scrolling + callback 
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 500, 'easeOutQuart', function() {
@@ -54,7 +57,7 @@ ready = function() {
 					var currentheight = jQuery( ".ajax-section" ).height();
 					
 					
-					alert('owl 1');
+					alert('dunno whats happening here');
 					jQuery( ".ajax-section" ).css({ 'min-height' : currentheight+'px' });
 					jQuery( '.close-project' ).fadeOut(500);
 					
