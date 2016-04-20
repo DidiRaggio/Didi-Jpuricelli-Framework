@@ -10,7 +10,28 @@
 var ready;
 ready = function() {
 
-						
+function flexInit(el) { 
+
+	/*---------------------------------------------- 
+				   F L E X S L I D E R
+	------------------------------------------------*/
+	if(jQuery().flexslider) { 
+		jQuery(el+" .flexslider").flexslider({
+			animation: "slide",
+			slideshowSpeed: 7000,
+			animationDuration: 1000,
+			slideshow: false,
+			directionNav: false,
+			controlNav: true,
+			smoothHeight: true,
+			touch: true,
+			video: true,
+			randomize: false
+		}); 
+	}
+	
+}
+flexInit('body');					
 		var activeproject = false;	
 		jQuery("body").on("click", 'a.load-content', function() {
 
