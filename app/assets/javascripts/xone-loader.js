@@ -159,28 +159,44 @@ $(document).on('page:load', ready);
 	}
 		
 	function portfolioShow(){
-		jQuery(".owl-carousel").owlCarousel({
+		// jQuery(".owl-carousel").owlCarousel({
 
-		  navigation : true, // Show next and prev buttons
-		  slideSpeed : 300,
-		  paginationSpeed : 400,
-		  loop: true,
-		  autoplay: true,
-		  dots: false,
-		  navigationText:[
-            "<i class='fa fa-angle-left fa-2x'></i>",
-            "<i class='fa fa-angle-right fa-2x'></i>"
-	      ],
-	      margin: 10,
-          video: true,
-          lazyLoad: true,
-          center: true,
-	      videoWidth: 600,
-		  videoHeight: 300,
-		  singleItem: true
+		//   navigation : true, // Show next and prev buttons
+		//   slideSpeed : 300,
+		//   paginationSpeed : 400,
+		//   loop: true,
+		//   autoplay: true,
+		//   dots: false,
+		//   navigationText:[
+  //           "<i class='fa fa-angle-left fa-2x'></i>",
+  //           "<i class='fa fa-angle-right fa-2x'></i>"
+	 //      ],
+	 //      margin: 10,
+  //         video: true,
+  //         lazyLoad: true,
+  //         center: true,
+	 //      videoWidth: 600,
+		//   videoHeight: 300,
+		//   singleItem: true
 
-		});	
-
+		// });	
+			jQuery(".owl-carousel").owlCarousel({
+				items:1,
+				merge:true,
+				loop:true,
+				margin:10,
+				video:true,
+				lazyLoad:true,
+				center:true,
+				responsive:{
+					480:{
+						items:2
+					},
+					600:{
+						items:4
+					}
+				}
+			});
 		// jQuery(".owl-carousel").owlCarousel({
 
 		//      	singleItem: true,
