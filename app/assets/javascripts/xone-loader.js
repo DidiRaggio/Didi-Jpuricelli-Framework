@@ -165,15 +165,16 @@ $(document).on('page:load', ready);
 		  slideSpeed : 300,
 		  paginationSpeed : 400,
 		  loop:true,
-			autoplay:true,
-			dots:false,
-			navigationText:[
+		  autoplay:true,
+		  dots:false,
+		  navigationText:[
             "<i class='fa fa-angle-left fa-2x'></i>",
             "<i class='fa fa-angle-right fa-2x'></i>"
-        ],
+	      ],
+	      video:true,
 		  singleItem:true
 
-		   });	
+		});	
 
 		// jQuery(".owl-carousel").owlCarousel({
 
