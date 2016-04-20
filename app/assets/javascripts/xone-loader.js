@@ -44,6 +44,7 @@ ready = function() {
 			if (!activeproject) { 
 				jQuery( ".ajax-section" ).slideDown(500);
 				loadcontent(url); 
+				jQuery(".owl-carousel").owlCarousel();
 			} else if (activeproject == url) {
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 700, 'easeOutQuart');
 			} else {
@@ -51,7 +52,7 @@ ready = function() {
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 500, 'easeOutQuart', function() {
 					if (i == 0) { // Bug Fix Safari when scrolling + callback 
 					var currentheight = jQuery( ".ajax-section" ).height();
-					jQuery(".owl-carousel").owlCarousel();
+					
 					
 					alert('owl 1');
 					jQuery( ".ajax-section" ).css({ 'min-height' : currentheight+'px' });
