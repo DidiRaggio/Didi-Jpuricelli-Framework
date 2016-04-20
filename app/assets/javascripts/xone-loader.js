@@ -172,6 +172,8 @@ $(document).on('page:load', ready);
             "<i class='fa fa-angle-right fa-2x'></i>"
 	      ],
 	      video:true,
+	      videoWidth: false, // Default false; Type: Boolean/Number
+		  videoHeight: false, // Default false; Type: Boolean/Number
 		  singleItem:true
 
 		});	
