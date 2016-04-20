@@ -215,7 +215,33 @@
 
 
 
+				<div id="portfolio-grid4" class="masonry portfolio-entries clearfix" data-maxitemwidth="350">
+               
+                <% @galleries.each do |gallery| %>
+                <!-- hell of a lot of ruby in the next line-->
+                <div class="portfolio-masonry-entry masonry-item <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
+                    <div class="entry-thumb portfolio-thumb">
+                        <div class="imgoverlay text-light">
+                            <%= link_to gallery_path(gallery), :class => 'load-content' do %>
 
+
+                            <%= image_tag gallery.galleryimage.url(:original), alt: "SEO IMAGE NAME"%>
+
+                            <div class="overlay">
+                              <span class="overlaycolor"></span>
+                              <div class="overlayinfo">
+                                <h5>
+                                  <strong>
+                                    <%= gallery.name %>
+                                  </strong><br/>
+                                </h5>
+                                <h6>
+                                  <%= gallery.sub %>
+                                </h6>
+                              </div>
+                            </div>
+
+                            <% end %>
 
 
 
