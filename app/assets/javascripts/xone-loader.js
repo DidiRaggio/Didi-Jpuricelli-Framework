@@ -44,14 +44,14 @@ ready = function() {
 			
 			if (!activeproject) { 
 				jQuery( ".ajax-section" ).slideDown(500);
-				jQuery(".owl-carousel").owlCarousel();
+				// jQuery(".owl-carousel").owlCarousel();
 				loadcontent(url); 
 				alert('not activeproject');
 				
 			} else if (activeproject == url) {
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 700, 'easeOutQuart');
 				alert('is activeproject');
-				jQuery(".owl-carousel").owlCarousel();
+				// jQuery(".owl-carousel").owlCarousel();
 			} else {
 				var i = 0; // Bug Fix Safari when scrolling + callback 
 				jQuery('html,body').animate({ scrollTop: jQuery( ".ajax-section" ).offset().top-scrolltop}, 500, 'easeOutQuart', function() {
@@ -68,7 +68,7 @@ ready = function() {
 					jQuery( "#portfolio-single .entry-media" ).animate({ 'top': '60px'}, 600, 'easeOutQuart');
 					jQuery( "#portfolio-single .entry-content" ).animate({ 'top': '60px'}, 600, 'easeOutQuart');
 					jQuery( ".ajax-content" ).fadeOut(600, function(){
-						jQuery(".owl-carousel").owlCarousel();
+						// jQuery(".owl-carousel").owlCarousel();
 						loadcontent(url);
 
 						// jQuery('body').getScript('galleria/themes/12/galleria.twelve.js');
@@ -83,10 +83,11 @@ ready = function() {
 		});
 		
 		function loadcontent(url){
-
+			jQuery(".owl-carousel").owlCarousel();
 			var scrolltop = jQuery('header').height() - 1;
 			jQuery( ".ajax-content" ).load( url + ' #portfolio-single', function(response, status) {
 				// jQuery('.galleria').galleria(); 
+				
 				jQuery( ".ajax-content" ).css({opacity: 1});
 				
 				if (status == 'success') {
