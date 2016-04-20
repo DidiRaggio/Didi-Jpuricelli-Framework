@@ -1,4 +1,5 @@
-
+ @import "owl.carousel";
+ @import "owl.theme";
 
 Old APP.JS
 //= require jquery

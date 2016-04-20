@@ -164,17 +164,20 @@ $(document).on('page:load', ready);
 		  navigation : true, // Show next and prev buttons
 		  slideSpeed : 300,
 		  paginationSpeed : 400,
-		  loop:true,
-		  autoplay:true,
-		  dots:false,
+		  loop: true,
+		  autoplay: true,
+		  dots: false,
 		  navigationText:[
             "<i class='fa fa-angle-left fa-2x'></i>",
             "<i class='fa fa-angle-right fa-2x'></i>"
 	      ],
-	      video:true,
-	      videoWidth: false, // Default false; Type: Boolean/Number
-		  videoHeight: false, // Default false; Type: Boolean/Number
-		  singleItem:true
+	      margin: 10,
+          video: true,
+          lazyLoad: true,
+          center: true,
+	      videoWidth: 940, // Default false; Type: Boolean/Number
+		  videoHeight: 300, // Default false; Type: Boolean/Number
+		  singleItem: true
 
 		});	
 
