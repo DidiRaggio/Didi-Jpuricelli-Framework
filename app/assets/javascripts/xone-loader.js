@@ -83,7 +83,7 @@ ready = function() {
 		});
 		
 		function loadcontent(url){
-			jQuery(".owl-carousel").owlCarousel();
+			
 			var scrolltop = jQuery('header').height() - 1;
 			jQuery( ".ajax-content" ).load( url + ' #portfolio-single', function(response, status) {
 				// jQuery('.galleria').galleria(); 
@@ -164,7 +164,7 @@ $(document).on('page:load', ready);
 	}
 		
 	function portfolioShow(){
-				
+		jQuery(".owl-carousel").owlCarousel();		
 		// Show Title
 		jQuery( "#portfolio-single .project-title" ).animate({ 'top': '0', opacity: 1 }, 500, 'easeOutQuart');
 			
