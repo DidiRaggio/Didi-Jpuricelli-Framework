@@ -175,8 +175,8 @@ $(document).on('page:load', ready);
           video: true,
           lazyLoad: true,
           center: true,
-	      videoWidth: 940, // Default false; Type: Boolean/Number
-		  videoHeight: 300, // Default false; Type: Boolean/Number
+	      videoWidth: 600,
+		  videoHeight: 300,
 		  singleItem: true
 
 		});	
