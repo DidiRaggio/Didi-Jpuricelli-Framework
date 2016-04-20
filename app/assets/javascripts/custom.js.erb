@@ -1,5 +1,26 @@
 (function($){
+// FLEXSLIDER INIT FUNCTION BECAUSE IT ALSO HAS TO BE REINITIALISED AFTER A PORTFOLIO ITEM IS LOADED
+function flexInit(el) { 
 
+	/*---------------------------------------------- 
+				   F L E X S L I D E R
+	------------------------------------------------*/
+	if(jQuery().flexslider) { 
+		jQuery(el+" .flexslider").flexslider({
+			animation: "slide",
+			slideshowSpeed: 7000,
+			animationDuration: 1000,
+			slideshow: false,
+			directionNav: false,
+			controlNav: true,
+			smoothHeight: true,
+			touch: true,
+			video: true,
+			randomize: false
+		}); 
+	}
+	
+}
 	/* ---------------------------------------------- /*
 	 * Preloader
 	/* ---------------------------------------------- */
@@ -10,7 +31,7 @@
 	});
 
 	$(document).ready(function() {
-			flexInit('body');
+flexInit('body');
 		/* ---------------------------------------------- /*
 		 * Animated scrolling / Scroll Up
 		/* ---------------------------------------------- */
@@ -245,28 +266,8 @@
 		// 	icon: image,
 		// 	animation: google.maps.Animation.BOUNCE,
 		// });
-		// FLEXSLIDER INIT FUNCTION BECAUSE IT ALSO HAS TO BE REINITIALISED AFTER A PORTFOLIO ITEM IS LOADED
-		function flexInit(el) { 
 
-			/*---------------------------------------------- 
-						   F L E X S L I D E R
-			------------------------------------------------*/
-			if(jQuery().flexslider) { 
-				jQuery(el+" .flexslider").flexslider({
-					animation: "slide",
-					slideshowSpeed: 7000,
-					animationDuration: 1000,
-					slideshow: false,
-					directionNav: false,
-					controlNav: true,
-					smoothHeight: true,
-					touch: true,
-					video: true,
-					randomize: false
-				}); 
-			}
-			
-		}
 
 	});
 })(jQuery);
+
