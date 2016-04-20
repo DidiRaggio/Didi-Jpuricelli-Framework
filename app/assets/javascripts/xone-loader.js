@@ -159,21 +159,21 @@ $(document).on('page:load', ready);
 	}
 		
 	function portfolioShow(){
-		// jQuery(".owl-carousel").owlCarousel({
+		jQuery(".owl-carousel").owlCarousel({
 
-  // navigation : true, // Show next and prev buttons
-  // slideSpeed : 300,
-  // paginationSpeed : 400,
-  // singleItem:true
+		  navigation : true, // Show next and prev buttons
+		  slideSpeed : 300,
+		  paginationSpeed : 400,
+		  loop:true,
+			autoplay:true,
+			dots:false,
+			navigationText:[
+            "<i class='fa fa-angle-left fa-2x'></i>",
+            "<i class='fa fa-angle-right fa-2x'></i>"
+        ],
+		  singleItem:true
 
-  //  // "singleItem:true" is a shortcut for:
-  //  // items : 1, 
-  //  // itemsDesktop : false,
-  //  // itemsDesktopSmall : false,
-  //  // itemsTablet: false,
-  //  // itemsMobile : false
-
-  //  });	
+		   });	
 
 		// jQuery(".owl-carousel").owlCarousel({
 
@@ -186,21 +186,21 @@ $(document).on('page:load', ready);
 		// 		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']	
 
 		//  });
-		 jQuery(".owl-carousel").owlCarousel({
+		//  jQuery(".owl-carousel").owlCarousel({
 
-		items:1,
-        loop:true,
-        autoplay:true,
-        autoHeight: false,
-        autoHeightClass: 'owl-height',
-        dots:false,
-        nav:true,
-        navText:[
-            "<i class='fa fa-angle-left fa-2x'></i>",
-            "<i class='fa fa-angle-right fa-2x'></i>"
-        ]
+		// items:1,
+  //       loop:true,
+  //       autoplay:true,
+  //       autoHeight: false,
+  //       autoHeightClass: 'owl-height',
+  //       dots:false,
+  //       nav:true,
+  //       navText:[
+  //           "<i class='fa fa-angle-left fa-2x'></i>",
+  //           "<i class='fa fa-angle-right fa-2x'></i>"
+  //       ]
 
-		 });	
+		//  });	
 	
 
 
