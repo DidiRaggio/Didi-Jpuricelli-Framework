@@ -1,4 +1,18 @@
+            <% @gallery.assets.each do |asset| %>
+              <% if asset.assettype_id == 1 %> 
 
+            
+                <%= link_to asset.image.url(:medium) do %>
+                  <%= image_tag asset.image.url(:thumb), :data => { :big => asset.image.url(:original), :title => asset.title, :description => asset.description }, :alt => "" %>
+                <% end %>
+
+              <% else %>
+                <%= link_to asset.embeded_video, :data => { :title => asset.title, :description => asset.description } do %>
+                  <span class="video">Watch this on Vimeo!</span>
+                <% end %>
+              <% end %>
+
+            <% end %>
 
 <section id="portfolio">
       <div id="portfolio-single" class="section-inner">
@@ -6,31 +20,20 @@
 		<div id="custom-content" class="white-popup-block">
 
 			<div class="row">
-			  <div class="col-sm-12 text-center">
-		      <div class="owl-carousel owl-theme portfolio-slider">
-		      <% @gallery.assets.each do |asset| %>
+				<div class="col-sm-12 text-center">
+			    	<div class="owl-carousel owl-theme portfolio-slider">
+				    	<% @gallery.assets.each do |asset| %>
+				      		<% if asset.assettype_id == 1 %> 
 								<div class="item">
-		            
-							
 									<%= image_tag asset.image.url(:original) %>
-
 								</div>
-		            <% end %>
-		            		<div class="item-video">
-		            			<a class="owl-video" href="https://vimeo.com/100785832"></a>
-		            		</div>
-		            		<div class="item-video">
-		            			<a class="owl-video" href="http://www.youtube.com/watch?v=0fhoIate4qI"></a>
-		            		</div>
-		            		 <div class="item-video" data-merge="3"><a class="owl-video" href="http://vimeo.com/23924346"></a></div>
-    <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=JpxsRwnRwCQ"></a></div>
-    <div class="item-video" data-merge="2"><a class="owl-video" href="http://www.youtube.com/watch?v=FBu_jxT1PkA"></a></div>
-    <div class="item-video" data-merge="1"><a class="owl-video" href="http://www.youtube.com/watch?v=oy18DJwy5lI"></a></div>
-    <div class="item-video" data-merge="2"><a class="owl-video" href="http://www.youtube.com/watch?v=H3jLkJrhHKQ"></a></div>
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=g3J4VxWIM6s"></a></div>
-    <div class="item-video" data-merge="1"><a class="owl-video" href="http://www.youtube.com/watch?v=0fhoIate4qI"></a></div>
-    <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=EF_kj2ojZaE"></a></div>
-		            		</div>
+							<% else %>
+								<div class="item-video">
+									<%= link_to "", asset.embeded_video, :class => "owl-video" %>
+								</div>
+							<% end %>
+		           		<% end %>		            		
+		            </div>
 		       </div><!-- .col -->
 				
 		
