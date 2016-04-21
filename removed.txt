@@ -1,3 +1,5 @@
+  navbar-fixed-top
+
  .owl-carousel .item-video {
     height: 100%;
 }
