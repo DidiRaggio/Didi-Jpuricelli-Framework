@@ -799,7 +799,7 @@ button.mfp-close {
     width: 100%;
     padding-top: ($height / $width) * 100%;
   }
-  > .owl-video {
+  > .owl-video-wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -809,6 +809,26 @@ button.mfp-close {
 }
 .item-video  {
   @include aspect-ratio(16, 9);
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+.item  {
+  @include aspect-ratio(950, 500);
 }
 
 /* ---------------------------------------------- /*
