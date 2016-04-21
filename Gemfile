@@ -67,6 +67,7 @@ gem 'underscore-rails'
 
 #paperclip and aws-sdk
 gem 'paperclip', '~> 4.2'
+gem 'paperclip-compression'
 gem 'nokogiri'
 gem 'aws-sdk', '< 2.0'
 
