@@ -799,7 +799,7 @@ button.mfp-close {
     width: 100%;
     padding-top: ($height / $width) * 100%;
   }
-  > .owl-video {
+  > .owl-video-wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -807,7 +807,7 @@ button.mfp-close {
     bottom: 0;
   }
 }
-.owl-video-wrapper  {
+.item-video  {
   @include aspect-ratio(16, 9);
 }
 
