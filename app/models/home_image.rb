@@ -4,7 +4,7 @@ class HomeImage < ActiveRecord::Base
     order('rank asc')
   end
 
-  has_attached_file :image, :styles => { :original => "1500x"},
+  has_attached_file :image, :styles => { :original => "1200x"},
   :hash_secret => "SOME_RANDOM_SECRET",
   :path => '/:class/:id/:style/:class:style:id.:extension'
   

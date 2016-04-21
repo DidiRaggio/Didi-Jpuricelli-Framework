@@ -1,6 +1,6 @@
 class About < ActiveRecord::Base
 
-  has_attached_file :image, :styles => { :original => "2000x" }, :default_url => "/images/:style/missing.png",
+  has_attached_file :image, :styles => { :original => "900x678" }, :default_url => "/images/:style/missing.png",
   # :url => ':s3_alias_url',
   # :s3_host_alias => 'static20.jpuricelli.com',
   :path => "files/uploads/about/image/:class/:id.:style.:extension"

@@ -5,7 +5,7 @@ ActiveAdmin.register About do
     f.inputs 'Details' do
 
       f.input :title, :required => true
-      f.input :description, :required => true
+      f.input :description, :required => true, :as => :html_editor
       f.input :image, :as => :file, :required => true
     end
     f.actions
