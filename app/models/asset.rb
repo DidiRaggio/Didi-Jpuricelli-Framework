@@ -15,7 +15,6 @@ validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 	:image_content_type
 	:image_file_size
 	:image_updated_at
-	:title
 	:description
 	:embeded_video
 	:assettype_id

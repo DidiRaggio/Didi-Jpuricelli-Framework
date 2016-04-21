@@ -1,4 +1,9 @@
-  navbar-fixed-top
+
+STYLE.SCSS LINE #1273
+	.side-image-container {
+		height: 675px;
+	}
+
 
  .owl-carousel .item-video {
     height: 100%;
