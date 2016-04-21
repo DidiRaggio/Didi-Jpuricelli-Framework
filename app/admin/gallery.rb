@@ -35,7 +35,7 @@ ActiveAdmin.register Gallery do
       asset.input :image, as: :file, :label => "Image",:hint => asset.object.image.nil? ? asset.template.content_tag(:span, "No Image Yet") : asset.template.image_tag(asset.object.image.url(:thumb)), :wrapper_html => { :class => "imageForm", :style => "display:none;" }
       asset.input :title, :as => :string, :required => false, :wrapper_html => { :class => "imageForm embededVideoForm", :style => "display:none;" }
       asset.input :embeded_video, :as => :text, :required => false, :wrapper_html => { :class => "embededVideoForm", :style => "display:none;" }
-      asset.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove Asset', :wrapper_html => { :class => "mageForm embededVideoForm"}
+      asset.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove Asset', :wrapper_html => { :class => "imageForm embededVideoForm"}
 
     end
 
