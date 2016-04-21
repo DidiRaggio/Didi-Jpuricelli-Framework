@@ -1,18 +1,3 @@
-            <% @gallery.assets.each do |asset| %>
-              <% if asset.assettype_id == 1 %> 
-
-            
-                <%= link_to asset.image.url(:medium) do %>
-                  <%= image_tag asset.image.url(:thumb), :data => { :big => asset.image.url(:original), :title => asset.title, :description => asset.description }, :alt => "" %>
-                <% end %>
-
-              <% else %>
-                <%= link_to asset.embeded_video, :data => { :title => asset.title, :description => asset.description } do %>
-                  <span class="video">Watch this on Vimeo!</span>
-                <% end %>
-              <% end %>
-
-            <% end %>
 
 <section id="portfolio">
       <div id="portfolio-single" class="section-inner">
