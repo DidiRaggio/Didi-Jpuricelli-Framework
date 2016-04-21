@@ -5,7 +5,7 @@ class Asset < ActiveRecord::Base
   end
 belongs_to :gallery
 belongs_to :assettype
-  has_attached_file :image, :styles => { :original => "950x500" },
+  has_attached_file :image, :styles => { :original => "950x500", :thumb => "120x80" },
   # :url => ':s3_alias_url',
   # :s3_host_alias => 'static15.jpuricelli.com',
   :path => "files/uploads/asset/image/:class/:id.:style.:extension"

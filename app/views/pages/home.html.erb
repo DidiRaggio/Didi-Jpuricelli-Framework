@@ -109,6 +109,17 @@
 
 			</div><!-- .row -->
 
+
+
+
+
+
+
+
+
+
+
+
 			<!-- Portfolio Filter start-->
             <!-- AJAX AREA -->    
             <div id="ajax-portfolio" class="ajax-section">
@@ -119,6 +130,37 @@
 				<div class="close-project"><a href="index.html">CLOSE</a></div>
             </div>    
             <!-- AJAX AREA --> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			<div class="row">
 
@@ -138,6 +180,18 @@
 			<!-- Portfolio Filter end -->
 
 		</div><!-- .contaier -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<ul class="portfolio-items-container">
 		<% @galleries.each do |gallery| %>
@@ -161,6 +215,57 @@
 		<% end %>
 
 		</ul><!-- .projects-container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<ul class="portfolio-items-container">
+		<% @galleries.each do |gallery| %>
+
+
+			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
+				<figure>
+					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
+					<figcaption>
+
+					<%= link_to "", 'galleries/show', :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}%>
+					
+
+						<div class="caption-inner">
+							<h3 class="portfolio-item-title"><%= gallery.name %></h3>
+							<div class="portfolio-item-desc"><%= gallery.sub %></div>
+						</div>
+					</figcaption>
+				</figure>
+			</li>
+		<% end %>
+
+		</ul><!-- .projects-container -->
+
 	</section>
 
 	<!-- Portfolio end -->
