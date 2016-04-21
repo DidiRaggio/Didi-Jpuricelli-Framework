@@ -222,7 +222,7 @@ $(document).on('page:load', ready);
 		//  });	
 		jQuery(".owl-carousel").owlCarousel({
 
-				singleItem: true,
+				items: 1,
 				loop: true,
 				nav: true,
 				dots: true,
