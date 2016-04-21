@@ -790,10 +790,8 @@ button.mfp-close {
 		 -o-border-radius: 3px 0 0 3px;
 			border-radius: 3px 0 0 3px;
 }
- .owl-carousel .item-video {
-    height: 100%;
-}
-
+.owl-carousel  {width:90%; margin: 0 auto;}
+.owl-carousel img{width:100%;height:auto;}
 
 /* ---------------------------------------------- /*
  * Twitter

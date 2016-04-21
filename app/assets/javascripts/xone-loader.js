@@ -229,8 +229,14 @@ $(document).on('page:load', ready);
 				pagination: false,
 				slideSpeed : 300,
 				paginationSpeed : 400,
-				autoPlay: 5000,
+				autoPlay: true,
+				stopOnHover : true,
+				autoplayHoverPause :true,
 				video: true,
+				autoHeight : true,
+			    responsive: true,
+			    responsiveRefreshRate : 200,
+			    responsiveBaseWidth: window,  
 				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
 
 		 });	
