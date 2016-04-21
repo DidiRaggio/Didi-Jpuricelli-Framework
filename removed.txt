@@ -1,4 +1,6 @@
-
+ .owl-carousel .item-video {
+    height: 100%;
+}
  @import "owl.carousel";
  @import "owl.theme";
 
