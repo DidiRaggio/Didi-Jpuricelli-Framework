@@ -174,9 +174,6 @@ $(document).on('page:load', ready);
 	      margin: 10,
           video: true,
           lazyLoad: true,
-          center: true,
-	      videoWidth: false,
-		  videoHeight: false,
 		  singleItem: true
 
 		});	
