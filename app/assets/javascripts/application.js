@@ -14,7 +14,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require owl.carousel
+//= require 'owl.carousel2'
 //= require 'jquery.backstretch'
 //= require 'jquery.sticky'
 //= require 'jquery.fitvids'
