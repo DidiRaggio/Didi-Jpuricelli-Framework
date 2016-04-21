@@ -22,7 +22,7 @@ class Gallery < ActiveRecord::Base
   has_many :assets, :dependent => :destroy
 
   has_attached_file :menuimage, :styles => { :original => "533x332" }, :default_url => "/images/:style/missing.png",
-
+  processors: [:thumbnail, :compression],
   :path => ':class/:id/:style/:class:style:id.:extension'
   validates_attachment :menuimage, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   validates :menuimage, presence: true
