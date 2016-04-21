@@ -228,8 +228,8 @@ $(document).on('page:load', ready);
 				dots: true,
 				pagination: false,
 				slideSpeed : 300,
-				paginationSpeed : 400,
-				autoplay: true,
+				// paginationSpeed : 400,
+				// autoplay: true,
 				video: true,
 				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
 
