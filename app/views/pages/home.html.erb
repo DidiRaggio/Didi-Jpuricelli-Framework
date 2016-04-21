@@ -243,28 +243,7 @@
 
 
 
-		<ul class="portfolio-items-container">
-		<% @galleries.each do |gallery| %>
 
-
-			<li class="portfolio-item" data-groups="all <%= gallery.tags.map(&:gallerytype).collect(&:name).join ' ' %>">
-				<figure>
-					<%= image_tag gallery.menuimage.url(:original), alt: ""%>
-					<figcaption>
-
-					<%= link_to "", 'galleries/show', :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}%>
-					
-
-						<div class="caption-inner">
-							<h3 class="portfolio-item-title"><%= gallery.name %></h3>
-							<div class="portfolio-item-desc"><%= gallery.sub %></div>
-						</div>
-					</figcaption>
-				</figure>
-			</li>
-		<% end %>
-
-		</ul><!-- .projects-container -->
 
 	</section>
 
