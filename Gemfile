@@ -32,7 +32,8 @@ gem 'jquery-ui-rails-google-cdn'
 
 
 #template gems
-gem 'owlcarousel-rails'
+# gem 'owlcarousel-rails'
+gem 'owlcarousel2-rails', github: 'openscript/owlcarousel2-rails'
 # gem 'magnific-popup-rails', '~> 1.1.0'
 gem 'backstretch-rails'
 gem 'wow-rails'
