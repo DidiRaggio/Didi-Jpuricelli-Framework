@@ -150,23 +150,3 @@ button.mfp-close {
 $ rails g model Contact --migration=false --skip-fixture name:string email:string subject:string message:text
 
 
-FROM SIDE-IMAGE
-	background: url(../images/about.jpg) scroll center no-repeat;
-
-
-        <%= render 'galleries/show', locals: { gallery: @gallery} %>
-
-						 <%= link_to "", gallery_path(gallery), :remote => true, :data => {:toggle => "modal", :target => "#myModal"} %>
-
-
-
-						 <%= link_to "", render(:partial => 'galleries/show'), :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}  %>
-
-
-						 <%= link_to "", render(:partial => 'galleries/show'), :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}  %>
-
-						 
-						 <%= link_to "", render_partial_path , :class => 'simple-ajax-popup', remote: true, locals: { gallery: gallery}  %>
-
-
-						 		    $('.mpf-content').html("<%= render :partial => 'galleries/show' %>");
